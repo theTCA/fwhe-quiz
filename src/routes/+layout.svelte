@@ -6,7 +6,7 @@
     const links = [
         {
             name: "Training",
-            href: "/trainig"
+            href: "/training"
         },
         {
             name: "Quiz",
