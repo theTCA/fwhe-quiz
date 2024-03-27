@@ -1,8 +1,26 @@
 <script>
-    import '../app.css';
-    import {page} from '$app/stores';
+    import "../app.css";
+    import {page} from "$app/stores";
+    import Icon from "@iconify/svelte";
 
-    const links = [];
+    const links = [
+        {
+            name: "Training",
+            href: "/trainig"
+        },
+        {
+            name: "Quiz",
+            href: "/quiz"
+        },
+        {
+            name: "ADR Quiz",
+            href: "/adrquiz"
+        },
+        {
+            name: "PDF-Quiz",
+            href: "/pdfquiz"
+        }
+    ];
 </script>
 
 <div class="drawer">
@@ -15,23 +33,28 @@
                 </label>
             </div>
             <div class="flex-none px-2 mx-2">
-                <a class="text-lg font-semibold" href="/">HFLÜ-Trainer</a>
+                <a class="btn btn-ghost text-lg font-semibold" href="/">HFLÜ-Trainer</a>
             </div>
             <div class="flex-1 hidden lg:block">
                 <ul class="menu menu-horizontal gap-2">
                     {#each links as link}
-                    <li>
+                    <li class="flex items-center">
                         {#if $page.url.pathname === link.href}
-                        <a class="bg-base-100 active" href={link.href}>{link.name}</a>
+                        <a class="btn btn-sm btn-active" href={link.href}>{link.name}</a>
                         {:else}
-                        <a class="bg-base-100" href={link.href}>{link.name}</a>
+                        <a class="btn btn-sm" href={link.href}>{link.name}</a>
                         {/if}
                     </li>
                     {/each}
                 </ul>
             </div>
+            <div class="flex-1 justify-end">
+                <a href="/bookmarks" class="btn btn-square">
+                    <Icon class="h-5 w-5" icon="material-symbols:bookmark"/>
+                </a>
+            </div>
         </nav>
-        <main>
+        <main class="w-full lg:w-[80%] mx-auto p-1 mt-2">
             <slot/>
         </main>
     </div>
