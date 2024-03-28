@@ -1,4 +1,30 @@
 import jsPDF from "jspdf";
+import {images} from "$lib/data.json";
+
+const styles = {
+    normal: {
+        imageSize: {w: 20, h: 20},
+        headlineFontSize: 14,
+        preambleFontSize: 8,
+        headerFontSize: 7,
+        footerFontSize: 7,
+        questionFontSize: 10,
+        choiceBoxLineWidth: 0.1,
+        choiceCrossLineWidth: 0.4,
+        choiceCrossSpacing: 1
+    },
+    xl: {
+        imageSize: {w: 25, h: 25},
+        headlineFontSize: 20,
+        preambleFontSize: 10,
+        headerFontSize: 10,
+        footerFontSize: 10,
+        questionFontSize: 14,
+        choiceBoxLineWidth: 0.3,
+        choiceCrossLineWidth: 0.6,
+        choiceCrossSpacing: 1.3
+    }
+}
 
 export class QuizBuilder {
     #doc
@@ -9,7 +35,7 @@ export class QuizBuilder {
     #questions
     #showSolution
     /**
-     * @param {{question: string;choices: {answer: boolean;text: string;}[];}[]} questions
+     * @param {import("$lib/types").Question[]} questions
      * @param {{style?: 'normal' | 'xl';showSolution?: boolean;}} options
      * @param {string} name
      */
@@ -29,13 +55,13 @@ export class QuizBuilder {
             this.#addPreamble("Es ist immer nur eine Antwortmöglichkeit richtig!");
         }
         for(const [index, question] of questions.entries())
-            this.#addQuestion(index+1, question);
+            this.#addQuestion(index + 1, question);
         this.#addHeader();
         this.#addFooter();
     }
 
     #getFontSizeInMM() {
-        return this.#doc.getFontSize() * 0.352777;
+        return this.#doc.getFontSize() / this.#doc.internal.scaleFactor;
     }
 
     #getMaxTextWidth() {
@@ -73,26 +99,18 @@ export class QuizBuilder {
         this.#doc.setFont(this.#doc.getFont().fontName, "normal");
     }
 
-
     #setItalic() {
         this.#doc.setFont(this.#doc.getFont().fontName, "italic");
     }
 
     /**
      * @param {number} number
-     * @param {{question: string;choices: {answer: boolean;text: string;}[];}} question
+     * @param {import("$lib/types").Question} question
      */
     #addQuestion(number, question) {
         const spaceAfterQuestion = 7;
         const spaceAfterQuestionText = 3;
-        switch(this.#style) {
-            case "normal":
-                this.#doc.setFontSize(10);
-                break;
-            case "xl":
-                this.#doc.setFontSize(14);
-                break;
-        }
+        this.#doc.setFontSize(styles[this.#style].questionFontSize);
         const spaceAfterChoice = this.#getFontSizeInMM();
         const lines = this.#splitText(question.question + "\n" + question.choices.reduce((acc, c) => acc + c.text + "\n", "").trim()).length;
         const lineHeight = lines * this.#getFontSizeInMM() * this.#doc.getLineHeightFactor();
@@ -103,37 +121,39 @@ export class QuizBuilder {
         this.#setBold();
         const numberText = `${number}. `;
         this.#putText(numberText);
-        const offset = this.#doc.getTextWidth(`${this.#questions.length}. `);
-        this.#putText(question.question, this.#margin.left + offset);
+        const padding = this.#doc.getTextWidth(`${this.#questions.length}. `);
+        this.#putText(question.question, this.#margin.left + padding);
         this.#setNormal();
         this.#y += spaceAfterQuestionText;
+        const imageSize = styles[this.#style].imageSize;
+        if(question.image) {
+            let imageUrl = images.find(i => i.id === question.image);
+            if(imageUrl) {
+                this.#doc.addImage(`/img/min/${imageUrl.file}`, "PNG", this.#margin.left + this.#getMaxTextWidth() - imageSize.w + 10, this.#y, imageSize.w, imageSize.h, "", "FAST");
+            }
+        }
+        let choiceHeight = 0;
         for(let choice of question.choices) {
-            switch(this.#style) {
-                case "normal":
-                    this.#doc.setLineWidth(0.1);
-                    break;
-                case "xl":
-                    this.#doc.setLineWidth(0.3);
-                    break;
-            }
-            this.#doc.rect(this.#margin.left + offset, this.#y, this.#getFontSizeInMM(), this.#getFontSizeInMM());
+            this.#doc.setLineWidth(styles[this.#style].choiceBoxLineWidth);
+            this.#doc.rect(this.#margin.left + padding, this.#y, this.#getFontSizeInMM(), this.#getFontSizeInMM());
             if(choice.answer && this.#showSolution) {
-                let spacing = 0;
-                switch(this.#style) {
-                    case "normal":
-                        spacing = 1;
-                        this.#doc.setLineWidth(0.4);
-                        break;
-                    case "xl":
-                        spacing = 1.3;
-                        this.#doc.setLineWidth(0.6);
-                        break;
-                }
-                this.#doc.line(this.#margin.left + offset + spacing, this.#y + spacing, this.#margin.left + offset + this.#getFontSizeInMM() - spacing, this.#y + this.#getFontSizeInMM() - spacing);
-                this.#doc.line(this.#margin.left + offset + this.#getFontSizeInMM() - spacing, this.#y + spacing, this.#margin.left + offset + spacing, this.#y + this.#getFontSizeInMM() - spacing);
+                let spacing = styles[this.#style].choiceCrossSpacing;
+                this.#doc.setLineWidth(styles[this.#style].choiceCrossLineWidth);
+                this.#doc.line(this.#margin.left + padding + spacing, this.#y + spacing, this.#margin.left + padding + this.#getFontSizeInMM() - spacing, this.#y + this.#getFontSizeInMM() - spacing);
+                this.#doc.line(this.#margin.left + padding + this.#getFontSizeInMM() - spacing, this.#y + spacing, this.#margin.left + padding + spacing, this.#y + this.#getFontSizeInMM() - spacing);
             }
-            this.#putText(choice.text, this.#margin.left + offset + this.#getFontSizeInMM() + 2, this.#y + this.#getFontSizeInMM());
-            this.#y += spaceAfterChoice + this.#getFontSizeInMM() * this.#doc.getLineHeightFactor() / 2;
+            let maxWidth = this.#getMaxTextWidth();
+            if(question.image) {
+                maxWidth = this.#getMaxTextWidth() - imageSize.w - 10;
+            }
+            let splitText = this.#doc.splitTextToSize(choice.text, maxWidth);
+            this.#doc.text(splitText, this.#margin.left + padding + this.#getFontSizeInMM() + 2, this.#y + this.#getFontSizeInMM());
+            let space = splitText.length * this.#getFontSizeInMM() * this.#doc.getLineHeightFactor() + spaceAfterChoice - (this.#getFontSizeInMM() * this.#doc.getLineHeightFactor() / 2);
+            this.#y += space;
+            choiceHeight += space;
+        }
+        if(question.image && choiceHeight < imageSize.h) {
+            this.#y += imageSize.h - choiceHeight;
         }
     }
 
@@ -142,14 +162,7 @@ export class QuizBuilder {
      */
     #addHeadline(text) {
         this.#setBold();
-        switch(this.#style) {
-            case "normal":
-                this.#doc.setFontSize(14);
-                break;
-            case "xl":
-                this.#doc.setFontSize(20);
-                break;
-        }
+        this.#doc.setFontSize(styles[this.#style].headlineFontSize);
         let splitText = this.#splitText(text);
         this.#doc.text(splitText, this.#doc.internal.pageSize.getWidth() / 2, this.#margin.top, {align: "center"});
         this.#setNormal();
@@ -160,14 +173,7 @@ export class QuizBuilder {
      * @param {string} text
      */
     #addPreamble(text) {
-        switch(this.#style) {
-            case "normal":
-                this.#doc.setFontSize(8);
-                break;
-            case "xl":
-                this.#doc.setFontSize(10);
-                break;
-        }
+        this.#doc.setFontSize(styles[this.#style].preambleFontSize);
         this.#setItalic();
         this.#putText(text);
         this.#setNormal();
@@ -176,14 +182,7 @@ export class QuizBuilder {
 
     #addHeader() {
         const pages = this.#doc.getNumberOfPages();
-        switch(this.#style) {
-            case "normal":
-                this.#doc.setFontSize(7);
-                break;
-            case "xl":
-                this.#doc.setFontSize(10);
-                break;
-        }
+        this.#doc.setFontSize(styles[this.#style].headerFontSize);
         this.#setNormal();
         for(let i = 1; i <= pages; i++) {
             this.#doc.setPage(i);
@@ -195,14 +194,7 @@ export class QuizBuilder {
 
     #addFooter() {
         const pages = this.#doc.getNumberOfPages();
-        switch(this.#style) {
-            case "normal":
-                this.#doc.setFontSize(7);
-                break;
-            case "xl":
-                this.#doc.setFontSize(10);
-                break;
-        }
+        this.#doc.setFontSize(styles[this.#style].footerFontSize);
         this.#setNormal();
         for(let i = 1; i <= pages; i++) {
             this.#doc.setPage(i);
