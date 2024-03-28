@@ -9,22 +9,23 @@ export class QuizBuilder {
     #questions
     #showSolution
     /**
-     * @param {{question:string, choices:{answer: boolean, text:string}[]}[]} questions
-     * @param {{style:'normal' | 'xl', showSolution: boolean}} options
+     * @param {{question: string;choices: {answer: boolean;text: string;}[];}[]} questions
+     * @param {{style?: 'normal' | 'xl';showSolution?: boolean;}} options
+     * @param {string} name
      */
-    constructor(questions, options={style: "normal", showSolution: false}) {
+    constructor(name, questions, options={style: "normal", showSolution: false}) {
         this.#doc = new jsPDF({
             orientation: "portrait",
             unit: "mm",
             format: "a4"
         });
-        this.#style = options.style;
-        this.#showSolution = options.showSolution;
+        this.#style = options.style ? options.style : "normal";
+        this.#showSolution = options.showSolution ? options.showSolution : false;
         this.#questions = questions;
         if(this.#showSolution) {
-            this.#addHeadline("Antwortenbogen");
+            this.#addHeadline(`${name} - Lösungen`);
         } else {
-            this.#addHeadline("Fragebogen");
+            this.#addHeadline(name);
             this.#addPreamble("Es ist immer nur eine Antwortmöglichkeit richtig!");
         }
         for(const [index, question] of questions.entries())
@@ -149,10 +150,10 @@ export class QuizBuilder {
                 this.#doc.setFontSize(20);
                 break;
         }
-        this.#doc.text(text, this.#doc.internal.pageSize.getWidth() / 2, this.#margin.top, {align: "center"});
+        let splitText = this.#splitText(text);
+        this.#doc.text(splitText, this.#doc.internal.pageSize.getWidth() / 2, this.#margin.top, {align: "center"});
         this.#setNormal();
-        console.log(this.#doc.getTextDimensions(text).h * this.#getFontSizeInMM() * this.#doc.getLineHeightFactor());
-        this.#y += this.#doc.getTextDimensions(text).h * this.#doc.getLineHeightFactor() + 5;
+        this.#y += this.#doc.getTextDimensions(splitText).h * this.#doc.getLineHeightFactor() + 5;
     }
 
     /**
@@ -186,7 +187,7 @@ export class QuizBuilder {
         this.#setNormal();
         for(let i = 1; i <= pages; i++) {
             this.#doc.setPage(i);
-            const text = `Fragebogen nach der hessischer Feuerwehrleistungsübung`;
+            const text = `Fragebogen nach der hessischen Feuerwehrleistungsübung`;
             this.#doc.text(text, this.#doc.internal.pageSize.getWidth() / 2, this.#margin.top - 15, {align: "center"});
             this.#doc.text(new Date().toLocaleDateString("de-DE", {year: "numeric", month: "2-digit", day:"2-digit"}), this.#doc.internal.pageSize.getWidth() - this.#margin.right, this.#margin.top - 15, {align: "left"});
         }
