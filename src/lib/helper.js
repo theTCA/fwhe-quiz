@@ -16,7 +16,7 @@ export function shuffle(array) {
 
 
 /**
- * Tesst if storage is supported and available
+ * Test if storage is supported and available
  * @param {string} type
  */
 export function storageAvailable(type) {
