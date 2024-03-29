@@ -11,7 +11,7 @@
  * @prop {Choice[]} choices
  * @prop {number | null} image
  * @prop {string[]} tags
- * @prop {QuestionHelp[]} helps
+ * @prop {QuestionHelp[]} help
  * @prop {string} [catalog]
  */
 
