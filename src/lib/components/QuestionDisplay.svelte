@@ -5,10 +5,11 @@
     export let question;
     /** @type {string|null}*/
     export let answer = null;
+    export let showCatalog = true;
 </script>
 
 <div>
-    <QuestionHeader {question} showCatalog={true}/>
+    <QuestionHeader {question} showCatalog={showCatalog}/>
     <div class="flex flex-col gap-3">
     {#each question.choices as choice}
         <div class="flex items-center gap-2 px-1.5 py-3 border-2 border-base-200 rounded-md">
