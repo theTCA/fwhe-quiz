@@ -1,5 +1,6 @@
 <script>
     import { adr } from "$lib/adr.json";
+    import AdrHelp from "$lib/components/AdrHelp.svelte";
     import AdrQuestion from "$lib/components/AdrQuestion.svelte";
     import AdrQuestionDisplay from "$lib/components/AdrQuestionDisplay.svelte";
     import { shuffle } from "$lib/helper";
@@ -71,4 +72,7 @@
         <button class="btn btn-primary btn-block lg:w-1/2" on:click={answerQuestion}> Wählen </button>
         {/if}
     </div>
+    {#if answered && answer !== question?.choices.find(c => c.answer)?.text}
+    <AdrHelp/>
+    {/if}
 </div>
