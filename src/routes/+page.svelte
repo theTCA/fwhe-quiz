@@ -7,7 +7,7 @@
         {
             name: "Training",
             desc: "Beantworte Fragen aus dem Fragenkatalog nach Wahl.",
-            href: ""
+            href: "/training"
         },
         {
             name: "Quiz",
