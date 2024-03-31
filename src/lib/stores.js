@@ -23,7 +23,6 @@ function getStored(key, base) {
 function putStore(key, value) {
     if(!storageAvailable("localStorage"))
         return;
-    console.log("putStorage", value);
     localStorage.setItem(key, JSON.stringify(value));
 }
 
