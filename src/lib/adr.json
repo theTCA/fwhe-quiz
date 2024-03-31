@@ -30,7 +30,7 @@
         },
         {
             "number": "9",
-            "description": "an 1. Stelle: Umweltgefährdender Stoff; Verschiedene gefährliche Stoffe | an 2. oder 3. Stelle: Gefahr einer spontanen heftigen Reaktion"
+            "description": "an 1. Stelle: Umweltgefährdender Stoff; Verschiedene gefährliche Stoffe, an 2. oder 3. Stelle: Gefahr einer spontanen heftigen Reaktion"
         },
         {
             "number": "0",
@@ -242,7 +242,7 @@
         },
         {
             "number": "X323",
-            "description": "entzündbarer flüssiger Stoff, der mit Wasser gefährlich reagiert und entzündbare Gase bildet",
+            "description": "entzündbarer flüssiger Stoff, der mit Wasser gefährlich reagiert und entzündbare Gase bildet (Wasser darf nur im Einverständnis mit Sachverständigem verwendet werden)",
             "examples": [
                 "1928",
                 "3399",
@@ -284,7 +284,7 @@
         },
         {
             "number": "X333",
-            "description": "selbstentzündlicher (pyrophorer) flüssiger Stoff, der mit Wasser gefährlich reagiert",
+            "description": "selbstentzündlicher (pyrophorer) flüssiger Stoff, der mit Wasser gefährlich reagiert (Wasser darf nur im Einverständnis mit Sachverständigem verwendet werden)",
             "examples": [
                 "2003",
                 "3052",
@@ -335,7 +335,7 @@
         },
         {
             "number": "X338",
-            "description": "leicht entzündbarer flüssiger Stoff, ätzend, der mit Wasser gefährlich reagiert",
+            "description": "leicht entzündbarer flüssiger Stoff, ätzend, der mit Wasser gefährlich reagiert (Wasser darf nur im Einverständnis mit Sachverständigem verwendet werden)",
             "examples": [
                 "1183",
                 "1298",
@@ -394,7 +394,7 @@
         },
         {
             "number": "X362",
-            "description": "entzündbarer flüssiger Stoff, giftig, der mit Wasser gefährlich reagiert und entzündbare Gase bildet",
+            "description": "entzündbarer flüssiger Stoff, giftig, der mit Wasser gefährlich reagiert und entzündbare Gase bildet (Wasser darf nur im Einverständnis mit Sachverständigem verwendet werden)",
             "type": "liquid",
             "examples": []
         },
@@ -426,7 +426,7 @@
         },
         {
             "number": "X382",
-            "description": "entzündbarer flüssiger Stoff, ätzend, der mit Wasser gefährlich reagiert und entzündbare Gase bildet",
+            "description": "entzündbarer flüssiger Stoff, ätzend, der mit Wasser gefährlich reagiert und entzündbare Gase bildet (Wasser darf nur im Einverständnis mit Sachverständigem verwendet werden)",
             "type": "liquid",
             "examples": []
         },
