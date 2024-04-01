@@ -111,10 +111,6 @@
                     ],
                     "help": [
                         {
-                            "name": "FwDV 500",
-                            "page": 113
-                        },
-                        {
                             "name": "Kennzeichnung GABC",
                             "page": 2
                         }
@@ -144,10 +140,6 @@
                         "Kennzeichnung"
                     ],
                     "help": [
-                        {
-                            "name": "FwDV 500",
-                            "page": 89
-                        },
                         {
                             "name": "Kennzeichnung GABC",
                             "page": 2
@@ -239,10 +231,6 @@
                     ],
                     "help": [
                         {
-                            "name": "FwDV 500",
-                            "page": 113
-                        },
-                        {
                             "name": "Kennzeichnung GABC",
                             "page": 2
                         }
@@ -272,10 +260,6 @@
                         "Kennzeichnung"
                     ],
                     "help": [
-                        {
-                            "name": "FwDV 500",
-                            "page": 113
-                        },
                         {
                             "name": "Kennzeichnung GABC",
                             "page": 2
@@ -339,7 +323,7 @@
                     "help": [
                         {
                             "name": "FwDV 500",
-                            "page": 30
+                            "page": 25
                         }
                     ]
                 },
@@ -396,7 +380,7 @@
                     "help": [
                         {
                             "name": "FwDV 500",
-                            "page": 30
+                            "page": 25
                         },
                         {
                             "name": "Führungsvorgang",
@@ -461,10 +445,6 @@
                     ],
                     "help": [
                         {
-                            "name": "FwDV 500",
-                            "page": 116
-                        },
-                        {
                             "name": "Kennzeichnung GABC",
                             "page": 2
                         }
@@ -494,10 +474,6 @@
                         "Kennzeichnung"
                     ],
                     "help": [
-                        {
-                            "name": "FwDV 500",
-                            "page": 113
-                        },
                         {
                             "name": "Kennzeichnung GABC",
                             "page": 2
@@ -613,12 +589,7 @@
                         "ABC-Gefahrstoffe",
                         "Dienstvorschrift"
                     ],
-                    "help": [
-                        {
-                            "name": "FwDV 500",
-                            "page": 87
-                        }
-                    ]
+                    "help": []
                 },
                 {
                     "id": 19,
@@ -646,7 +617,7 @@
                     "help": [
                         {
                             "name": "FwDV 500",
-                            "page": 10
+                            "page": 12
                         }
                     ]
                 },
@@ -673,10 +644,6 @@
                         "Kennzeichnung"
                     ],
                     "help": [
-                        {
-                            "name": "FwDV 500",
-                            "page": 116
-                        },
                         {
                             "name": "Kennzeichnung GABC",
                             "page": 2
@@ -706,10 +673,6 @@
                         "Kennzeichnung"
                     ],
                     "help": [
-                        {
-                            "name": "FwDV 500",
-                            "page": 115
-                        },
                         {
                             "name": "Kennzeichnung GABC",
                             "page": 2
@@ -768,10 +731,6 @@
                         "Kennzeichnung"
                     ],
                     "help": [
-                        {
-                            "name": "FwDV 500",
-                            "page": 116
-                        },
                         {
                             "name": "Kennzeichnung GABC",
                             "page": 2
@@ -832,10 +791,6 @@
                     ],
                     "help": [
                         {
-                            "name": "FwDV 500",
-                            "page": 116
-                        },
-                        {
                             "name": "Kennzeichnung GABC",
                             "page": 2
                         }
@@ -864,10 +819,6 @@
                         "Kennzeichnung"
                     ],
                     "help": [
-                        {
-                            "name": "FwDV 500",
-                            "page": 115
-                        },
                         {
                             "name": "Kennzeichnung GABC",
                             "page": 2
@@ -899,7 +850,7 @@
                     "help": [
                         {
                             "name": "FwDV 500",
-                            "page": 10
+                            "page": 12
                         }
                     ]
                 },
@@ -925,12 +876,7 @@
                         "ABC-Gefahrstoffe",
                         "Begriff"
                     ],
-                    "help": [
-                        {
-                            "name": "FwDV 500",
-                            "page": 11
-                        }
-                    ]
+                    "help": []
                 },
                 {
                     "id": 29,
@@ -958,7 +904,7 @@
                     "help": [
                         {
                             "name": "FwDV 500",
-                            "page": 37
+                            "page": 32
                         }
                     ]
                 },
@@ -1010,10 +956,6 @@
                         "bebildert"
                     ],
                     "help": [
-                        {
-                            "name": "FwDV 500",
-                            "page": 115
-                        },
                         {
                             "name": "Kennzeichnung GABC",
                             "page": 2
@@ -2033,12 +1975,7 @@
                         "Besondere Gefahren",
                         "Fahrzeugkunde"
                     ],
-                    "help": [
-                        {
-                            "name": "FwDV 500",
-                            "page": 36
-                        }
-                    ]
+                    "help": []
                 },
                 {
                     "id": 67,
@@ -2137,7 +2074,7 @@
                     "help": [
                         {
                             "name": "FwDV 500",
-                            "page": 57
+                            "page": 70
                         }
                     ]
                 },
@@ -2263,7 +2200,7 @@
                     "help": [
                         {
                             "name": "FwDV 500",
-                            "page": 22
+                            "page": 60
                         }
                     ]
                 },
@@ -2337,12 +2274,7 @@
                         "Dekontaminierung",
                         "Besondere Gefahren"
                     ],
-                    "help": [
-                        {
-                            "name": "FwDV 500",
-                            "page": 34
-                        }
-                    ]
+                    "help": []
                 },
                 {
                     "id": 79,
@@ -6825,12 +6757,7 @@
                         "ABC-Gefahrstoffe",
                         "Grundlagen des Zivil und Katastrophenschutzes"
                     ],
-                    "help": [
-                        {
-                            "name": "FwDV 500",
-                            "page": 86
-                        }
-                    ]
+                    "help": []
                 },
                 {
                     "id": 247,
@@ -17991,10 +17918,6 @@
                         "Verhalten bei Gefahr"
                     ],
                     "help": [
-                        {
-                            "name": "FwDV 500",
-                            "page": 10
-                        },
                         {
                             "name": "Atemschutzeinsatz",
                             "page": 34
