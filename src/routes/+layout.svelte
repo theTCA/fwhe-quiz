@@ -34,7 +34,7 @@
                 </label>
             </div>
             <div class="flex-none px-2 mx-2">
-                <a class="btn btn-ghost text-lg font-semibold" href="/">HFLÜ-Trainer</a>
+                <a class="btn btn-ghost text-lg font-semibold" href={base + "/"}>HFLÜ-Trainer</a>
             </div>
             <div class="flex-1 hidden lg:block">
                 <ul class="menu menu-horizontal gap-2">
