@@ -1,5 +1,6 @@
 <script>
     import "../app.css";
+    import {base} from "$app/paths";
     import {page} from "$app/stores";
     import Icon from "@iconify/svelte";
 
@@ -20,7 +21,7 @@
             name: "PDF-Quiz",
             href: "/pdfquiz"
         }
-    ];
+    ].map(l => ({...l, href: base + l.href}));
 </script>
 
 <div class="drawer">
