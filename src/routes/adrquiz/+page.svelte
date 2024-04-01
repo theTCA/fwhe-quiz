@@ -18,7 +18,7 @@
         const types = shuffle(adr.filter(a => a.number !== question.number));
         return {
             number: question.number,
-            choices: [
+            choices: shuffle([
                 {
                     text: question.description,
                     answer: true
@@ -31,7 +31,7 @@
                     text: types.at(1).description,
                     answer: false,
                 }
-            ],
+            ]),
             example: shuffle(question.examples).at(0)
         };
     }
