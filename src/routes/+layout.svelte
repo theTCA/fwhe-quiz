@@ -50,7 +50,7 @@
                 </ul>
             </div>
             <div class="flex-1 justify-end">
-                <a href="/bookmarks" class="btn btn-square">
+                <a href={base + "/bookmarks"} class="btn btn-square">
                     <Icon class="h-5 w-5" icon="material-symbols:bookmark"/>
                 </a>
             </div>

@@ -2,6 +2,7 @@
     import {storageAvailable} from "$lib/helper";
     import { meta } from "$lib/data.json";
     import Icon from "@iconify/svelte";
+    import { base } from "$app/paths";
 
     const cards = [
         {
@@ -34,7 +35,7 @@
             desc: "Historie der beantworteten Fragen",
             href: "/history"
         }
-    ];
+    ].map(c => ({...c, href: base + c.href}));
 </script>
 
 <svelte:head>
