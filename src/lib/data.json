@@ -17304,15 +17304,15 @@
                     "question": "Welche Mindestabstände sind mit tragbaren Leitern, nach DIN VDE 0132, bei Annäherung an elektrische, unter Spannung stehende Anlagen einzuhalten?",
                     "choices": [
                         {
-                            "text": "bis 1 000 Volt 1 Meter, über 220 000 Volt mindestens 1 Meter",
+                            "text": "bis 1000 Volt 1 Meter, über 220000 Volt mindestens 1 Meter",
                             "answer": false
                         },
                         {
-                            "text": "bis 1 000 Volt 1 Meter, über 220 000 Volt mindestens 3 Meter",
+                            "text": "bis 1000 Volt 1 Meter, über 220000 Volt mindestens 3 Meter",
                             "answer": false
                         },
                         {
-                            "text": "bis 1 000 Volt 1 Meter, über 220 000 Volt mindestens 5 Meter",
+                            "text": "bis 1000 Volt 1 Meter, über 220000 Volt mindestens 5 Meter",
                             "answer": true
                         }
                     ],
@@ -17331,7 +17331,7 @@
                 },
                 {
                     "id": 631,
-                    "question": "Welcher Sicherheitsabstand ist mit tragbaren Leitern, nach DIN VDE 0132, in der Nähe von elektrischen Freileitungen mit einer Spannung von 110 000 Volt mindestens einzuhalten?",
+                    "question": "Welcher Sicherheitsabstand ist mit tragbaren Leitern, nach DIN VDE 0132, in der Nähe von elektrischen Freileitungen mit einer Spannung von 110000 Volt mindestens einzuhalten?",
                     "choices": [
                         {
                             "text": "3 Meter",
@@ -18923,7 +18923,7 @@
         },
         {
             "name": "DGUV 49",
-            "description": "DGUV 49",
+            "description": "Deutsche Gesetzliche Unfallversicherung - Vorschrift 49",
             "file": "DGUV_49.pdf",
             "source": "https://publikationen.dguv.de/widgets/pdf/download/article/1507"
         },
