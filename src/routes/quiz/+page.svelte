@@ -9,22 +9,23 @@
     if($quizQuestions.length === 0) {
         $quizQuestions = [...shuffle(flattendQuestions)];
     }
-    $: question = $quizQuestions.at(0);
+    let question = $quizQuestions.at(0);
     let answer = "";
     let answered = false;
 
     function nextQuestion() {
         answered = false;
-        $quizQuestions = [...$quizQuestions.slice(1)];
         if($quizQuestions.length <= 0) {
             $quizQuestions = [...shuffle(flattendQuestions)];
         }
+        question = $quizQuestions.at(0);
         answer = "";
     }
 
     function answerQuestion() {
         $quizHistory = [...$quizHistory, {question: question, answer: answer, date: new Date()}];
         answered = true;
+        $quizQuestions = [...$quizQuestions.slice(1)];
     }
 </script>
 
