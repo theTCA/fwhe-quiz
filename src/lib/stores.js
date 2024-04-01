@@ -30,4 +30,4 @@ export const quizQuestions = writable(getStored("quizQuestions", []).map((/** @t
 quizQuestions.subscribe(val => putStore("quizQuestions", val.map((/** @type {{ id: number; }} */ q) => q.id)));
 
 export const quizHistory = writable(getStored("quizHistory", []).map((/**@type {{id: number, answer: string, date:Date}} */ e) => ({question: flattendQuestions.find(q => q.id === e.id), answer: e.answer, date: new Date(e.date)})));
-quizHistory.subscribe(val => putStore("quizHistory", val.map(( /** @type {{ question: import("$lib/types").Question; answer: any; date: any; }} */ h) => ({id: h.question.id, answer: h.answer, date: h.date}))));
+quizHistory.subscribe(val => putStore("quizHistory", val.map(( /** @type {import("$lib/types").QuizHistory} */ h) => ({id: h.question.id, answer: h.answer, date: h.date}))));

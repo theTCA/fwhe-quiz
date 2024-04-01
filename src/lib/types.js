@@ -27,4 +27,11 @@
  * @prop {number} page
  */
 
+/**
+ * @typedef {Object} QuizHistory
+ * @prop {Question} question
+ * @prop {string} answer
+ * @prop {Date} date
+ */
+
 module.exports = {};
