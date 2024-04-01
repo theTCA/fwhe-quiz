@@ -1,38 +1,25 @@
-# create-svelte
+# HFLÜ-Quiz
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Quiz zur Vorbereitung auf die hessische Feuerwehrleistungsübung nach dem Fragenkatalog der [hessischen Landesfeuerwehrschule](www.hlfs.hessen.de).
 
-## Creating a project
+Quiz: https://thetca.github.io/fwhe-quiz/
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Bestandteile
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+### Training
+Fragen nach Fragenkatalog trainieren.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+### Quiz
+Zufällige Fragen aus dem gesamten Fragenkatalog beantworten.
 
-## Developing
+### ADR-Quiz
+Fragen, um die Gefahrnummern der Gefahrstofftafel nach ADR zu üben.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### PDF-Quiz
+Ein PDF-Quiz zum ausdrucken erstellen.
 
-```bash
-npm run dev
+### Statistik
+Generelle Informationen über der Fragenkatalog.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+### Verlauf
+Historie der Quiz-Fragen, um Aufschluss über mögliche Schwächen zu finden.
