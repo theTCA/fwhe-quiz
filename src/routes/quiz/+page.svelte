@@ -23,7 +23,7 @@
     }
 
     function answerQuestion() {
-        $quizHistory = [...$quizHistory, {question: question, answer: answer, date: new Date()}];
+        $quizHistory = [{question: question, answer: answer, date: new Date()}, ...$quizHistory];
         answered = true;
         $quizQuestions = [...$quizQuestions.slice(1)];
     }
