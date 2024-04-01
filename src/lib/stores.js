@@ -31,3 +31,9 @@ quizQuestions.subscribe(val => putStore("quizQuestions", val.map((/** @type {{ i
 
 export const quizHistory = writable(getStored("quizHistory", []).map((/**@type {{id: number, answer: string, date:Date}} */ e) => ({question: flattendQuestions.find(q => q.id === e.id), answer: e.answer, date: new Date(e.date)})));
 quizHistory.subscribe(val => putStore("quizHistory", val.map(( /** @type {import("$lib/types").QuizHistory} */ h) => ({id: h.question.id, answer: h.answer, date: h.date}))));
+
+export const trainingChapters = writable(getStored("trainingChapters", []));
+trainingChapters.subscribe(val => putStore("trainingChapters", val));
+
+export const trainingLastChapter = writable(getStored("trainingLastChapter", ""));
+trainingLastChapter.subscribe(val => putStore("trainingLastChapter", val));
