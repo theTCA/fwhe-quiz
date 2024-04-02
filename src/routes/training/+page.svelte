@@ -7,7 +7,6 @@
     import ChapterSelector from "$lib/components/ChapterSelector.svelte";
     import { shuffle } from "$lib/helper";
     import { onMount } from "svelte";
-    import QuestionHeader from "$lib/components/QuestionHeader.svelte";
     import QuestionHelp from "$lib/components/QuestionHelp.svelte";
 
     if($trainingChapters.length <= 0) {
