@@ -8,6 +8,7 @@
     import { shuffle } from "$lib/helper";
     import { onMount } from "svelte";
     import QuestionHelp from "$lib/components/QuestionHelp.svelte";
+    import BookmarkButton from "$lib/components/BookmarkButton.svelte";
 
     if($trainingChapters.length <= 0) {
         $trainingChapters = catalogues.map(c => ({name: c.name, questions:[], length: c.questions.length}));
@@ -165,7 +166,12 @@
     {:else}
     <div>
         <div class="mb-3">
-            <h2 class="text-sm font-semibold text-center text-primary"> {selectedChapter.name} </h2>
+            <div class="relative flex justify-between items-center w-full">
+                <h2 class="text-sm flex-1 text-center text-primary font-semibold mb-2"> {selectedChapter.name} </h2>
+                {#if question}
+                <BookmarkButton class="absolute right-2 lg:right-0" {question}/>
+                {/if}
+            </div>
             <div class="w-[80%] mx-auto">
                 <progress class="progress progress-primary" value={selectedChapter.questions.length} max={selectedChapter.length}></progress>
             </div>

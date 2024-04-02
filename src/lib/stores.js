@@ -37,3 +37,6 @@ trainingChapters.subscribe(val => putStore("trainingChapters", val));
 
 export const trainingLastChapter = writable(getStored("trainingLastChapter", ""));
 trainingLastChapter.subscribe(val => putStore("trainingLastChapter", val));
+
+export const bookmarks = writable(getStored("bookmarks", []).map((/** @type {number} */ m) => flattendQuestions.find(q => q.id === m)));
+bookmarks.subscribe(val => putStore("bookmarks", val.map((/** @type { import("$lib/types").Question } */ q) => q.id)));

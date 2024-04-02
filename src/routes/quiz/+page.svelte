@@ -1,4 +1,5 @@
 <script>
+    import BookmarkButton from "$lib/components/BookmarkButton.svelte";
     import Question from "$lib/components/Question.svelte";
     import QuestionDisplay from "$lib/components/QuestionDisplay.svelte";
     import QuestionHelp from "$lib/components/QuestionHelp.svelte";
@@ -34,7 +35,10 @@
 </svelte:head>
 
 <div>
-    <h1 class="text-3xl text-center font-semibold mb-2">Quiz</h1>
+    <div class="relative flex justify-between w-full">
+        <h1 class="text-3xl flex-1 text-center font-semibold mb-2">Quiz</h1>
+        <BookmarkButton class="absolute right-2 lg:right-0" {question}/>
+    </div>
     <div class="mb-2">
         {#if answered}
         <QuestionDisplay question={question} answer={answer}/>
@@ -43,7 +47,6 @@
         {/if}
     </div>
     <div class="flex justify-center mb-4">
-        <div></div>
         {#if answered}
         <button class="btn btn-primary btn-block lg:w-1/2" on:click={nextQuestion}> Weiter </button>
         {:else}

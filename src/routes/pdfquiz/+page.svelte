@@ -4,6 +4,7 @@
     import {catalogues} from "$lib/data.json";
     import { shuffle } from "$lib/helper";
     import { QuizBuilder } from "$lib/pdf";
+    import { bookmarks } from "$lib/stores";
 
     const flattendQuestions = catalogues.map(c => c.questions.map(q => ({...q, catalog: c.name}))).flat();
 
@@ -65,6 +66,12 @@
         }
         window.open(bloburl, "_blank");
     }
+
+    function addBookmarks() {
+        for(let bookmark of $bookmarks) {
+            addQuestion(new CustomEvent("", {detail: {id: bookmark.id}}));
+        }
+    }
 </script>
 
 <svelte:head>
@@ -102,6 +109,14 @@
                 </form>
             </dialog>
         </div>
+        {#if $bookmarks.length > 0}
+        <div>
+            <h3 class="font-semibold mb-1"> Lesezeichen </h3>
+            <button class="btn btn-sm btn-block btn-outline btn-success" on:click={addBookmarks}>
+                hinzufügen
+            </button>
+        </div>
+        {/if}
     </div>
     <div class="divider"></div>
     <div class="flex flex-col gap-2">
