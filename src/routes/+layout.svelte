@@ -22,10 +22,19 @@
             href: "/pdfquiz"
         }
     ].map(l => ({...l, href: base + l.href}));
+
+    /**
+     * @type {HTMLInputElement}
+     */
+    let drawer;
+
+    function closeDrawer() {
+        drawer.checked = false;
+    }
 </script>
 
 <div class="drawer">
-    <input id="drawer" type="checkbox" class="drawer-toggle">
+    <input id="drawer" type="checkbox" class="drawer-toggle" bind:this={drawer}>
     <div class="drawer-content flex flex-col">
         <nav class="w-full navbar bg-base-300">
             <div class="flex-none lg:hidden">
@@ -68,9 +77,9 @@
             {#each links as link}
             <li>
                 {#if $page.url.pathname === link.href}
-                <a class="bg-base-100 active" href={link.href}>{link.name}</a>
+                <a class="bg-base-100 active" href={link.href} on:click={closeDrawer}>{link.name}</a>
                 {:else}
-                <a class="bg-base-100" href={link.href}>{link.name}</a>
+                <a class="bg-base-100" href={link.href} on:click={closeDrawer}>{link.name}</a>
                 {/if}
             </li>
             {/each}
