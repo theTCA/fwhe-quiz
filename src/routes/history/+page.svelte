@@ -52,7 +52,7 @@
             <h3 class="text-sm font-semibold text-center opacity-70">beantwortete Fragen</h3>
         </div>
         <div class="inline-flex flex-col gap-2">
-            <div class="radial-progress self-center text-primary" style={`--value:${correctQuestionsProgress};`} role="progressbar">
+            <div class="radial-progress self-center text-primary font-bold" style={`--value:${correctQuestionsProgress};`} role="progressbar">
                 {`${correctQuestionsProgress}%`}
             </div>
             <h3 class="text-sm font-semibold text-center opacity-70">richtige Antworten</h3>
