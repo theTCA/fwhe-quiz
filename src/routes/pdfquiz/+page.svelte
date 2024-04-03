@@ -104,14 +104,20 @@
     <div class="divider font-bold text-primary"> Fragen hinzufügen </div>
     <div class="flex flex-col gap-3 lg:w-1/2 mx-auto">
         <div>
-            <h3 class="font-semibold mb-1">zufällige Fragen</h3>
+            <div class="flex items-center gap-1">
+                <Icon icon="ion:dice"/>
+                <h3 class="font-semibold mb-1">zufällige Fragen</h3>
+            </div>
             <div class="flex flex-col lg:flex-row lg:items-end gap-2">
                 <input class="input input-sm input-bordered" type="number" min={1} bind:value={randomQuestions}>
                 <button class="flex-1 btn btn-sm btn-outline btn-success" on:click={addRandomQuestions}> hinzufügen </button>
             </div>
         </div>
         <div>
-            <h3 class="font-semibold mb-1">aus Fragenkatalog auswählen</h3>
+            <div class="flex items-center gap-1">
+                <Icon icon="icon-park-solid:add"/>
+                <h3 class="font-semibold mb-1">aus Fragenkatalog auswählen</h3>
+            </div>
             <button class="btn btn-sm btn-block btn-outline btn-success" on:click={() => modal.showModal()}>Fragen auswählen</button>
             <dialog id="quizQuestionSelection" class="modal" bind:this={modal}>
                 <form class="modal-box max-w-[90%] text-wrap" method="dialog">
@@ -158,7 +164,7 @@
                     TODO: make questions drag and droppable
                     <div>
                         <Icon icon="octicon:grabber-16"/>
-                    </div>
+                </div>
                 -->
                 <div class="text-base flex-1">
                     {question?.question}
