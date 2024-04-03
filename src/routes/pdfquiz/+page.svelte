@@ -80,11 +80,29 @@
 
 <div>
     <h1 class="text-3xl text-center font-semibold mb-2">PDF-Quiz</h1>
-    <p class="text-center mb-5">
-        Ein PDF-Quiz erstellen mit Fragen- und Antwortenbogen.
-    </p>
-    <h2 class="text-lg font-bold">Fragen hinzufügen </h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-3">
+    <div class="flex flex-col gap-3 lg:w-1/2 mx-auto">
+        <label class="form-control">
+            <span class="label pb-0 label-text font-bold">Überschrift</span>
+            <input class="input input-bordered" type="text" bind:value={quizName}>
+        </label>
+        <div>
+            <h3 class="pl-1.5 font-bold text-sm">Schriftgröße</h3>
+            <div class="form-control">
+                <label class="label justify-start gap-2 cursor-pointer">
+                    <input class="radio radio-primary" type="radio" value="normal" bind:group={quizFontSize}>
+                    <span class="label-text text-base">Normal</span>
+                </label>
+            </div>
+            <div class="form-control">
+                <label class="label justify-start gap-2 cursor-pointer">
+                    <input class="radio radio-primary" type="radio" value="xl" bind:group={quizFontSize}>
+                    <span class="label-text text-base">XL</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="divider font-bold text-primary"> Fragen hinzufügen </div>
+    <div class="flex flex-col gap-3 lg:w-1/2 mx-auto">
         <div>
             <h3 class="font-semibold mb-1">zufällige Fragen</h3>
             <div class="flex flex-col lg:flex-row lg:items-end gap-2">
@@ -111,40 +129,22 @@
         </div>
         {#if $bookmarks.length > 0}
         <div>
-            <h3 class="font-semibold mb-1"> Lesezeichen </h3>
+            <div class="flex items-center gap-1">
+                <Icon icon="mdi:bookmark"/>
+                <h3 class="font-semibold mb-1"> Lesezeichen </h3>
+            </div>
             <button class="btn btn-sm btn-block btn-outline btn-success" on:click={addBookmarks}>
                 hinzufügen
             </button>
         </div>
         {/if}
     </div>
-    <div class="divider"></div>
-    <div class="flex flex-col gap-2">
-        <label class="form-control">
-            <span class="label pb-0 label-text font-bold">Überschrift</span>
-            <input class="input input-bordered" type="text" bind:value={quizName}>
-        </label>
-        <div>
-            <h3 class="pl-1.5 font-bold text-sm">Schriftgröße</h3>
-            <div class="form-control">
-                <label class="label justify-start gap-2 cursor-pointer">
-                    <input class="radio" type="radio" value="normal" bind:group={quizFontSize}>
-                    <span class="label-text text-base">Normal</span>
-                </label>
-            </div>
-            <div class="form-control">
-                <label class="label justify-start gap-2 cursor-pointer">
-                    <input class="radio" type="radio" value="xl" bind:group={quizFontSize}>
-                    <span class="label-text text-base">XL</span>
-                </label>
-            </div>
-        </div>
-        <div class="grid grid-cols-2 gap-2">
-            <button class="btn btn-primary" on:click={() => buildQuiz(false)} disabled={questions.length <= 0}> Fragebogen </button>
-            <button class="btn btn-primary" on:click={() => buildQuiz(true)} disabled={questions.length <= 0}> Antwortbogen </button>
-        </div>
+    <div class="divider font-bold text-primary"> Erstellen </div>
+    <div class="grid grid-cols-2 gap-2 w-1/2 mx-auto">
+        <button class="btn btn-primary" on:click={() => buildQuiz(false)} disabled={questions.length <= 0}> Fragebogen </button>
+        <button class="btn btn-primary" on:click={() => buildQuiz(true)} disabled={questions.length <= 0}> Antwortbogen </button>
     </div>
-    <div class="divider"></div>
+    <div class="divider font-bold text-primary"> Fragen </div>
     <div>
         <div class="mb-2 flex items-center">
             <h2 class="flex-1 text-base lg:text-lg font-semibold">Ausgewählte Fragen ({questions.length})</h2>
