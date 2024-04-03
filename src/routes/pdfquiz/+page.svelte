@@ -146,7 +146,7 @@
         {/if}
     </div>
     <div class="divider font-bold text-primary"> Erstellen </div>
-    <div class="grid grid-cols-2 gap-2 w-1/2 mx-auto">
+    <div class="grid grid-cols-2 gap-2 w-full lg:w-1/2 mx-auto">
         <button class="btn btn-primary" on:click={() => buildQuiz(false)} disabled={questions.length <= 0}> Fragebogen </button>
         <button class="btn btn-primary" on:click={() => buildQuiz(true)} disabled={questions.length <= 0}> Antwortbogen </button>
     </div>
