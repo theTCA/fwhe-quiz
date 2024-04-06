@@ -25,6 +25,10 @@
     }
 </script>
 
+<svelte:head>
+    <title>Lesezeichen - HFLÜ-Trainer</title>
+</svelte:head>
+
 <div>
     <h1 class="text-3xl text-center font-semibold mb-2"> Lesezeichen </h1>
     {#if $bookmarks.length > 0}

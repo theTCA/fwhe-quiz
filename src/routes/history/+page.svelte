@@ -42,6 +42,10 @@
     }
 </script>
 
+<svelte:head>
+    <title>Verlauf - HFLÜ-Trainer</title>
+</svelte:head>
+
 <div>
     <h1 class="text-3xl text-center font-semibold mb-2">Verlauf</h1>
     <div class="mb-4 grid grid-cols-1 lg:grid-cols-3 items-end">

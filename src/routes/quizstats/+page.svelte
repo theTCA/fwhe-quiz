@@ -70,6 +70,10 @@
     ];
 </script>
 
+<svelte:head>
+    <title>Statistik - HFLÜ-Trainer</title>
+</svelte:head>
+
 <div>
     <h1 class="text-3xl text-center font-semibold mb-2">Statistik</h1>
     <div>
