@@ -26,6 +26,11 @@
             href: "/pdfquiz"
         },
         {
+            name: "Durchsuchen",
+            desc: "Fragenkatalog nach Fragen durchsuchen",
+            href: "/search"
+        },
+        {
             name: "Statistik",
             desc: "Informationen über Fragenkatalog",
             href: "/quizstats"
