@@ -3,6 +3,7 @@
     import {base} from "$app/paths";
     import {page} from "$app/stores";
     import Icon from "@iconify/svelte";
+    import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
 
     const links = [
         {
@@ -58,7 +59,8 @@
                     {/each}
                 </ul>
             </div>
-            <div class="flex-1 justify-end">
+            <div class="flex-1 gap-3 justify-end">
+                <ThemeSwitcher/>
                 <a href={base + "/bookmarks"} class="btn btn-square">
                     <Icon class="h-5 w-5" icon="material-symbols:bookmark"/>
                 </a>
