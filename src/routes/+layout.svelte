@@ -2,28 +2,11 @@
     import "../app.css";
     import {base} from "$app/paths";
     import {page} from "$app/stores";
+    import {pages, pageGroups} from "$lib/pages";
     import Icon from "@iconify/svelte";
     import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
     import { PUBLIC_APP_NAME } from "$env/static/public";
 
-    const links = [
-        {
-            name: "Training",
-            href: "/training"
-        },
-        {
-            name: "Quiz",
-            href: "/quiz"
-        },
-        {
-            name: "ADR Quiz",
-            href: "/adrquiz"
-        },
-        {
-            name: "PDF-Quiz",
-            href: "/pdfquiz"
-        }
-    ].map(l => ({...l, href: base + l.href}));
     /**
      * @type {HTMLInputElement}
      */
@@ -40,7 +23,7 @@
         <nav class="w-full navbar bg-base-300">
             <div class="flex-none lg:hidden">
                 <label for="drawer" aria-label="open sidebar" class="btn btn-square btn-ghost">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <Icon class="w-7 h-7" icon="ci:hamburger-md"/>
                 </label>
             </div>
             <div class="flex-none px-2 mx-2">
@@ -50,18 +33,24 @@
             </div>
             <div class="flex-1 hidden lg:block">
                 <ul class="menu menu-horizontal gap-2">
-                    {#each links as link}
+                    {#each pages.filter(p => p.inNavbar) as link}
                     <li class="flex items-center">
                         {#if $page.url.pathname === link.href}
-                        <a class="btn btn-sm btn-active" href={link.href}>{link.name}</a>
+                        <a class="btn btn-sm btn-active" href={link.href}>
+                            <Icon icon={link.icon}/>
+                            {link.name}
+                        </a>
                         {:else}
-                        <a class="btn btn-sm" href={link.href}>{link.name}</a>
+                        <a class="btn btn-sm" href={link.href}>
+                            <Icon icon={link.icon}/>
+                            {link.name}
+                        </a>
                         {/if}
                     </li>
                     {/each}
                 </ul>
             </div>
-            <div class="flex-1 gap-3 justify-end">
+            <div class="flex-1 lg:flex-none gap-3 justify-end">
                 <ThemeSwitcher/>
                 <a href={base + "/bookmarks"} class="btn btn-square">
                     <Icon class="h-5 w-5" icon="material-symbols:bookmark"/>
@@ -78,14 +67,25 @@
             <li class="text-lg font-semibold">
                 {PUBLIC_APP_NAME}
             </li>
-            {#each links as link}
+            {#each pageGroups as group}
+            <li class="text-primary">
+                {group.name}
+            </li>
+            {#each group.pages as link}
             <li>
                 {#if $page.url.pathname === link.href}
-                <a class="bg-base-100 active" href={link.href} on:click={closeDrawer}>{link.name}</a>
+                <a class="bg-base-100 active" href={link.href} on:click={closeDrawer}>
+                    <Icon icon={link.icon}/>
+                    {link.name}
+                </a>
                 {:else}
-                <a class="bg-base-100" href={link.href} on:click={closeDrawer}>{link.name}</a>
+                <a class="bg-base-100" href={link.href} on:click={closeDrawer}>
+                    <Icon icon={link.icon}/>
+                    {link.name}
+                </a>
                 {/if}
             </li>
+            {/each}
             {/each}
         </ul>
     </div>

@@ -1,48 +1,9 @@
 <script>
     import {storageAvailable} from "$lib/helper";
-    import { meta } from "$lib/data.json";
-    import { base } from "$app/paths";
+    import {pageGroups} from "$lib/pages";
     import {meta} from "$lib/data.json";
     import Icon from "@iconify/svelte";
     import { PUBLIC_APP_NAME } from "$env/static/public";
-
-    const cards = [
-        {
-            name: "Training",
-            desc: "Beantworte Fragen aus dem Fragenkatalog nach Wahl.",
-            href: "/training"
-        },
-        {
-            name: "Quiz",
-            desc: "Beantworte zufällige Fragen aus dem Fragenkatalog.",
-            href: "/quiz"
-        },
-        {
-            name: "ADR-Quiz",
-            desc: "Beantworte Fragen zu Gefahrgütern und deren Kennzeichnung.",
-            href: "/adrquiz"
-        },
-        {
-            name: "PDF-Quiz",
-            desc: "Erstelle Fragen- und Antwortenbogen als PDF.",
-            href: "/pdfquiz"
-        },
-        {
-            name: "Durchsuchen",
-            desc: "Fragenkatalog nach Fragen durchsuchen",
-            href: "/search"
-        },
-        {
-            name: "Statistik",
-            desc: "Informationen über Fragenkatalog",
-            href: "/quizstats"
-        },
-        {
-            name: "Verlauf",
-            desc: "Historie der beantworteten Fragen",
-            href: "/history"
-        }
-    ].map(c => ({...c, href: base + c.href}));
 </script>
 
 <svelte:head>
@@ -75,12 +36,20 @@
             </span>
         </div>
     </div>
-    <div class="grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-2">
-        {#each cards as card}
-        <a href={card.href} class="btn flex flex-col flex-nowrap h-full w-full p-2">
-            <h2 class="text-xl text-primary"> {card.name} </h2>
-            <p>{card.desc}</p>
-        </a>
-    {/each}
+    {#each pageGroups as group}
+    <div class="flex flex-col gap-2">
+        <div class="divider text-primary text-lg font-bold">{group.name}</div>
+        <div class="grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {#each group.pages as card}
+            <a href={card.href} class="btn flex flex-col flex-nowrap h-full w-full p-2">
+                <div class="rounded-full text-primary bg-base-100">
+                    <Icon class="w-16 h-16 p-2" icon={card.icon}/>
+                </div>
+                <h2 class="text-xl text-primary"> {card.name} </h2>
+                <p>{card.desc}</p>
+            </a>
+        {/each}
+        </div>
     </div>
+    {/each}
 </div>
