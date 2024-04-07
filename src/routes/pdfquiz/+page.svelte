@@ -72,6 +72,22 @@
             addQuestion(new CustomEvent("", {detail: {id: bookmark.id}}));
         }
     }
+
+    /**
+     * @param {number} index
+     */
+    function moveUp(index) {
+        if(index <= 0) return;
+        [questions[index - 1], questions[index]] = [questions[index], questions[index - 1]];
+    }
+
+    /**
+     * @param {number} index
+     */
+    function moveDown(index) {
+        if(index >= questions.length - 1) return;
+        [questions[index + 1], questions[index]] = [questions[index], questions[index + 1]];
+    }
 </script>
 
 <svelte:head>
@@ -126,7 +142,7 @@
                             <Icon icon="mdi:close"/>
                         </button>
                     </div>
-                    <QuestionAdder on:add={addQuestion}/>
+                    <QuestionAdder on:change={addQuestion}/>
                 </form>
                 <form class="modal-backdrop" method="dialog">
                     <button></button>
@@ -158,14 +174,17 @@
         </div>
         <div class="flex flex-col gap-2">
             {#if questions.length > 0}
-            {#each questions as question}
-            <div class="p-2 bg-base-200 rounded-md flex items-center gap-2">
-                <!--
-                    TODO: make questions drag and droppable
-                    <div>
-                        <Icon icon="octicon:grabber-16"/>
+            {#each questions as question, idx}
+            <div class="p-2 bg-base-200 rounded-md flex items-center gap-1">
+                <div class="grid grid-rows-2 gap-1">
+                    <button class="btn btn-xs" type="button" on:click={() => moveUp(idx)}>
+                        <Icon icon="teenyicons:up-solid"/>
+                    </button>
+                    <button class="btn btn-xs" type="button" on:click={() => moveDown(idx)}>
+                        <Icon icon="teenyicons:down-solid"/>
+                    </button>
                 </div>
-                -->
+                <div class="divider divider-horizontal m-0 p-0"></div>
                 <div class="text-base flex-1">
                     {question?.question}
                 </div>
