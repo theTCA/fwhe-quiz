@@ -38,15 +38,17 @@
     </div>
     {#each pageGroups as group}
     <div class="flex flex-col gap-2">
-        <div class="divider text-primary text-lg font-bold">{group.name}</div>
+        <div class="divider text-primary text-lg font-bold mb-0">{group.name}</div>
         <div class="grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {#each group.pages as card}
-            <a href={card.href} class="btn flex flex-col flex-nowrap h-full w-full p-2">
-                <div class="rounded-full text-primary bg-base-100">
-                    <Icon class="w-16 h-16 p-2" icon={card.icon}/>
+            <a href={card.href} class="btn h-fit p-2">
+                <div class="flex flex-col justify-center items-center">
+                    <div class="rounded-full text-primary bg-base-100">
+                        <Icon class="w-16 h-16 p-2" icon={card.icon}/>
+                    </div>
+                    <h2 class="text-xl text-primary"> {card.name} </h2>
+                    <p class="break-words">{card.desc}</p>
                 </div>
-                <h2 class="text-xl text-primary"> {card.name} </h2>
-                <p>{card.desc}</p>
             </a>
         {/each}
         </div>
