@@ -44,7 +44,6 @@
     function getCatalogues() {
         return catalogues.map(c => ({name: c.name, questions: c.questions.map(q => ({...q, hidden: false}))}));
     }
-    let selectedCataloues = [];
 </script>
 
 <svelte:head>
