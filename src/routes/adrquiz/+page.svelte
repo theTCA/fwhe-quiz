@@ -1,4 +1,5 @@
 <script>
+    import { PUBLIC_APP_NAME } from "$env/static/public";
     import { adr } from "$lib/adr.json";
     import AdrHelp from "$lib/components/AdrHelp.svelte";
     import AdrQuestion from "$lib/components/AdrQuestion.svelte";
@@ -52,7 +53,7 @@
 </script>
 
 <svelte:head>
-    <title>ADR-Quiz - HFLÜ-Trainer</title>
+    <title>ADR-Quiz - {PUBLIC_APP_NAME}</title>
 </svelte:head>
 
 <div>

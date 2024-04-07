@@ -1,4 +1,5 @@
 <script>
+    import { PUBLIC_APP_NAME } from "$env/static/public";
     import QuizHistory from "$lib/components/QuizHistory.svelte";
     import {quizHistory} from "$lib/stores";
 
@@ -43,7 +44,7 @@
 </script>
 
 <svelte:head>
-    <title>Verlauf - HFLÜ-Trainer</title>
+    <title>Verlauf - {PUBLIC_APP_NAME}</title>
 </svelte:head>
 
 <div>

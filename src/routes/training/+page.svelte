@@ -9,6 +9,7 @@
     import { onMount } from "svelte";
     import QuestionHelp from "$lib/components/QuestionHelp.svelte";
     import BookmarkButton from "$lib/components/BookmarkButton.svelte";
+    import { PUBLIC_APP_NAME } from "$env/static/public";
 
     if($trainingChapters.length <= 0) {
         $trainingChapters = catalogues.map(c => ({name: c.name, questions:[], length: c.questions.length}));
@@ -145,7 +146,7 @@
 </script>
 
 <svelte:head>
-    <title>Training - HFLÜ-Trainer</title>
+    <title>Training - {PUBLIC_APP_NAME}</title>
 </svelte:head>
 
 <div>

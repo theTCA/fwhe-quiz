@@ -4,6 +4,7 @@
     import {page} from "$app/stores";
     import Icon from "@iconify/svelte";
     import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
+    import { PUBLIC_APP_NAME } from "$env/static/public";
 
     const links = [
         {
@@ -23,7 +24,6 @@
             href: "/pdfquiz"
         }
     ].map(l => ({...l, href: base + l.href}));
-
     /**
      * @type {HTMLInputElement}
      */
@@ -44,7 +44,9 @@
                 </label>
             </div>
             <div class="flex-none px-2 mx-2">
-                <a class="btn btn-ghost text-lg font-semibold" href={base + "/"}>HFLÜ-Trainer</a>
+                <a class="btn btn-ghost text-lg font-semibold" href={base + "/"}>
+                    {PUBLIC_APP_NAME}
+                </a>
             </div>
             <div class="flex-1 hidden lg:block">
                 <ul class="menu menu-horizontal gap-2">
@@ -74,7 +76,7 @@
         <label for="drawer" aria-label="close sidebar" class="drawer-overlay"></label>
         <ul class="menu p-4 w-80 min-h-full gap-2 bg-base-200">
             <li class="text-lg font-semibold">
-                HFLÜ-Trainer
+                {PUBLIC_APP_NAME}
             </li>
             {#each links as link}
             <li>

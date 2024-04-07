@@ -1,4 +1,5 @@
 <script>
+    import { PUBLIC_APP_NAME } from "$env/static/public";
     import {bookmarks} from "$lib/stores";
     import Icon from "@iconify/svelte";
 
@@ -26,7 +27,7 @@
 </script>
 
 <svelte:head>
-    <title>Lesezeichen - HFLÜ-Trainer</title>
+    <title>Lesezeichen - {PUBLIC_APP_NAME}</title>
 </svelte:head>
 
 <div>

@@ -1,4 +1,5 @@
 <script>
+    import { PUBLIC_APP_NAME } from "$env/static/public";
     import {catalogues} from "$lib/data.json";
 
     const flattendQuestions = catalogues.map(c => c.questions.map(q => ({...q, catalogue: c.name}))).flat();
@@ -71,7 +72,7 @@
 </script>
 
 <svelte:head>
-    <title>Statistik - HFLÜ-Trainer</title>
+    <title>Statistik - {PUBLIC_APP_NAME}</title>
 </svelte:head>
 
 <div>

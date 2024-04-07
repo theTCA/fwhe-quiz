@@ -3,6 +3,7 @@
     import Icon from "@iconify/svelte";
     import Collapsible from "$lib/components/Collapsible.svelte";
     import QuestionHelp from "$lib/components/QuestionHelp.svelte";
+    import { PUBLIC_APP_NAME } from "$env/static/public";
 
     let searchInput = "";
     $: questions = getCatalogues();
@@ -47,7 +48,7 @@
 </script>
 
 <svelte:head>
-    <title>Durchsuchen - HFLÜ-Trainer</title>
+    <title>Durchsuchen - {PUBLIC_APP_NAME}</title>
 </svelte:head>
 
 <div>

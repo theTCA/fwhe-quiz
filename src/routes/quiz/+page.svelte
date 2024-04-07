@@ -1,4 +1,5 @@
 <script>
+    import { PUBLIC_APP_NAME } from "$env/static/public";
     import BookmarkButton from "$lib/components/BookmarkButton.svelte";
     import Question from "$lib/components/Question.svelte";
     import QuestionDisplay from "$lib/components/QuestionDisplay.svelte";
@@ -31,7 +32,7 @@
 </script>
 
 <svelte:head>
-    <title>Quiz - HFLÜ-Trainer</title>
+    <title>Quiz - {PUBLIC_APP_NAME}</title>
 </svelte:head>
 
 <div>

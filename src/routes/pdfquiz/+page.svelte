@@ -5,6 +5,7 @@
     import { shuffle } from "$lib/helper";
     import { QuizBuilder } from "$lib/pdf";
     import { bookmarks } from "$lib/stores";
+    import { PUBLIC_APP_NAME } from "$env/static/public";
 
     const flattendQuestions = catalogues.map(c => c.questions.map(q => ({...q, catalog: c.name}))).flat();
 
@@ -91,7 +92,7 @@
 </script>
 
 <svelte:head>
-    <title>PDF-Quiz - HFLÜ-Trainer</title>
+    <title>PDF-Quiz - {PUBLIC_APP_NAME}</title>
 </svelte:head>
 
 <div>

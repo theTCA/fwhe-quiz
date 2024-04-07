@@ -1,8 +1,10 @@
 <script>
     import {storageAvailable} from "$lib/helper";
     import { meta } from "$lib/data.json";
-    import Icon from "@iconify/svelte";
     import { base } from "$app/paths";
+    import {meta} from "$lib/data.json";
+    import Icon from "@iconify/svelte";
+    import { PUBLIC_APP_NAME } from "$env/static/public";
 
     const cards = [
         {
@@ -44,14 +46,16 @@
 </script>
 
 <svelte:head>
-    <title>Startseite - HFLÜ-Trainer</title>
+    <title>{PUBLIC_APP_NAME}</title>
 </svelte:head>
 
 <div>
-    <h1 class="text-3xl text-center font-semibold">HFLÜ-Trainer</h1>
+    <h1 class="text-3xl text-center font-semibold">
+        {PUBLIC_APP_NAME}
+    </h1>
     <div class="mt-4 p-4 text-center text-lg bg-base-200 rounded-md">
         <div class="font-semibold">
-            Trainer zum Vorbereiten auf die hessische Feuerwehrleistungsübung.
+            Quiz zum Vorbereiten auf die hessische Feuerwehrleistungsübung.
         </div>
         <div class="divider"></div>
         Die Fragen stammen aus dem Fragenkatalog der <a class="link link-primary" href="https://hlfs.hessen.de">hessischen Landesfeuerwehrschule</a>.
@@ -60,7 +64,7 @@
         </div>
         <div class="divider"></div>
         <div class="text-sm">
-            Dieser Trainer verwendet statische Seiten und benutzt wenn möglich den <a class="link link-primary" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">LocalStorage</a> des
+            Diese Webseite verwendet statische Seiten und benutzt wenn möglich den <a class="link link-primary" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">LocalStorage</a> des
             <span class="inline-flex items-center gap-2">
                 Browsers.
                 {#if typeof window !== 'undefined' && storageAvailable("localStorage")}
@@ -77,6 +81,6 @@
             <h2 class="text-xl text-primary"> {card.name} </h2>
             <p>{card.desc}</p>
         </a>
-        {/each}
+    {/each}
     </div>
 </div>
