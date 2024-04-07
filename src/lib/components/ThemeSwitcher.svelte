@@ -10,15 +10,17 @@
 
     function onChange() {
         if($theme === "light")
-            $theme = ""
+            $theme = "dark"
         else
             $theme = "light"
     }
 </script>
 
-
-<label class="swap btn">
-    <input class="theme-controller" type="checkbox" value="light" checked={$theme === "light"} on:change={onChange}>
-    <Icon class="swap-off" icon="ph:sun-bold"/>
-    <Icon class="swap-on" icon="ph:moon-bold"/>
-</label>
+<div>
+    <label class="swap btn">
+        <input type="checkbox" on:change={onChange} checked={$theme === "light"}>
+        <Icon class="swap-off" icon="ph:sun-bold"/>
+        <Icon class="swap-on" icon="ph:moon-bold"/>
+    </label>
+    <input class="theme-controller" type="checkbox" bind:value={$theme} checked={true} hidden>
+</div>
