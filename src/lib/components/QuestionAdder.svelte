@@ -9,7 +9,7 @@
      * @param {number} id
      */
     function addQuestion(id) {
-        dispatch("add", {
+        dispatch("change", {
             id: id
         });
     }
