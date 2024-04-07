@@ -1,4 +1,5 @@
 <script>
+    import { base } from "$app/paths";
     import { PUBLIC_APP_NAME } from "$env/static/public";
     import BookmarkButton from "$lib/components/BookmarkButton.svelte";
     import Question from "$lib/components/Question.svelte";
@@ -47,11 +48,12 @@
         <Question question={question} bind:answer/>
         {/if}
     </div>
-    <div class="flex justify-center mb-4">
+    <div class="grid grid-cols-2 gap-2 mb-4">
+        <a class="btn btn-outline" href={base + "/history"}>Ergebnisse</a>
         {#if answered}
-        <button class="btn btn-primary btn-block lg:w-1/2" on:click={nextQuestion}> Weiter </button>
+        <button class="btn btn-primary" on:click={nextQuestion}> Weiter </button>
         {:else}
-        <button class="btn btn-primary btn-block lg:w-1/2" on:click={answerQuestion}> Wählen </button>
+        <button class="btn btn-primary" on:click={answerQuestion}> Wählen </button>
         {/if}
     </div>
     {#if answered}
