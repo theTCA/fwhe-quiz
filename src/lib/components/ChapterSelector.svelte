@@ -44,7 +44,7 @@
             {#if chapter.questions.length === chapter.length}
             <progress class="progress progress-success" value={chapter.questions.length} max={chapter.length}></progress>
             {:else}
-            <progress class="progress" value={chapter.questions.length} max={chapter.length}></progress>
+            <progress class="progress progress-primary" value={chapter.questions.length} max={chapter.length}></progress>
             {/if}
         </div>
         <button class="btn btn-ghost text-primary" on:click={() => resetChapter(chapter.name)}>
