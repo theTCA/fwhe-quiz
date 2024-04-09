@@ -125,9 +125,9 @@
                 <Icon icon="ion:dice"/>
                 <h3 class="font-semibold mb-1">zufällige Fragen</h3>
             </div>
-            <div class="flex flex-col lg:flex-row lg:items-end gap-2">
+            <div class="flex flex-row lg:items-end gap-2">
                 <input class="input input-sm input-bordered" type="number" min={1} bind:value={randomQuestions}>
-                <button class="flex-1 btn btn-sm btn-outline btn-success" on:click={addRandomQuestions}> hinzufügen </button>
+                <button class="flex-1 btn btn-sm btn-outline btn-success" on:click={addRandomQuestions} disabled={randomQuestions <= 0}> hinzufügen </button>
             </div>
         </div>
         <div>
