@@ -27,6 +27,10 @@
         );
     }
 
+    function reset() {
+        catalogues = catalogData.map((c) => ({ ...c, selected: [] }));
+    }
+
     /**
      * @param {Event & {currentTarget: HTMLInputElement}} e
      * @param {import("$lib/types").Catalog & {selected: number[]}} catalog
@@ -84,13 +88,20 @@
             </div>
         {/each}
     </div>
-    <div class="flex justify-center mt-4">
+    <div class="grid grid-cols-2 gap-2 mt-4">
+        <button
+            class="btn btn-error btn-block"
+            type="reset"
+            on:click|preventDefault={reset}
+            >
+                Zurücksetzten
+        </button>
         <button
             class="btn btn-success btn-block"
             type="submit"
             on:click={submit}
         >
-            hinzufügen
+            Hinzufügen
         </button>
     </div>
 </div>
