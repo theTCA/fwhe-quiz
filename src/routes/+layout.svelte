@@ -40,8 +40,9 @@
                     <Icon class="w-7 h-7" icon="ci:hamburger-md"/>
                 </label>
             </div>
-            <div class="flex-none px-2 mx-2">
+            <div class="flex-none mr-2">
                 <a class="btn btn-ghost text-lg font-semibold" href={base + "/"}>
+                    <Icon icon="openmoji:fire-engine"/>
                     {PUBLIC_APP_NAME}
                 </a>
             </div>
@@ -79,7 +80,10 @@
         <label for="drawer" aria-label="close sidebar" class="drawer-overlay"></label>
         <ul class="menu p-4 w-80 min-h-full gap-2 bg-base-200">
             <li class="text-lg font-semibold">
-                {PUBLIC_APP_NAME}
+                <div>
+                    <Icon icon="openmoji:fire-engine"/>
+                    {PUBLIC_APP_NAME}
+                </div>
             </li>
             {#each pageGroups as group}
             <li class="text-primary">
