@@ -34,4 +34,13 @@
  * @prop {Date} date
  */
 
+/**
+ * @typedef {Object} Help
+ * @prop {string} name
+ * @prop {string} description
+ * @prop {string} file
+ * @prop {string} source
+ * @prop {string} group
+ */
+
 module.exports = {};
