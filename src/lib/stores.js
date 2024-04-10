@@ -26,6 +26,14 @@ function putLocalStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
 
+export function clearVersionDependentStores() {
+    quizQuestions.set([]);
+    quizHistory.set([]);
+    trainingChapters.set([]);
+    trainingLastChapter.set("");
+    bookmarks.set([]);
+}
+
 export const quizQuestions = writable(getLocalStorage("quizQuestions", []).map((/** @type {number} */ e) => flattendQuestions.find(q => q.id === e)));
 quizQuestions.subscribe(val => putLocalStorage("quizQuestions", val.map((/** @type {{ id: number; }} */ q) => q.id)));
 
@@ -43,3 +51,6 @@ bookmarks.subscribe(val => putLocalStorage("bookmarks", val.map((/** @type { imp
 
 export const theme = writable(getLocalStorage("theme", ""));
 theme.subscribe(val => putLocalStorage("theme", val));
+
+export const version = writable(getLocalStorage("version", 0));
+version.subscribe(val => putLocalStorage("version", val));

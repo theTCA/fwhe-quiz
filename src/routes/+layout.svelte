@@ -1,11 +1,18 @@
 <script>
     import "../app.css";
-    import {base} from "$app/paths";
-    import {page} from "$app/stores";
-    import {pages, pageGroups} from "$lib/pages";
+    import { onMount } from "svelte";
+    import { base } from "$app/paths";
+    import { page } from "$app/stores";
+    import { meta } from "$lib/data.json";
+    import { pages, pageGroups } from "$lib/pages";
+    import { version, clearVersionDependentStores } from "$lib/stores";
+    import { PUBLIC_APP_NAME } from "$env/static/public";
     import Icon from "@iconify/svelte";
     import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
-    import { PUBLIC_APP_NAME } from "$env/static/public";
+
+    onMount(() => {
+        versionCheck();
+    });
 
     /**
      * @type {HTMLInputElement}
@@ -14,6 +21,13 @@
 
     function closeDrawer() {
         drawer.checked = false;
+    }
+
+    function versionCheck() {
+        if($version < meta.version) {
+            clearVersionDependentStores();
+            $version = meta.version;
+        }
     }
 </script>
 
