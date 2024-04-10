@@ -139,15 +139,16 @@
             </div>
             <button class="btn btn-sm btn-block btn-outline btn-success" on:click={() => modal.showModal()}>Fragen auswählen</button>
             <dialog id="quizQuestionSelection" class="modal" bind:this={modal}>
-                <form class="modal-box max-w-[90%] text-wrap" method="dialog">
-                    <div class="mb-2 flex justify-end">
+                <form class="modal-box w-screen h-screen md:max-w-[90%] z-10" method="dialog">
+                    <div class="mb-2 flex justify-between items-center">
+                        <h2 class="text-xl font-bold">Fragen auswählen</h2>
                         <button class="btn btn-square btn-outline">
                             <Icon icon="mdi:close"/>
                         </button>
                     </div>
                     <QuestionAdder on:change={addQuestion}/>
                 </form>
-                <form class="modal-backdrop" method="dialog">
+                <form class="modal-backdrop select-none" method="dialog">
                     <button></button>
                 </form>
             </dialog>
