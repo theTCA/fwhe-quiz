@@ -150,7 +150,12 @@
 </svelte:head>
 
 <div>
-    <h1 class="text-3xl text-center font-semibold mb-2">Training</h1>
+    <div class="relative flex justify-between w-full mb-2">
+        <h1 class="text-3xl flex-1 text-center font-semibold mb-2"> Training </h1>
+        {#if question}
+        <BookmarkButton class="absolute right-2 lg:right-0" {question}/>
+        {/if}
+    </div>
     {#if !selectedChapter}
     <div class="mb-2">
         <h2 class="text-lg font-semibold">Fortschritt</h2>
@@ -167,12 +172,7 @@
     {:else}
     <div>
         <div class="mb-3">
-            <div class="relative flex justify-between items-center w-full">
-                <h2 class="text-sm flex-1 text-center text-primary font-semibold mb-2"> {selectedChapter.name} </h2>
-                {#if question}
-                <BookmarkButton class="absolute right-2 lg:right-0" {question}/>
-                {/if}
-            </div>
+            <h2 class="text-sm flex-1 text-center text-primary font-semibold mb-2"> {selectedChapter.name} </h2>
             <div class="w-[80%] mx-auto">
                 <progress class="progress progress-primary" value={selectedChapter.questions.length} max={selectedChapter.length}></progress>
             </div>
