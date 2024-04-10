@@ -1,13 +1,11 @@
 <script>
     import QuestionAdder from "$lib/components/QuestionAdder.svelte";
     import Icon from "@iconify/svelte";
-    import {catalogues} from "$lib/data.json";
+    import { flattendQuestions } from "$lib/data";
     import { shuffle } from "$lib/helper";
     import { QuizBuilder } from "$lib/pdf";
     import { bookmarks } from "$lib/stores";
     import { PUBLIC_APP_NAME } from "$env/static/public";
-
-    const flattendQuestions = catalogues.map(c => c.questions.map(q => ({...q, catalog: c.name}))).flat();
 
     /**
      * @type {HTMLDialogElement}
@@ -27,8 +25,11 @@
         possibleQuestions = possibleQuestions.filter(id => !questions.some(q => q.id === id));
         possibleQuestions = shuffle(possibleQuestions);
         let ids = possibleQuestions.slice(0, randomQuestions);
-        // @ts-ignore
-        questions = [...questions, ...ids.map(id => flattendQuestions[id-1])];
+        for(let id of ids) {
+            let question = flattendQuestions[id - 1];
+            question.choices = shuffle(question.choices);
+            questions = [...questions, question];
+        }
     }
 
     /**
@@ -37,8 +38,9 @@
     function addQuestion(e) {
         let id = e.detail.id;
         if(!questions.some(q => q.id === id)) {
-            // @ts-ignore
-            questions = [...questions, flattendQuestions[id-1]];
+            let question = flattendQuestions[id - 1];
+            question.choices = shuffle(question.choices);
+            questions = [...questions, question];
         }
     }
 
