@@ -80,10 +80,10 @@
         <label for="drawer" aria-label="close sidebar" class="drawer-overlay"></label>
         <ul class="menu p-4 w-80 min-h-full gap-2 bg-base-200">
             <li class="text-lg font-semibold">
-                <div>
+                <a href={`${base}/`} on:click={closeDrawer}>
                     <Icon icon="openmoji:fire-engine"/>
                     {PUBLIC_APP_NAME}
-                </div>
+                </a>
             </li>
             {#each pageGroups as group}
             <li class="text-primary">
