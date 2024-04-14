@@ -32,6 +32,7 @@ export function clearVersionDependentStores() {
     trainingChapters.set([]);
     trainingLastChapter.set("");
     bookmarks.set([]);
+    trainedBookmarks.set([]);
 }
 
 export const quizQuestions = writable(getLocalStorage("quizQuestions", []).map((/** @type {number} */ e) => flattendQuestions.find(q => q.id === e)));
@@ -48,6 +49,9 @@ trainingLastChapter.subscribe(val => putLocalStorage("trainingLastChapter", val)
 
 export const bookmarks = writable(getLocalStorage("bookmarks", []).map((/** @type {number} */ m) => flattendQuestions.find(q => q.id === m)));
 bookmarks.subscribe(val => putLocalStorage("bookmarks", val.map((/** @type { import("$lib/types").Question } */ q) => q.id)));
+
+export const trainedBookmarks = writable(getLocalStorage("trainedBookmarks", []).map((/** @type {number} */ m) => flattendQuestions.find(q => q.id === m)));
+trainedBookmarks.subscribe(val => putLocalStorage("trainedBookmarks", val.map((/** @type { import("$lib/types").Question } */ q) => q.id)));
 
 export const theme = writable(getLocalStorage("theme", ""));
 theme.subscribe(val => putLocalStorage("theme", val));

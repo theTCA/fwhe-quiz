@@ -1,5 +1,5 @@
 <script>
-    import {trainingChapters, trainingLastChapter} from "$lib/stores";
+    import {trainingChapters, trainingLastChapter, trainedBookmarks, bookmarks} from "$lib/stores";
     import {flattendQuestions} from "$lib/data";
     import {catalogues} from "$lib/data.json";
     import Question from "$lib/components/Question.svelte";
@@ -10,6 +10,7 @@
     import QuestionHelp from "$lib/components/QuestionHelp.svelte";
     import BookmarkButton from "$lib/components/BookmarkButton.svelte";
     import { PUBLIC_APP_NAME } from "$env/static/public";
+    import Icon from "@iconify/svelte";
 
     if($trainingChapters.length <= 0) {
         $trainingChapters = catalogues.map(c => ({name: c.name, questions:[], length: c.questions.length}));
@@ -48,8 +49,14 @@
         let correctChoice = question.choices.find(c => c.answer);
         if(correctChoice && selectedChapter && questions) {
             if(correctChoice.text === answer) {
-                $trainingChapters.find((/** @type {{ name: string; }} */ c) => c.name === selectedChapter?.name).questions = [...selectedChapter.questions, question.id];
-                $trainingChapters = $trainingChapters;
+                if(selectedChapter.name === "Lesezeichen") {
+                    selectedChapter.questions = [...selectedChapter.questions, question.id];
+                    $trainedBookmarks = [...$trainedBookmarks, question];
+                    $trainedBookmarks = $trainedBookmarks;
+                } else {
+                    $trainingChapters.find((/** @type {{ name: string; }} */ c) => c.name === selectedChapter?.name).questions = [...selectedChapter.questions, question.id];
+                    $trainingChapters = $trainingChapters;
+                }
             } else {
                 questions = [...questions, question];
             }
@@ -90,12 +97,29 @@
         question = questions?.at(0);
     }
 
+    function selectBookmarkChapter() {
+        if($trainedBookmarks.length === $bookmarks.length)
+            $trainedBookmarks = [];
+        selectedChapter = {name: "Lesezeichen", questions: [...$trainedBookmarks], length: $bookmarks.length};
+        $trainingLastChapter = "Lesezeichen";
+        questions = shuffle($bookmarks.filter((/** @type {import("$lib/types").Question} */ q) => !$trainedBookmarks.includes(q.id)).map((/** @type {import("$lib/types").Question} */ q) => ({...q, choices: shuffle(q.choices)})));
+        question = questions?.at(0);
+    }
+
+    function resetBookmarkChapter() {
+        $trainedBookmarks = [];
+    }
+
     /**
      * @param {CustomEvent} e
      */
     function onSelectChapter(e) {
         if(!e.detail.name) {
             selectedChapter = null;
+            return;
+        }
+        if(e.detail.name === "Lesezeichen") {
+            selectBookmarkChapter();
             return;
         }
         let chapter = $trainingChapters.find((/** @type {{ name: string; }} */ c) => c.name === e.detail.name);
@@ -168,6 +192,23 @@
         <progress class="progress progress-primary" value={chapterProgress} max={flattendQuestions.length}></progress>
     </div>
     <div class="divider font-bold"> Abschnitte </div>
+        {#if $bookmarks.length > 0}
+        <div class="flex justify-center px-2 mb-2">
+            <div class="flex items-center gap-2 p-2 bg-base-200 rounded-md w-full lg:w-1/3">
+                <button class="btn btn-primary btn-square btn-outline" type="button" on:click={selectBookmarkChapter}>
+                    <Icon icon="carbon:play-filled-alt"/>
+                </button>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-left break-words min-w-0"> Lesezeichen </h3>
+                    <progress class="progress progress-primary" value={$trainedBookmarks.length} max={$bookmarks.length}></progress>
+                </div>
+                <button class="btn btn-ghost text-primary" on:click={resetBookmarkChapter}>
+                    <Icon icon="material-symbols:refresh"/>
+                </button>
+            </div>
+        </div>
+        <div class="divider"></div>
+        {/if}
     <ChapterSelector chapters={$trainingChapters} on:select={onSelectChapter} on:reset={onResetChapter}/>
     {:else}
     <div>
