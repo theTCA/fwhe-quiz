@@ -15,6 +15,7 @@
     let question = $quizQuestions.at(0);
     let answer = "";
     let answered = false;
+    let streak = 0;
 
     function nextQuestion() {
         answered = false;
@@ -27,6 +28,12 @@
 
     function answerQuestion() {
         $quizHistory = [{question: question, answer: answer, date: new Date()}, ...$quizHistory];
+        let correctChoice = question.choices.find((/** @type {{ answer: boolean; }} */ c) => c.answer);
+        if(correctChoice && correctChoice.text === answer) {
+            streak += 1;
+        } else {
+            streak = 0;
+        }
         answered = true;
         $quizQuestions = [...$quizQuestions.slice(1)];
     }
@@ -38,7 +45,7 @@
 
 <div>
     <div class="relative flex justify-between w-full">
-        <h1 class="text-3xl flex-1 text-center font-semibold mb-2">Quiz</h1>
+        <h1 class="text-3xl flex-1 text-center font-semibold mb-2"> Quiz </h1>
         <BookmarkButton class="absolute right-2 lg:right-0" {question}/>
     </div>
     <div class="mb-2">
@@ -57,6 +64,14 @@
         {/if}
     </div>
     {#if answered}
+    <div class="grid grid-cols-2">
+        <div class="text-sm text-center mb-4">
+            in Folge richtig:
+            <span class="font-semibold">
+                {streak}
+            </span>
+        </div>
+    </div>
     <QuestionHelp question={question}/>
     {/if}
 </div>
