@@ -12,8 +12,16 @@ export const pages = [
         inNavbar: true,
     },
     {
-        name: "Quiz",
+        name: "Endlosquiz",
         desc: "Beantworte zufällige Fragen aus dem Fragenkatalog.",
+        href: "/endless",
+        icon: "ri:infinity-line",
+        group: groups[0],
+        inNavbar: true,
+    },
+    {
+        name: "Quiz",
+        desc: "Beantworte selbst gewählte zufällige Fragen aus dem Fragenkatalog.",
         href: "/quiz",
         icon: "material-symbols:question-mark",
         group: groups[0],
