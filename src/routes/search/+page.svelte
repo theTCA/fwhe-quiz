@@ -85,7 +85,7 @@
                 <div class="flex flex-col gap-1">
                     {#each catalog.questions as question}
                     <Collapsible hidden={question.hidden}>
-                        <div slot="title" class="font-semibold select-none">{question.question}</div>
+                        <div slot="title" id={""+question.id} class="font-semibold select-none">{question.question}</div>
                         <div slot="content">
                             {#if question.image}
                             <div class="w-32 h-32 mx-auto py-1">
