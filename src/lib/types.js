@@ -32,6 +32,7 @@
  * @prop {Question} question
  * @prop {string} answer
  * @prop {Date} date
+ * @prop {string} type
  */
 
 /**

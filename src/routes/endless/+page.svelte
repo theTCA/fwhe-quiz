@@ -7,27 +7,27 @@
     import QuestionHelp from "$lib/components/QuestionHelp.svelte";
     import { flattendQuestions } from "$lib/data";
     import { shuffle } from "$lib/helper";
-    import { quizQuestions, quizHistory } from "$lib/stores";
+    import { endlessQuizQuestions, quizHistory } from "$lib/stores";
 
-    if($quizQuestions.length === 0) {
-        $quizQuestions = [...shuffle(flattendQuestions)];
+    if($endlessQuizQuestions.length === 0) {
+        $endlessQuizQuestions = [...shuffle(flattendQuestions)];
     }
-    let question = $quizQuestions.at(0);
+    let question = $endlessQuizQuestions.at(0);
     let answer = "";
     let answered = false;
     let streak = 0;
 
     function nextQuestion() {
         answered = false;
-        if($quizQuestions.length <= 0) {
-            $quizQuestions = [...shuffle(flattendQuestions)];
+        if($endlessQuizQuestions.length <= 0) {
+            $endlessQuizQuestions = [...shuffle(flattendQuestions)];
         }
-        question = $quizQuestions.at(0);
+        question = $endlessQuizQuestions.at(0);
         answer = "";
     }
 
     function answerQuestion() {
-        $quizHistory = [{question: question, answer: answer, date: new Date()}, ...$quizHistory];
+        $quizHistory = [{question: question, answer: answer, date: new Date(), type: "endless"}, ...$quizHistory];
         let correctChoice = question.choices.find((/** @type {{ answer: boolean; }} */ c) => c.answer);
         if(correctChoice && correctChoice.text === answer) {
             streak += 1;
@@ -35,7 +35,7 @@
             streak = 0;
         }
         answered = true;
-        $quizQuestions = [...$quizQuestions.slice(1)];
+        $endlessQuizQuestions = [...$endlessQuizQuestions.slice(1)];
     }
 </script>
 
