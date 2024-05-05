@@ -8,7 +8,7 @@
     <div class="collapse-title">
         <slot name="title"/>
     </div>
-    <div class="collapse-content">
+    <div class="collapse-content overflow-y-auto">
         <slot name="content"/>
     </div>
 </div>
