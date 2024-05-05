@@ -1,10 +1,11 @@
 <script>
     export let hidden = false;
+    export let open = false;
 </script>
 
 {#if !hidden}
 <div class="collapse bg-base-200">
-    <input type="checkbox">
+    <input type="checkbox" checked={open}>
     <div class="collapse-title">
         <slot name="title"/>
     </div>

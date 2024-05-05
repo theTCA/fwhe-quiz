@@ -4,9 +4,15 @@
     import Collapsible from "$lib/components/Collapsible.svelte";
     import QuestionHelp from "$lib/components/QuestionHelp.svelte";
     import { PUBLIC_APP_NAME } from "$env/static/public";
+    import { onMount } from "svelte";
 
     let searchInput = "";
     $: questions = getCatalogues();
+
+    $: openedQuestion = 0;
+    onMount(() => {
+        openedQuestion = parseInt((new URL(window.location.href)).hash.replace("#", ""));
+    });
 
     const searchToggles = [
         {
@@ -84,7 +90,7 @@
                 <span class="font-bold text-lg text-primary">{catalog.name}</span>
                 <div class="flex flex-col gap-1">
                     {#each catalog.questions as question}
-                    <Collapsible hidden={question.hidden}>
+                    <Collapsible open={question.id === openedQuestion} hidden={question.hidden}>
                         <div slot="title" id={""+question.id} class="font-semibold select-none">{question.question}</div>
                         <div slot="content">
                             {#if question.image}
