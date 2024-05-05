@@ -1,4 +1,5 @@
 <script>
+    import { base } from "$app/paths";
     import Icon from "@iconify/svelte";
 
     /** @type {{question: import("$lib/types").Question, date: Date, answer: string}}*/
@@ -7,7 +8,7 @@
     let correctChoice = history.question.choices.find(c => c.answer);
 </script>
 
-<div class="flex items-center gap-1">
+<a class="flex items-center gap-1" target="_blank" href={base + `/search#${history.question.id}`}>
     <div class="w-6 h-6 inline-flex items-center">
         {#if correctChoice && correctChoice?.text === history.answer}
         <span class="text-success">
@@ -22,4 +23,4 @@
     <div class="flex-1 font-semibold">
         {history.question.question}
     </div>
-</div>
+</a>
