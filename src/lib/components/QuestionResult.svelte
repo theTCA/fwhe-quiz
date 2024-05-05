@@ -1,4 +1,5 @@
 <script>
+    import { base } from "$app/paths";
     import Icon from "@iconify/svelte";
 
     /** @type {import("$lib/types").Question}*/
@@ -8,7 +9,7 @@
     export let answer;
 </script>
 
-<a class="flex items-center gap-1 bg-base-200 rounded-md p-1" target="_blank" href={`/search#${question.id}`}>
+<a class="flex items-center gap-1 bg-base-200 rounded-md p-1" target="_blank" href={base + `/search#${question.id}`}>
     {#if question.choices.find(c => c.answer)?.text === answer}
     <Icon class="rounded-full border border-base-200 w-6 h-6 text-success" icon="carbon:checkmark-filled"/>
     {:else}
