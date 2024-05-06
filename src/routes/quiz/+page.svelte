@@ -151,7 +151,11 @@
             {#if answered}
             <button class="btn btn-primary" type="button" on:click={nextQuestion}>Weiter</button>
             {:else}
+            {#if answer.length > 0}
             <button class="btn btn-primary" type="button" on:click={answerQuestion}>Wählen</button>
+            {:else}
+            <button class="btn btn-primary btn-outline" type="button" on:click={answerQuestion}>Wählen</button>
+            {/if}
             {/if}
         </div>
         {/if}

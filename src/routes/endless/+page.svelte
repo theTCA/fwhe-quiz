@@ -60,7 +60,11 @@
         {#if answered}
         <button class="btn btn-primary" on:click={nextQuestion}> Weiter </button>
         {:else}
+        {#if answer.length > 0}
         <button class="btn btn-primary" on:click={answerQuestion}> Wählen </button>
+        {:else}
+        <button class="btn btn-primary btn-outline" on:click={answerQuestion}> Wählen </button>
+        {/if}
         {/if}
     </div>
     {#if answered}
