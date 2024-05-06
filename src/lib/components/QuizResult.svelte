@@ -24,7 +24,12 @@
             </div>
             <h3 class="text-sm font-semibold text-center opacity-70">richtige Antworten</h3>
         </div>
-        <div class=""></div>
+        <div>
+            <div class="text-lg font-bold text-center">
+                {questions.length - correctQuestions}
+            </div>
+            <h3 class="text-sm font-semibold text-center opacity-70">falsche Antworten</h3>
+        </div>
     </div>
     <div class="divider"></div>
     <div class="flex justify-center items-center relative mb-2">
