@@ -1,4 +1,5 @@
 <script>
+    import { base } from "$app/paths";
     import { PUBLIC_APP_NAME } from "$env/static/public";
     import {bookmarks} from "$lib/stores";
     import Icon from "@iconify/svelte";
@@ -42,7 +43,7 @@
                 <button class="text-error" on:click={() => removeBookmark(question.id)}>
                     <Icon class="w-5 h-5" icon="ep:remove-filled"/>
                 </button>
-                <div class="flex-1"> {question.question} </div>
+                <a class="flex-1" target="_blank" href={base + "/search#" + question.id}> {question.question} </a>
             </div>
             {/each}
         </div>
