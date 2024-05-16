@@ -9,17 +9,11 @@
 </script>
 
 <a class="flex items-center gap-1" target="_blank" href={base + `/search#${history.question.id}`}>
-    <div class="w-6 h-6 inline-flex items-center">
-        {#if correctChoice && correctChoice?.text === history.answer}
-        <span class="text-success">
-            <Icon icon="mdi:tick"/>
-        </span>
-        {:else}
-        <span class="text-error">
-            <Icon icon="mdi:close"/>
-        </span>
-        {/if}
-    </div>
+    {#if correctChoice && correctChoice?.text === history.answer}
+    <Icon class="w-5 h-5 rounded-full border border-base-200 text-success" icon="carbon:checkmark-filled"/>
+    {:else}
+    <Icon class="w-5 h-5 rounded-full border border-base-200 text-error" icon="carbon:close-filled"/>
+    {/if}
     <div class="flex-1 font-semibold">
         {history.question.question}
     </div>
