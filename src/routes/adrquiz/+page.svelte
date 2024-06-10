@@ -66,11 +66,14 @@
         {/if}
     {/if}
     <div class="flex justify-center m-4">
-        <div></div>
         {#if answered}
         <button class="btn btn-primary btn-block lg:w-1/2" on:click={nextQuestion}> Weiter </button>
         {:else}
-        <button class="btn btn-primary btn-block lg:w-1/2" on:click={answerQuestion}> Wählen </button>
+            {#if answer}
+            <button class="btn btn-primary btn-block lg:w-1/2" on:click={answerQuestion}> Wählen </button>
+            {:else}
+            <button class="btn btn-primary btn-block btn-outline lg:w-1/2" on:click={answerQuestion}> Wählen </button>
+            {/if}
         {/if}
     </div>
     {#if answered && answer !== question?.choices.find(c => c.answer)?.text}
