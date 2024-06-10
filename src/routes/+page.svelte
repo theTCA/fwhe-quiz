@@ -55,3 +55,11 @@
     </div>
     {/each}
 </div>
+<footer class="mt-16">
+    <div class="flex justify-center w-full">
+        <a class="btn btn-sm btn-ghost" href="https://github.com/theTCA">
+            <Icon icon="mdi:github"/>
+            theTCA
+        </a>
+    </div>
+</footer>
