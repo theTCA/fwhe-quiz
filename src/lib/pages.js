@@ -28,6 +28,14 @@ export const pages = [
         inNavbar: true,
     },
     {
+        name: "Schlagwortquiz",
+        desc: "Beantworte zufällige Fragen aus einem gewähltem Schlagwort",
+        href: "/tagsquiz",
+        icon: "material-symbols:category-outline",
+        group: groups[0],
+        inNavbar: true,
+    },
+    {
         name: "ADR-Quiz",
         desc: "Beantworte Fragen zu Gefahrgütern und deren Kennzeichnung.",
         href: "/adrquiz",
