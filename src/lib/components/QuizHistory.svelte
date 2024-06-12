@@ -14,5 +14,6 @@
     {/if}
     <div class="flex-1">
         {history.question.question}
+        <span class="text-sm opacity-70"> aus {history.question.catalog} </span>
     </div>
 </a>
