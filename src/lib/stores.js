@@ -42,7 +42,7 @@ endlessQuizQuestions.subscribe(val => putLocalStorage("endlessQuizQuestions", va
 export const quizQuestions = writable(getLocalStorage("quizQuestions", []).map((/** @type {{id: number, answer: string, answered: boolean}}*/e) => ({question: flattendQuestions.find(q => q.id === e.id), answer: e.answer, answered: e.answered})));
 quizQuestions.subscribe(val => putLocalStorage("quizQuestions", val.map((/** @type {{question: import("$lib/types").Question, answer: string, answered: boolean}}*/ e) => ({id: e.question.id, answer: e.answer, answered: e.answered}))));
 
-export const quizHistory = writable(getLocalStorage("quizHistory", []).map((/**@type {{id: number, answer: string, date: Date, type: string}} */ e) => ({question: flattendQuestions.find(q => q.id === e.id), answer: e.answer, date: new Date(e.date)})));
+export const quizHistory = writable(getLocalStorage("quizHistory", []).map((/**@type {{id: number, answer: string, date: Date, type: string}} */ e) => ({question: flattendQuestions.find(q => q.id === e.id), answer: e.answer, date: new Date(e.date), type: e.type})));
 quizHistory.subscribe(val => putLocalStorage("quizHistory", val.map(( /** @type {import("$lib/types").QuizHistory} */ h) => ({id: h.question.id, answer: h.answer, date: h.date, type: h.type}))));
 
 export const trainingChapters = writable(getLocalStorage("trainingChapters", []));
