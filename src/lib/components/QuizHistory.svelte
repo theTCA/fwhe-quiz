@@ -14,7 +14,7 @@
     {:else}
     <Icon class="w-5 h-5 rounded-full border border-base-200 text-error" icon="carbon:close-filled"/>
     {/if}
-    <div class="flex-1 font-semibold">
+    <div class="flex-1">
         {history.question.question}
     </div>
 </a>
