@@ -9,7 +9,7 @@
 </script>
 
 <a class="flex items-center gap-1" target="_blank" href={base + `/search#${history.question.id}`}>
-    {#if correctChoice && correctChoice?.text === history.answer}
+    {#if correctChoice?.text === history.answer}
     <Icon class="w-5 h-5 rounded-full border border-base-200 text-success" icon="carbon:checkmark-filled"/>
     {:else}
     <Icon class="w-5 h-5 rounded-full border border-base-200 text-error" icon="carbon:close-filled"/>
