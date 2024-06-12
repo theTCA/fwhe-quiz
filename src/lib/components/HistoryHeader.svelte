@@ -1,13 +1,13 @@
 <script>
-    import { quizHistory } from "$lib/stores";
+    export let quizHistory;
 
-    $: correctQuestions = $quizHistory.reduce(reduceCorrectQuestions, 0);
-    $: correctQuestionsProgress = $quizHistory.length > 0 ? Math.round((correctQuestions / $quizHistory.length) * 100) : 0;
+    $: correctQuestions = quizHistory.reduce(reduceCorrectQuestions, 0);
+    $: correctQuestionsProgress = quizHistory.length > 0 ? Math.round((correctQuestions / quizHistory.length) * 100) : 0;
     $: worstCatalog = Object.keys(historyAsCatalogues).reduce((acc, c) => {
-        let ratio = historyAsCatalogues[c].incorrect / $quizHistory.length;
+        let ratio = historyAsCatalogues[c].incorrect / quizHistory.length;
         return ratio > acc.ratio ? {ratio: ratio, catalog: c} : acc;
     }, {ratio: 0, catalog: "-"});
-    $: historyAsCatalogues = $quizHistory.reduce(reduceCatalogues, {});
+    $: historyAsCatalogues = quizHistory.reduce(reduceCatalogues, {});
 
     /**
      * @param {any} acc
@@ -40,10 +40,10 @@
     }
 </script>
 
-<div class="mb-4 grid grid-cols-1 lg:grid-cols-3 items-end">
+<div class="border-2 border-base-200 p-2 rounded-md mb-4 grid grid-cols-1 lg:grid-cols-3 items-end">
     <div>
         <div class="text-lg font-bold text-center">
-            {$quizHistory.length}
+            {quizHistory.length}
         </div>
         <h3 class="text-sm font-semibold text-center opacity-70">beantwortete Fragen</h3>
     </div>
