@@ -35,6 +35,9 @@
                 {/if}
             </span>
         </div>
+        <div class="text-sm">
+            Die Konsequenz ist, dass alle Ergebnisse nur im Browser gespeichert werden.
+        </div>
     </div>
     {#each pageGroups as group}
     <div class="flex flex-col gap-2">
