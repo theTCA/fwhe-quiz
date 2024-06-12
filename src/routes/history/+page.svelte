@@ -3,14 +3,35 @@
     import { quizHistory } from "$lib/stores";
     import HistoryHeader from "$lib/components/HistoryHeader.svelte";
     import QuizHistory from "$lib/components/QuizHistory.svelte";
+    import { page } from "$app/stores";
 
-    $: historyRange = 10;
-    $: deleteRange = 10;
+    let historyRange = 10;
+    let deleteRange = 10;
+
+    const tabs = [
+        {
+            id: "all",
+            name: "Alle"
+        },
+        {
+            id: "endless",
+            name: "Endlosquiz"
+        },
+        {
+            id: "quiz",
+            name: "Quiz"
+        }
+    ];
+    let selectedTab = tabs[0].id;
+    if($page.url.hash && tabs.some(t => "#" + t.id === $page.url.hash)) {
+        selectedTab = $page.url.hash.replace("#", "");
+    }
 
     /**
+     * @param {string} type
      * @param {number} range
      */
-    function groupHistory(range) {
+    function groupHistory(type, range) {
         /** @type {{label: string, time: number, history: import("$lib/types").QuizHistory[]}[]}*/
         let groups = [
             {
@@ -41,6 +62,8 @@
         ];
         let amount = 0;
         for(let history of $quizHistory) {
+            if(history.type !== type && type !== tabs[0].id)
+                continue;
             let diff = (Date.now() - history.date) / 60000;
             for(let group of groups) {
                 if(diff < group.time) {
@@ -70,9 +93,13 @@
 
 <div>
     <h1 class="text-3xl text-center font-semibold mb-2">Verlauf</h1>
-    <HistoryHeader/>
-    <div class="divider"></div>
     <div class="flex flex-col gap-4">
+        <div class="tabs tabs-bordered flex" role="tablist">
+            {#each tabs as tab}
+            <input type="radio" class="tab flex-auto font-bold select-auto" role="tab" aria-label={tab.name} name="tabs" value={tab.id} bind:group={selectedTab}>
+            {/each}
+        </div>
+        <HistoryHeader quizHistory={$quizHistory.filter((/** @type {import('$lib/types').QuizHistory} */ h) => h.type === selectedTab || selectedTab === tabs[0].id)}/>
         {#if $quizHistory.length > 0}
         <div class="flex flex-row items-center gap-2">
             <span class="font-bold"> Letzten </span>
@@ -86,7 +113,7 @@
         </div>
         {/if}
         <div class="flex flex-col gap-1">
-            {#each groupHistory(historyRange) as group}
+            {#each groupHistory(selectedTab, historyRange) as group}
                 {#if group.history.length > 0}
                 <div>
                     <span class="font-bold text-primary text-sm"> {group.label} </span>
@@ -99,7 +126,7 @@
                 {/if}
             {/each}
         </div>
-        {#if $quizHistory.length > 0}
+        {#if $quizHistory.length > 0 && selectedTab === tabs[0].id}
         <div class="flex items-center gap-2">
             <span class="font-bold"> ältesten </span>
             <div class="join">

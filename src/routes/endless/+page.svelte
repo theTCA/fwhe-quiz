@@ -56,7 +56,7 @@
         {/if}
     </div>
     <div class="grid grid-cols-2 gap-2 mb-4">
-        <a class="btn btn-outline" href={base + "/history"}> Verlauf </a>
+        <a class="btn btn-outline" href={base + "/history#endless"}> Verlauf </a>
         {#if answered}
         <button class="btn btn-primary" on:click={nextQuestion}> Weiter </button>
         {:else}
