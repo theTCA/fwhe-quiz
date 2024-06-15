@@ -20,7 +20,7 @@
 <div class="flex flex-col gap-2 mt-3">
     {#each questionHelp as help}
     {@const url = `${help.source}#page${isSafari() ? "" : "="}${help.page}`}
-    <a class="btn flex flex-col flex-nowrap justify-center items-center text-sm h-full gap-0.5" href={url} target="_blank">
+    <a class="btn flex flex-col flex-nowrap justify-center items-center text-sm h-full gap-0.5 border-2 border-base-300 shadow-none" href={url} target="_blank">
         <h4 class="font-bold"> {help.name} </h4>
         <div>
             <div>
