@@ -61,6 +61,12 @@
 <div>
     <h1 class="text-3xl text-center font-semibold mb-2"> Schlagwortquiz</h1>
     {#if !selectedTag}
+    <p class="text-center mb-3 ">
+        Beantworte Fragen wie im Endlosquiz, jedoch nach Schlagwörtern gruppiert.
+        Fragen können meheren Schlagwörter zugeordnet sein.
+        <br>
+        <span class="font-semibold"> Wähle ein Schlagwort aus, um das Quiz zu starten. </span>
+    </p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         {#each tags as tag}
         <div class="bg-base-200 p-2 rounded-md flex flex-row items-center gap-2">
