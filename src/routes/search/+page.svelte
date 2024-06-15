@@ -98,7 +98,7 @@
                                 <img src={`./img/${images.find(i => i.id === question.image)?.file}`} alt={images.find(i => i.id === question.image)?.description}>
                             </div>
                             {/if}
-                            <div class="mb-2">
+                            <div class="mb-3">
                                 {#each question.choices as choice}
                                 <div class="flex items-center gap-2 p-1.5 border-2 border-base-200 rounded-md">
                                     {#if choice.answer}
@@ -113,7 +113,6 @@
                                 {/each}
                             </div>
                             {#if question.help.length > 0}
-                            <div class="divider font-semibold">Hilfe</div>
                             <QuestionHelp {question}/>
                             {/if}
                         </div>

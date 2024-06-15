@@ -15,7 +15,8 @@
 </script>
 
 <QuestionTags {question}/>
-{#if questionHelp}
+{#if question.help.length > 0 && questionHelp}
+<div class="divider font-semibold">Hilfe</div>
 <div class="flex flex-col gap-2 mt-3">
     {#each questionHelp as help}
     {@const url = `${help.source}#page${isSafari() ? "" : "="}${help.page}`}
