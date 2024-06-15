@@ -36,6 +36,14 @@ export const pages = [
         inNavbar: true,
     },
     {
+        name: "Problemquiz",
+        desc: "Fragen, die zuvor falsch beantwortet wurden wiederholen.",
+        href: "/problemquiz",
+        icon: "icon-park-outline:thinking-problem",
+        group: groups[0],
+        inNavbar: false,
+    },
+    {
         name: "PDF-Quiz",
         desc: "Erstelle Fragen- und Antwortenbogen als PDF.",
         href: "/pdfquiz",
