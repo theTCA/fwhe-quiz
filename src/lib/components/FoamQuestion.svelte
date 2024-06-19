@@ -63,11 +63,11 @@
         </div>
         {:else if question.type.id === "agentVolume"}
         <div class="text-center">
-            Welche Menge Schaummittel wird für einem Zumischer
+            Welche Menge Schaummittel wird für einen Zumischer
             <span class="font-semibold">
                 {question.mixer.type}
             </span>
-            und mit einem Schaumstrahlrohr
+            mit einem Schaumstrahlrohr
             <span class="font-semibold">
                 {question.nozzle.type}
             </span>
@@ -84,7 +84,7 @@
             <span class="font-semibold">
                 {question.time}
             </span>
-            Minuten hergestellt werden?
+            Minuten benötigt werden?
         </div>
         {:else if question.type.id === "time"}
         <div class="text-center">
