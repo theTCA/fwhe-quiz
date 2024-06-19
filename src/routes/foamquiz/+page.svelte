@@ -1,6 +1,8 @@
 <script>
     import { PUBLIC_APP_NAME } from "$env/static/public";
     import { shuffle } from "$lib/helper";
+    import FoamHelp from "$lib/components/FoamHelp.svelte";
+    import FoamQuestion from "$lib/components/FoamQuestion.svelte";
 
     const mixers = [
         {
@@ -80,19 +82,6 @@
     let compactView = true;
 
     let questions = generateQuestions();
-    /*
-    let question = {
-        mixer: {
-            ...mixers[1],
-            mixingRate: 1,
-        },
-        nozzle: nozzles[4],
-        time: 5,
-        type: quizTypes[0],
-        answer: 0,
-        agentAmount: 40
-    };
-    */
     $: question = questions[0];
 
     let answer = "";
@@ -200,110 +189,7 @@
     <div class="flex flex-col justify-center gap-2">
         <h2 class="text-2xl flex-1 text-center font-semibold mb-2"> {question.type.name} </h2>
         <input type="checkbox" bind:checked={compactView}>
-        {#if compactView}
-        <div class="text-center grid grid-cols-1 lg:grid-cols-3">
-            <div>
-                <h4 class="font-semibold"> Schaumstrahlrohr </h4>
-                <div class="flex justify-center gap-2">
-                    <span>{question.nozzle.type}</span>
-                    <span>{question.nozzle.foamRatio} VZ</span>
-                </div>
-            </div>
-            <div>
-                <h4 class="font-semibold"> Zumischer </h4>
-                <div class="flex justify-center gap-2">
-                    <span>{question.mixer.type}</span>
-                    <span>{question.mixer.mixingRate.toString().replace(".", ",")}% Zumischung</span>
-                </div>
-            </div>
-            {#if question.type.id !== "time"}
-            <div>
-                <h4 class="font-semibold"> Zeit </h4>
-                <div>
-                    <span>{question.time} Minuten </span>
-                </div>
-            </div>
-            {:else}
-            <div>
-                <h4 class="font-semibold"> Schaummittel </h4>
-                <div>
-                    <span>{question.agentAmount} Liter </span>
-                </div>
-            </div>
-            {/if}
-        </div>
-        {:else}
-            {#if question.type.id === "foamVolume"}
-            <div class="text-center">
-                Welche Menge Schaum kann mit einem Zumischer
-                <span class="font-semibold">
-                    {question.mixer.type}
-                </span>
-                und mit einem Schaumstrahlrohr
-                <span class="font-semibold">
-                    {question.nozzle.type}
-                </span>
-                (Verschäumungszahl
-                <span class="font-semibold">
-                    {question.nozzle.foamRatio}
-                </span>
-                ) bei einer
-                <span class="font-semibold">
-                    {question.mixer.mixingRate}%
-                </span>
-                Zumischung des Schaummittel in
-                <span class="font-semibold">
-                    {question.time}
-                </span>
-                Minuten hergestellt werden?
-            </div>
-            {:else if question.type.id === "agentVolume"}
-            <div class="text-center">
-                Welche Menge Schaummittel wird für einem Zumischer
-                <span class="font-semibold">
-                    {question.mixer.type}
-                </span>
-                und mit einem Schaumstrahlrohr
-                <span class="font-semibold">
-                    {question.nozzle.type}
-                </span>
-                (Verschäumungszahl
-                <span class="font-semibold">
-                    {question.nozzle.foamRatio}
-                </span>
-                )
-                bei einer
-                <span class="font-semibold">
-                    {question.mixer.mixingRate}%
-                </span>
-                Zumischung des Schaummittel in
-                <span class="font-semibold">
-                    {question.time}
-                </span>
-                Minuten hergestellt werden?
-            </div>
-            {:else if question.type.id === "time"}
-            <div class="text-center">
-                Nach welcher Zeit sind beim Schaumeinsatz
-                <span class="font-semibold">
-                    {question.agentAmount} l
-                </span>
-                Schaummittel zugemischt, wenn ein Zumischer
-                <span class="font-semibold">
-                    {question.mixer.type}
-                </span>
-                mit einer Zumischrate von
-                <span class="font-semibold">
-                    {question.mixer.mixingRate}%
-                </span>
-                und ein Schaumstrahlrohr
-                <span class="font-semibold">
-                    {question.nozzle.type}
-                </span>
-                eingesetzt wird?
-            </div>
-            {/if}
-        {/if}
+        <FoamQuestion {question} {compactView}/>
         <form class="flex flex-col gap-2">
             {#if !answered}
             <div class="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-2 items-center">
@@ -332,16 +218,8 @@
             </div>
             {/if}
         </form>
-        <div class="flex justify-center">
         {#if answered}
-            {#if question.type.id === "foamVolume"}
-                <math xmlns="http://www.w3.org/1998/Math/MathML"><mtext>Schaumvolumen</mtext><mo>=</mo><mi>{question.nozzle.flowRate}</mi><mfrac><mtext>l</mtext><mtext>min</mtext></mfrac><mo>&#xd7;</mo><mi>{question.nozzle.foamRatio}</mi><mo>&#xd7;</mo><mi>{question.time}</mi><mtext>min</mtext><mo>=</mo><mi>{question.answer}</mi><mtext>l</mtext></math>
-            {:else if question.type.id === "agentVolume"}
-                <math xmlns="http://www.w3.org/1998/Math/MathML"><mtext>Schaummittelmenge</mtext><mo>=</mo><mi>{question.mixer.flowRate}</mi><mfrac><mtext>l</mtext><mtext>min</mtext></mfrac><mo>&#xd7;</mo><mi>{question.mixer.mixingRate}</mi><mo>%</mo><mo>&#xd7;</mo><mi>{question.time}</mi><mtext>min</mtext><mo>=</mo><mi>{question.answer}</mi><mtext>l</mtext></math>
-            {:else if question.type.id === "time"}
-                <math xmlns="http://www.w3.org/1998/Math/MathML"><mtext>Zeit</mtext><mo>=</mo><mfrac><mrow><mi>{question.agentAmount}</mi><mtext>l</mtext></mrow><mrow><mi>{question.mixer.flowRate}</mi><mfrac><mtext>l</mtext><mtext>min</mtext></mfrac><mo>&#xd7;</mo><mi>{question.mixer.mixingRate}</mi><mtext>%</mtext></mrow></mfrac><mo>=</mo><mi>{question.answer}</mi><mtext>min</mtext></math>
-            {/if}
+        <FoamHelp {question}/>
         {/if}
-        </div>
     </div>
 </div>
