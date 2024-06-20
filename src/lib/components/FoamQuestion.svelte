@@ -3,7 +3,7 @@
     export let compactView = false;
 </script>
 
-<div>
+<div class="text-base lg:text-lg">
     {#if compactView}
     <div class="text-center grid grid-cols-1 lg:grid-cols-3">
         <div>
@@ -53,7 +53,7 @@
             </span>
             ) bei einer
             <span class="font-semibold">
-                {question.mixer.mixingRate}%
+                {question.mixer.mixingRate.toString().replace(".", ",")}%
             </span>
             Zumischung des Schaummittel in
             <span class="font-semibold">
@@ -78,7 +78,7 @@
             )
             bei einer
             <span class="font-semibold">
-                {question.mixer.mixingRate}%
+                {question.mixer.mixingRate.toString().replace(".", ",")}%
             </span>
             Zumischung des Schaummittel in
             <span class="font-semibold">
@@ -98,7 +98,7 @@
             </span>
             mit einer Zumischrate von
             <span class="font-semibold">
-                {question.mixer.mixingRate}%
+                {question.mixer.mixingRate.toString().replace(".", ",")}%
             </span>
             und ein Schaumstrahlrohr
             <span class="font-semibold">
