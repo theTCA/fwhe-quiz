@@ -19,13 +19,14 @@
     {:else if question.type.id === "agentVolume"}
     {@html alignStar(`
         \\text{Schaummittelmenge} &= \\text{Durchflussrate} \\times \\text{Zumischrate} \\times \\text{Zeit} \\\\
-                                  &= ${question.mixer.flowRate} \\frac{\\text{l}}{\\text{min}} \\times ${question.mixer.mixingRate} \\times ${question.time} \\\\
+                                  &= ${question.mixer.flowRate} \\frac{\\text{l}}{\\text{min}} \\times ${question.mixer.mixingRate}\\% \\times ${question.time} \\text{min} \\\\
                                   &= ${question.answer} \\text{l}
     `)}
     {:else if question.type.id === "time"}
     {@html alignStar(`
         \\text{Zeit} &= \\frac{\\text{Schaummittelmenge}}{\\text{Durchflussrate} \\times \\text{Zumischrate}} \\\\
-                     &= \\frac{${question.agentAmount}}{${question.mixer.flowRate} \\frac{\\text{l}}{\\text{min}}  \\times ${question.mixer.mixingRate}\\%} \\\\
+                     &= \\frac{${question.agentAmount}\\text{l}}{${question.mixer.flowRate} \\frac{\\text{l}}{\\text{min}}  \\times ${question.mixer.mixingRate}\\%} \\\\
+                     &= \\frac{${question.agentAmount}\\text{l}}{${question.mixer.flowRate * (question.mixer.mixingRate / 100)} \\frac{\\text{l}}{\\text{min}}} \\\\
                      &= ${question.answer} \\text{min}
     `)}
     {/if}
