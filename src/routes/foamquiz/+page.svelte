@@ -187,6 +187,10 @@
                 <Icon class="swap-off" icon="octicon:number-16"/>
             </label>
         </div>
+        {:else}
+            {#if question}
+            <h2 class="text-center font-semibold text-lg"> {question.type.name} </h2>
+            {/if}
         {/if}
     </div>
     {#if filteredQuestions.length > 0}
