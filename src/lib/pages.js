@@ -36,6 +36,14 @@ export const pages = [
         inNavbar: true,
     },
     {
+        name: "Schaumquiz",
+        desc: "Berechne die benötigte Menge Schaum oder Schaummittel",
+        href: "/foamquiz",
+        icon: "icon-park-outline:soap-bubble",
+        group: groups[0],
+        inNavbar: false,
+    },
+    {
         name: "Problemquiz",
         desc: "Fragen, die zuvor falsch beantwortet wurden wiederholen.",
         href: "/problemquiz",
