@@ -26,6 +26,7 @@
     if($page.url.hash && tabs.some(t => "#" + t.id === $page.url.hash)) {
         selectedTab = $page.url.hash.replace("#", "");
     }
+    let groupedHistory = groupHistory(selectedTab, historyRange);
 
     /**
      * @param {string} type
@@ -84,6 +85,7 @@
         } else {
             $quizHistory = $quizHistory.slice(0, $quizHistory.length - deleteRange);
         }
+        groupedHistory = groupHistory(selectedTab, historyRange);
     }
 </script>
 
@@ -113,7 +115,7 @@
         </div>
         {/if}
         <div class="flex flex-col gap-1">
-            {#each groupHistory(selectedTab, historyRange) as group}
+            {#each groupedHistory as group}
                 {#if group.history.length > 0}
                 <div>
                     <span class="font-bold text-primary text-sm"> {group.label} </span>
