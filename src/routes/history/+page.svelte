@@ -98,7 +98,7 @@
     <div class="flex flex-col gap-4">
         <div class="tabs tabs-bordered flex" role="tablist">
             {#each tabs as tab}
-            <input type="radio" class="tab flex-auto font-bold select-auto" role="tab" aria-label={tab.name} name="tabs" value={tab.id} bind:group={selectedTab}>
+            <input id={tab.id} type="radio" class="tab flex-auto font-bold select-auto" role="tab" aria-label={tab.name} name="tabs" value={tab.id} bind:group={selectedTab}>
             {/each}
         </div>
         <HistoryHeader quizHistory={$quizHistory.filter((/** @type {import('$lib/types').QuizHistory} */ h) => h.type === selectedTab || selectedTab === tabs[0].id)}/>
