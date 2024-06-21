@@ -38,6 +38,7 @@
 
 <div>
     <h1 class="text-3xl text-center font-semibold mb-2"> Problemquiz </h1>
+    {#if questions.length > 0}
     <div class="mb-2">
         {#if !answered}
         <Question question={questions[currentIndex]} bind:answer/>
@@ -59,5 +60,10 @@
     </div>
     {#if answered}
     <QuestionHelp question={questions[currentIndex]}/>
+    {/if}
+    {:else}
+    <div class="text-center">
+        Keine Problemfragen!
+    </div>
     {/if}
 </div>
