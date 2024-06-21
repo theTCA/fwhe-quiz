@@ -180,17 +180,17 @@
                 <input class="btn" aria-label={type.name} type="checkbox" value={type.id} bind:group={selectedTypes}>
             {/each}
         </div>
-        {/if}
-    </div>
-    {#if filteredQuestions.length > 0}
-    <div class="flex flex-col justify-center gap-2">
-        <div class="relative">
-            <label class="swap btn absolute -top-2 right-1">
+        <div class="flex justify-end mt-2">
+            <label class="swap btn">
                 <input type="checkbox" bind:checked={compactView}>
                 <Icon class="swap-on" icon="solar:text-bold"/>
                 <Icon class="swap-off" icon="octicon:number-16"/>
             </label>
         </div>
+        {/if}
+    </div>
+    {#if filteredQuestions.length > 0}
+    <div class="flex flex-col justify-center gap-2">
         <FoamQuestion {question} {compactView}/>
         <form class="flex items-center flex-col gap-2 border-t-2 border-t-base-300 p-2">
             {#if !answered}
