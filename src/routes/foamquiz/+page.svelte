@@ -75,9 +75,12 @@
         }
     ];
 
+    let selectionCollapsed = true;
     let compactView = false;
-    let questions = generateQuestions();
-    $: question = questions[0];
+    $: selectedTypes = [...quizTypes.map(t => t.id)];
+    const questions = generateQuestions();
+    $: filteredQuestions = questions.filter(q => selectedTypes.includes(q.type.id));
+    $: question = filteredQuestions[0];
 
     let answer = "";
     let answered = false;
@@ -131,7 +134,7 @@
     function nextQuestion() {
         answer = "";
         answered = false;
-        questions = [...questions.slice(1)];
+        filteredQuestions = [...filteredQuestions.slice(1)];
     }
 
     /**
@@ -164,9 +167,24 @@
     <div class="relative flex justify-between w-full mb-2">
         <h1 class="text-3xl flex-1 text-center font-semibold mb-2"> Schaumquiz </h1>
     </div>
+    <div class="relative mb-4">
+        <h2 class="text-center font-semibold text-2xl mb-1"> Quiztyp </h2>
+        <label class="swap btn btn-sm absolute top-0 left-0">
+            <input type="checkbox" bind:checked={selectionCollapsed}>
+            <Icon class="swap-on" icon="bx:right-arrow"/>
+            <Icon class="swap-off" icon="bx:up-arrow"/>
+        </label>
+        {#if !selectionCollapsed}
+        <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-2">
+            {#each quizTypes as type}
+                <input class="btn" aria-label={type.name} type="checkbox" value={type.id} bind:group={selectedTypes}>
+            {/each}
+        </div>
+        {/if}
+    </div>
+    {#if filteredQuestions.length > 0}
     <div class="flex flex-col justify-center gap-2">
         <div class="relative">
-            <h2 class="text-2xl flex-1 text-center font-semibold mb-2"> {question.type.name} </h2>
             <label class="swap btn absolute -top-2 right-1">
                 <input type="checkbox" bind:checked={compactView}>
                 <Icon class="swap-on" icon="solar:text-bold"/>
@@ -211,4 +229,9 @@
         <FoamHelp {question}/>
         {/if}
     </div>
+    {:else}
+    <div class="text-center font-semibold text-lg">
+        Kein Fragetyp ausgewählt!
+    </div>
+    {/if}
 </div>
