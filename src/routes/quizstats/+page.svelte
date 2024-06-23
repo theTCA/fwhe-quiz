@@ -16,6 +16,19 @@
         }
         return acc;
     }, {short: 0, middle: 0, long: 0});
+
+    const tags = flattendQuestions.reduce((/** @type {{name: string; count: number}[]} */acc, q) => {
+        for(let tag of q.tags) {
+            let questionTag = acc.find(t => t.name === tag);
+            if(questionTag) {
+                questionTag.count++;
+            } else {
+                acc = [...acc, {name: tag, count: 1}];
+            }
+        }
+        return acc;
+    }, []);
+
     const stats = [
         {
             name: "Fragenkataloge",
@@ -65,6 +78,23 @@
                 {
                     title: "längste Richtige",
                     value: `${rightChoices.long} (${Math.round((rightChoices.long/flattendQuestions.length) * 100)}%)`
+                }
+            ]
+        },
+        {
+            name: "Schlagwörter",
+            elements: [
+                {
+                    title: "gesamt",
+                    value: tags.length
+                },
+                {
+                    title: "häufigstes",
+                    value: tags.sort((a, b) => b.count - a.count).at(0)?.name
+                },
+                {
+                    title: "seltenstes",
+                    value: tags.sort((a, b) => a.count - b.count).at(0)?.name
                 }
             ]
         }
