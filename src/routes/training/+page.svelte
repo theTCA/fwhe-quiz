@@ -195,14 +195,14 @@
         {#if $bookmarks.length > 0}
         <div class="flex justify-center px-2 mb-2">
             <div class="flex items-center gap-2 p-2 bg-base-200 rounded-md w-full lg:w-1/3">
-                <button class="btn btn-primary btn-square btn-outline" type="button" on:click={selectBookmarkChapter}>
+                <button class="btn btn-primary btn-square btn-outline bg-base-100" type="button" on:click={selectBookmarkChapter}>
                     <Icon icon="carbon:play-filled-alt"/>
                 </button>
                 <div class="flex-1">
                     <h3 class="font-semibold text-left break-words min-w-0"> Lesezeichen </h3>
                     <progress class="progress progress-primary" value={$trainedBookmarks.length} max={$bookmarks.length}></progress>
                 </div>
-                <button class="btn btn-ghost text-primary" on:click={resetBookmarkChapter}>
+                <button class="btn btn-ghost bg-base-100 text-primary" on:click={resetBookmarkChapter}>
                     <Icon icon="material-symbols:refresh"/>
                 </button>
             </div>

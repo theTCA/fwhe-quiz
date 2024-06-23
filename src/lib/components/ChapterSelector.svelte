@@ -35,7 +35,7 @@
             <Icon class="btn-square p-2.5" icon="mdi:check"/>
         </div>
         {:else}
-        <button class="btn btn-primary btn-outline btn-square" on:click={() => selectChapter(chapter.name)}>
+        <button class="btn btn-primary btn-outline btn-square bg-base-100" on:click={() => selectChapter(chapter.name)}>
             <Icon icon="carbon:play-filled-alt"/>
         </button>
         {/if}
@@ -47,7 +47,7 @@
             <progress class="progress progress-primary" value={chapter.questions.length} max={chapter.length}></progress>
             {/if}
         </div>
-        <button class="btn btn-ghost text-primary" on:click={() => resetChapter(chapter.name)}>
+        <button class="btn btn-ghost bg-base-100 text-primary" on:click={() => resetChapter(chapter.name)}>
             <Icon icon="material-symbols:refresh"/>
         </button>
     </div>

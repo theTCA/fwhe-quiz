@@ -70,12 +70,12 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         {#each tags as tag}
         <div class="bg-base-200 p-2 rounded-md flex flex-row items-center gap-2">
-            <button class="btn btn-primary btn-outline btn-square" on:click={() => selectTag(tag.name)}>
+            <button class="btn btn-primary btn-outline btn-square bg-base-100" on:click={() => selectTag(tag.name)}>
                 <Icon icon="carbon:play-filled-alt"/>
             </button>
             <div class="flex-1 flex justify-between">
                 <h3 class="font-semibold text-left break-words min-w-0"> {tag.name} </h3>
-                <div class="flex justify-center items-center border-2 bg-base-100 w-10 h-10 rounded-full">
+                <div class="flex justify-center items-center border-2 border-base-300 bg-base-100 w-10 h-10 rounded-full">
                     <span class="font-semibold"> {tag.questions.length} </span>
                 </div>
             </div>
