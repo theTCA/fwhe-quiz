@@ -4,11 +4,12 @@
     import FoamQuestion from "$lib/components/FoamQuestion.svelte";
     import Icon from "@iconify/svelte";
     import {quizTypes, generateQuestions} from "$lib/foam";
+    import { shuffle } from "$lib/helper";
 
     let selectionCollapsed = true;
     let compactView = false;
     $: selectedTypes = [...quizTypes.map(t => t.id)];
-    const questions = generateQuestions();
+    const questions = shuffle(generateQuestions());
     $: filteredQuestions = questions.filter(q => selectedTypes.includes(q.type.id));
     $: question = filteredQuestions[0];
 
