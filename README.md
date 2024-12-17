@@ -1,6 +1,6 @@
 # HFLÜ-Quiz
 
-Quiz zur Vorbereitung auf die hessische Feuerwehrleistungsübung nach dem Fragenkatalog der [hessischen Landesfeuerwehrschule](www.hlfs.hessen.de).
+Quiz zur Vorbereitung auf die hessische Feuerwehrleistungsübung nach dem Fragenkatalog der [hessischen Landesfeuerwehrschule](https://hlfs.hessen.de/hessische-feuerwehrleistungsuebung).
 
 Zum Quiz: https://thetca.github.io/fwhe-quiz/
 
