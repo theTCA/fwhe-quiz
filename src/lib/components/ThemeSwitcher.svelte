@@ -22,5 +22,5 @@
         <Icon class="swap-off" icon="ph:sun-bold"/>
         <Icon class="swap-on" icon="ph:moon-bold"/>
     </label>
-    <input class="theme-controller" type="checkbox" bind:value={$theme} checked={true} hidden>
+    <input class="theme-controller" type="checkbox" checked={true} value={$theme} hidden>
 </div>
