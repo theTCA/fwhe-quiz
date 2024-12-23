@@ -149,7 +149,7 @@
                     <QuestionAdder on:change={addQuestion}/>
                 </form>
                 <form class="modal-backdrop select-none" method="dialog">
-                    <button></button>
+                    <button aria-label="backdrop"></button>
                 </form>
             </dialog>
         </div>

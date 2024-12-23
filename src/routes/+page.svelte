@@ -19,13 +19,13 @@
             Quiz zum Vorbereiten auf die hessische Feuerwehrleistungsübung.
         </div>
         <div class="divider"></div>
-        Die Fragen stammen aus dem Fragenkatalog der <a class="link link-primary" href="https://hlfs.hessen.de">hessischen Landesfeuerwehrschule</a>.
+        Die Fragen stammen aus dem Fragenkatalog der <a class="link link-primary" href="https://hlfs.hessen.de/hessische-feuerwehrleistungsuebung">hessischen Landesfeuerwehrschule</a>.
         <div class="text-sm">
             Stand: {meta.date}
         </div>
         <div class="divider"></div>
         <div class="text-sm">
-            Diese Webseite verwendet statische Seiten und benutzt wenn möglich den <a class="link link-primary" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">LocalStorage</a> des
+            Diese Webseite verwendet statische Seiten und benutzt, wenn möglich, den <a class="link link-primary" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">LocalStorage</a> des
             <span class="inline-flex items-center gap-2">
                 Browsers.
                 {#if typeof window !== 'undefined' && storageAvailable("localStorage")}
