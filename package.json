@@ -32,7 +32,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"jspdf": "^2.5.2",
+		"jspdf": "^3.0.1",
 		"mathlifier": "^2.0.3",
 		"theme-change": "^2.5.0",
 		"ua-parser-js": "^2.0.0"
