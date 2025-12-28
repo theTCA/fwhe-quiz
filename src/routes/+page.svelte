@@ -50,7 +50,7 @@
                         <Icon class="w-16 h-16 p-2" icon={card.icon}/>
                     </div>
                     <h2 class="text-xl text-primary"> {card.name} </h2>
-                    <p class="break-words">{card.desc}</p>
+                    <p class="wrap-break-word">{card.desc}</p>
                 </div>
             </a>
         {/each}

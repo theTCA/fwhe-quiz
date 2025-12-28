@@ -199,7 +199,7 @@
                     <Icon icon="carbon:play-filled-alt"/>
                 </button>
                 <div class="flex-1">
-                    <h3 class="font-semibold text-left break-words min-w-0"> Lesezeichen </h3>
+                    <h3 class="font-semibold text-left wrap-break-word min-w-0"> Lesezeichen </h3>
                     <progress class="progress progress-primary" value={$trainedBookmarks.length} max={$bookmarks.length}></progress>
                 </div>
                 <button class="btn btn-ghost text-primary" on:click={resetBookmarkChapter}>

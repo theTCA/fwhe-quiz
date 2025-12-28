@@ -85,7 +85,7 @@
                 {#each statgroup.elements as stat}
                 <div>
                     <h3 class="text-sm lg:text-base opacity-60">{stat.title}</h3>
-                    <p class="font-bold text-xl lg:text-2xl break-words">{stat.value}</p>
+                    <p class="font-bold text-xl lg:text-2xl wrap-break-word">{stat.value}</p>
                 </div>
                 {/each}
             </div>

@@ -40,7 +40,7 @@
         </button>
         {/if}
         <div class="flex-1">
-            <h3 class="font-semibold text-left break-words min-w-0">{chapter.name}</h3>
+            <h3 class="font-semibold text-left wrap-break-word min-w-0">{chapter.name}</h3>
             {#if chapter.questions.length === chapter.length}
             <progress class="progress progress-success" value={chapter.questions.length} max={chapter.length}></progress>
             {:else}
