@@ -129,7 +129,7 @@ export class QuizBuilder {
         if(question.image) {
             let imageUrl = images.find(i => i.id === question.image);
             if(imageUrl) {
-                this.#doc.addImage(`/img/min/${imageUrl.file}`, "PNG", this.#margin.left + this.#getMaxTextWidth() - imageSize.w + 10, this.#y, imageSize.w, imageSize.h, "", "FAST");
+                this.#doc.addImage(`/img/${imageUrl.file}`, "PNG", this.#margin.left + this.#getMaxTextWidth() - imageSize.w + 10, this.#y, imageSize.w, imageSize.h, "", "FAST");
             }
         }
         let choiceHeight = 0;
