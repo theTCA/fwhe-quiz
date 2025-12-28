@@ -3,7 +3,7 @@
     import { quizHistory } from "$lib/stores";
     import HistoryHeader from "$lib/components/HistoryHeader.svelte";
     import QuizHistory from "$lib/components/QuizHistory.svelte";
-    import { page } from "$app/stores";
+    import { page } from "$app/state";
 
     let historyRange = 10;
     let deleteRange = 10;
@@ -23,8 +23,8 @@
         }
     ];
     let selectedTab = tabs[0].id;
-    if($page.url.hash && tabs.some(t => "#" + t.id === $page.url.hash)) {
-        selectedTab = $page.url.hash.replace("#", "");
+    if(page.url.hash && tabs.some(t => "#" + t.id === page.url.hash)) {
+        selectedTab = page.url.hash.replace("#", "");
     }
     let groupedHistory = groupHistory(selectedTab, historyRange);
 

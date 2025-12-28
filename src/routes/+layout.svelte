@@ -2,7 +2,7 @@
     import "../app.css";
     import { onMount } from "svelte";
     import { base } from "$app/paths";
-    import { page } from "$app/stores";
+    import { page } from "$app/state";
     import { meta } from "$lib/data.json";
     import { pages, pageGroups } from "$lib/pages";
     import { version, clearVersionDependentStores } from "$lib/stores";
@@ -60,7 +60,7 @@
                 <ul class="menu menu-horizontal gap-2">
                     {#each pages.filter(p => p.inNavbar) as link}
                     <li class="flex items-center">
-                        {#if $page.url.pathname === link.href}
+                        {#if page.url.pathname === link.href}
                         <a class="btn btn-sm btn-active" href={link.href}>
                             <Icon icon={link.icon}/>
                             {link.name}
@@ -101,7 +101,7 @@
             </li>
             {#each group.pages as link}
             <li>
-                {#if $page.url.pathname === link.href}
+                {#if page.url.pathname === link.href}
                 <a class="bg-base-100 active" href={link.href} on:click={closeDrawer}>
                     <Icon icon={link.icon}/>
                     {link.name}
