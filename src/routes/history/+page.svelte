@@ -96,7 +96,7 @@
 <div>
     <h1 class="text-3xl text-center font-semibold mb-2">Verlauf</h1>
     <div class="flex flex-col gap-4">
-        <div class="tabs tabs-bordered flex" role="tablist">
+        <div class="tabs tabs-border flex" role="tablist">
             {#each tabs as tab}
             <input id={tab.id} type="radio" class="tab flex-auto font-bold select-auto" role="tab" aria-label={tab.name} name="tabs" value={tab.id} bind:group={selectedTab}>
             {/each}
@@ -105,7 +105,7 @@
         {#if $quizHistory.length > 0}
         <div class="flex flex-row items-center gap-2">
             <span class="font-bold"> Letzten </span>
-            <select class="select select-bordered select-sm" bind:value={historyRange}>
+            <select class="select w-20 select-sm" bind:value={historyRange}>
                 <option value={10}> 10 </option>
                 <option value={20}> 20 </option>
                 <option value={50}> 50 </option>
@@ -132,7 +132,7 @@
         <div class="flex items-center gap-2">
             <span class="font-bold"> ältesten </span>
             <div class="join">
-                <select class="join-item select select-error select-sm" bind:value={deleteRange}>
+                <select class="join-item w-20 select select-error select-sm" bind:value={deleteRange}>
                     <option value={10}> 10 </option>
                     <option value={20}> 20 </option>
                     <option value={50}> 50 </option>

@@ -67,7 +67,7 @@
         <form class="flex items-center flex-col gap-2 border-t-2 border-t-base-300 p-2">
             {#if !answered}
             <div class="flex-1 flex flex-col gap-2 w-full lg:w-1/2">
-                <input class="input input-bordered text-center text-lg w-full lg:w-1/2 inline-flex self-center" type="text" bind:value={answer}>
+                <input class="input text-center text-lg w-full lg:w-1/2 inline-flex self-center" type="text" bind:value={answer}>
                 <span class="font-semibold text-center"> {question.type.answerUnit} </span>
             </div>
             {:else}

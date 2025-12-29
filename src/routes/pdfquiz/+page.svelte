@@ -100,46 +100,47 @@
 <div>
     <h1 class="text-3xl text-center font-semibold mb-2">PDF-Quiz</h1>
     <div class="flex flex-col gap-3 lg:w-1/2 mx-auto">
-        <label class="form-control">
-            <span class="label pb-0 label-text font-bold">Überschrift</span>
-            <input class="input input-bordered" type="text" bind:value={quizName}>
-        </label>
-        <div>
-            <h3 class="pl-1.5 font-bold text-sm">Schriftgröße</h3>
-            <div class="form-control">
-                <label class="label justify-start gap-2 cursor-pointer">
-                    <input class="radio radio-primary" type="radio" value="normal" bind:group={quizFontSize}>
-                    <span class="label-text text-base">Normal</span>
-                </label>
+        <fieldset class="fieldset">
+            <label class="input w-full">
+                <span class="label">Name</span>
+                <input class="w-full" id="quizName" type="text" placeholder="Fragebogen" bind:value={quizName}>
+            </label>
+        </fieldset>
+        <fieldset class="fieldset">
+            <legend>Schriftgröße</legend>
+            <label class="input input-ghost justify-start gap-2 cursor-pointer">
+                <input class="radio radio-primary" name="quizFontSize" type="radio" value="normal" bind:group={quizFontSize}>
+                <span class="label">Normal</span>
+            </label>
+            <label class="input input-ghost justify-start gap-2 cursor-pointer">
+                <input class="radio radio-primary" name="quizFontSize" type="radio" value="xl" bind:group={quizFontSize}>
+                <span class="label text-xl">Größer</span>
+            </label>
+        </fieldset>
+        <div class="divider font-bold text-primary"> Fragen hinzufügen </div>
+        <fieldset class="fieldset">
+            <legend class="flex h-8 items-center gap-1">
+                <Icon class="w-5 h-5" icon="ion:dice"/>
+                <h3>zufällige Fragen</h3>
+            </legend>
+            <div class="join">
+                <div>
+                    <label class="input input-sm join-item">
+                        <span class="label">Anzahl</span>
+                        <input class="w-full" type="number" min={1} bind:value={randomQuestions}>
+                    </label>
+                </div>
+                <button class="flex-1 btn btn-sm join-item" on:click={addRandomQuestions} disabled={randomQuestions <= 0}> hinzufügen </button>
             </div>
-            <div class="form-control">
-                <label class="label justify-start gap-2 cursor-pointer">
-                    <input class="radio radio-primary" type="radio" value="xl" bind:group={quizFontSize}>
-                    <span class="label-text text-base">XL</span>
-                </label>
-            </div>
-        </div>
-    </div>
-    <div class="divider font-bold text-primary"> Fragen hinzufügen </div>
-    <div class="flex flex-col gap-3 lg:w-1/2 mx-auto">
-        <div>
-            <div class="flex items-center gap-1">
-                <Icon icon="ion:dice"/>
-                <h3 class="font-semibold mb-1">zufällige Fragen</h3>
-            </div>
-            <div class="flex flex-row lg:items-end gap-2">
-                <input class="input input-sm input-bordered" type="number" min={1} bind:value={randomQuestions}>
-                <button class="flex-1 btn btn-sm btn-outline btn-success" on:click={addRandomQuestions} disabled={randomQuestions <= 0}> hinzufügen </button>
-            </div>
-        </div>
-        <div>
-            <div class="flex items-center gap-1">
-                <Icon icon="icon-park-solid:add"/>
-                <h3 class="font-semibold mb-1">aus Fragenkatalog auswählen</h3>
-            </div>
-            <button class="btn btn-sm btn-block btn-outline btn-success" on:click={() => modal.showModal()}>Fragen auswählen</button>
+        </fieldset>
+        <fieldset class="fieldset">
+            <legend class="flex h-8 items-center gap-1">
+                <Icon class="w-5 h-5" icon="flowbite:book-solid"/>
+                <h3>aus Fragenkatalog auswählen</h3>
+            </legend>
+            <button class="btn btn-sm btn-block" on:click={() => modal.showModal()}>Fragen auswählen</button>
             <dialog id="quizQuestionSelection" class="modal" bind:this={modal}>
-                <form class="modal-box w-screen h-screen md:max-w-[90%] z-10" method="dialog">
+                <form class="modal-box w-screen h-screen max-h-[90%] md:max-w-[90%] z-10" method="dialog">
                     <div class="mb-2 flex justify-between items-center">
                         <h2 class="text-xl font-bold">Fragen auswählen</h2>
                         <button class="btn btn-square btn-outline">
@@ -152,18 +153,20 @@
                     <button aria-label="backdrop"></button>
                 </form>
             </dialog>
-        </div>
-        {#if $bookmarks.length > 0}
-        <div>
-            <div class="flex items-center gap-1">
-                <Icon icon="mdi:bookmark"/>
-                <h3 class="font-semibold mb-1"> Lesezeichen </h3>
-            </div>
-            <button class="btn btn-sm btn-block btn-outline btn-success" on:click={addBookmarks}>
-                hinzufügen
-            </button>
-        </div>
-        {/if}
+        </fieldset>
+
+    {#if $bookmarks.length > 0}
+    <fieldset class="fieldset">
+        <legend class="flex h-8 items-center gap-1">
+            <Icon class="w-5 h-5" icon="mdi:bookmark"/>
+            <h3>Lesezeichen wählen</h3>
+        </legend>
+        <button class="btn btn-sm btn-block" on:click={addBookmarks}>
+            <span class="badge badge-sm">{$bookmarks?.length}</span>
+            hinzufügen
+        </button>
+    </fieldset>
+    {/if}
     </div>
     <div class="divider font-bold text-primary"> Erstellen </div>
     <div class="grid grid-cols-2 gap-2 w-full lg:w-1/2 mx-auto">
@@ -181,10 +184,10 @@
             {#each questions as question, idx}
             <div class="p-2 bg-base-200 rounded-md flex items-center gap-1">
                 <div class="grid grid-rows-2 gap-1">
-                    <button class="btn btn-xs" type="button" on:click={() => moveUp(idx)}>
+                    <button class="btn btn-ghost btn-xs" type="button" on:click={() => moveUp(idx)}>
                         <Icon icon="teenyicons:up-solid"/>
                     </button>
-                    <button class="btn btn-xs" type="button" on:click={() => moveDown(idx)}>
+                    <button class="btn btn-ghost btn-xs" type="button" on:click={() => moveDown(idx)}>
                         <Icon icon="teenyicons:down-solid"/>
                     </button>
                 </div>
@@ -193,7 +196,7 @@
                     {question?.question}
                 </div>
                 <button on:click={() => removeQuestion(question.id)}>
-                    <Icon class="w-6 h-6 text-error" icon="ep:remove-filled"/>
+                    <Icon class="w-6 h-6 cursor-pointer text-error" icon="ep:remove-filled"/>
                 </button>
             </div>
             {/each}

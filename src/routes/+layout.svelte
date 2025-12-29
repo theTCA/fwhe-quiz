@@ -75,11 +75,11 @@
                     {/each}
                 </ul>
             </div>
-            <div class="flex-1 lg:flex-none gap-3 justify-end">
-                <ThemeSwitcher/>
-                <a href={base + "/bookmarks"} class="btn btn-square">
-                    <Icon class="h-5 w-5" icon="material-symbols:bookmark"/>
-                </a>
+            <div class="flex-1 inline-flex lg:flex-none gap-3 items-center justify-end">
+                    <ThemeSwitcher/>
+                    <a href={base + "/bookmarks"} class="btn btn-square">
+                        <Icon class="h-5 w-5" icon="material-symbols:bookmark"/>
+                    </a>
             </div>
         </nav>
         <main class="w-full lg:w-[80%] mx-auto p-1 mt-2">

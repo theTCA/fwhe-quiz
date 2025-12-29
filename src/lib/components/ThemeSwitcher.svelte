@@ -17,7 +17,7 @@
 </script>
 
 <div>
-    <label class="swap btn">
+    <label class="swap btn btn-square">
         <input type="checkbox" on:change={onChange} checked={$theme === "light"}>
         <Icon class="swap-off" icon="ph:sun-bold"/>
         <Icon class="swap-on" icon="ph:moon-bold"/>

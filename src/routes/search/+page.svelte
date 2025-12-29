@@ -62,7 +62,7 @@
     <form class="mx-auto flex flex-col gap-2 w-3/4 lg:w-2/3">
         <div class="join flex">
             <div class="flex-1 relative">
-                <input class="join-item input input-bordered w-full" type="text" placeholder="Suche" bind:value={searchInput}>
+                <input class="join-item input w-full" type="text" placeholder="Suche" bind:value={searchInput}>
                 <button class="absolute right-4 top-4 text-error" type="button" on:click={clear}>
                     <Icon icon="material-symbols:close"/>
                 </button>

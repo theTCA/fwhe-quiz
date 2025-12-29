@@ -111,7 +111,7 @@
             <div class="join">
                 <button class="join-item btn btn-sm" type="button" on:click={() => numberOfQuestions = 1}> Min </button>
                 <button class="join-item btn btn-sm" type="button" on:click={() => setNumberOfQuestions(-1)}> -1 </button>
-                <input class="join-item input input-bordered input-sm w-full lg:w-auto text-center" min={1} type="number" bind:value={numberOfQuestions}>
+                <input class="join-item input input-sm w-full lg:w-auto text-center" min={1} type="number" bind:value={numberOfQuestions}>
                 <button class="join-item btn btn-sm" type="button" on:click={() => setNumberOfQuestions(1)}> +1 </button>
                 <button class="join-item btn btn-sm" type="button" on:click={() => setNumberOfQuestions(5)}> +5 </button>
             </div>
