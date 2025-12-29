@@ -117,7 +117,6 @@
                 <span class="label text-xl">Größer</span>
             </label>
         </fieldset>
-        <div class="divider font-bold text-primary"> Fragen hinzufügen </div>
         <fieldset class="fieldset">
             <legend class="flex h-8 items-center gap-1">
                 <Icon class="w-5 h-5" icon="ion:dice"/>
@@ -130,7 +129,7 @@
                         <input class="w-full" type="number" min={1} bind:value={randomQuestions}>
                     </label>
                 </div>
-                <button class="flex-1 btn btn-sm join-item" on:click={addRandomQuestions} disabled={randomQuestions <= 0}> hinzufügen </button>
+                <button class="flex-1 btn btn-primary btn-sm join-item" on:click={addRandomQuestions} disabled={randomQuestions <= 0}> hinzufügen </button>
             </div>
         </fieldset>
         <fieldset class="fieldset">
@@ -138,7 +137,7 @@
                 <Icon class="w-5 h-5" icon="flowbite:book-solid"/>
                 <h3>aus Fragenkatalog auswählen</h3>
             </legend>
-            <button class="btn btn-sm btn-block" on:click={() => modal.showModal()}>Fragen auswählen</button>
+            <button class="btn btn-sm btn-primary btn-block" on:click={() => modal.showModal()}>Fragen auswählen</button>
             <dialog id="quizQuestionSelection" class="modal" bind:this={modal}>
                 <form class="modal-box w-screen h-screen max-h-[90%] md:max-w-[90%] z-10" method="dialog">
                     <div class="mb-2 flex justify-between items-center">
@@ -161,7 +160,7 @@
             <Icon class="w-5 h-5" icon="mdi:bookmark"/>
             <h3>Lesezeichen wählen</h3>
         </legend>
-        <button class="btn btn-sm btn-block" on:click={addBookmarks}>
+        <button class="btn btn-sm btn-primary btn-block" on:click={addBookmarks}>
             <span class="badge badge-sm">{$bookmarks?.length}</span>
             hinzufügen
         </button>
