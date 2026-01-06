@@ -12,6 +12,6 @@
     </div>
     {/each}
     <div class="text-xs pt-1 pl-2">
-        Quelle: <a class="link link-primary" href="https://de.wikipedia.org/wiki/Nummer_zur_Kennzeichnung_der_Gefahr">Wikipedia</a>
+        Quelle: <a class="link link-primary" target="_blank" href="https://de.wikipedia.org/wiki/Nummer_zur_Kennzeichnung_der_Gefahr">Wikipedia</a>
     </div>
 </div>
