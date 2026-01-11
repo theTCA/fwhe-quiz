@@ -6,10 +6,17 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		paths: {
-			base: process.env.NODE_EV === "production" ? "/fwhe-quiz" : "",
+			base: process.env.NODE_EV === 'production' ? '/fwhe-quiz' : ''
 		}
 	},
-	preprocess: vitePreprocess()
+	preprocess: vitePreprocess(),
+	vitePlugin: {
+		dynamicCompileOptions() {
+			return {
+				runes: true
+			};
+		}
+	}
 };
 
 export default config;
