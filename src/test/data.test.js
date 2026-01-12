@@ -14,7 +14,7 @@ test('Unique ids for questions', () => {
 	expect(duplicates.length, `Duplicate ids @ ${duplicates.toString()}`).toEqual(0);
 });
 
-test('Exaclty one correct answer', () => {
+test('Exactly one correct answer', () => {
 	/**
 	 * @type {Array<number>}
 	 */
