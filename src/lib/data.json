@@ -1,7 +1,7 @@
 {
 	"meta": {
-		"date": "1. Januar 2024",
-		"version": 2
+		"date": "1. Januar 2026",
+		"version": 3
 	},
 	"images": [
 		{
@@ -50,6 +50,18 @@
 			"id": 8,
 			"name": "Löschgeräte1",
 			"file": "Löschgeräte1.png",
+			"description": ""
+		},
+		{
+			"id": 9,
+			"name": "Wald1",
+			"file": "Wald1.png",
+			"description": ""
+		},
+		{
+			"id": 10,
+			"name": "Wald2",
+			"file": "Wald2.png",
 			"description": ""
 		}
 	],
@@ -1203,20 +1215,20 @@
 					"question": "Welchen Behälterdruck muss ein einsatzbereiter Pressluftatmer aufweisen?",
 					"choices": [
 						{
-							"text": "Ein 300 bar-Gerät muss einen Behälterdruck von 270 bar aufweisen.",
+							"text": "Ein 300 bar-Gerät muss mindestens einen Behälterdruck von 270 bar aufweisen.",
 							"answer": true
 						},
 						{
-							"text": "Ein 300 bar-Gerät muss einen Behälterdruck von 250 bar aufweisen.",
+							"text": "Ein 300 bar-Gerät muss mindestens einen Behälterdruck von 250 bar aufweisen.",
 							"answer": false
 						},
 						{
-							"text": "Ein 200 bar-Gerät muss einen Behälterdruck von 170 bar aufweisen.",
+							"text": "Ein 200 bar-Gerät muss mindestens einen Behälterdruck von 170 bar aufweisen.",
 							"answer": false
 						}
 					],
 					"image": null,
-					"tags": ["Atemschutz"],
+					"tags": ["Atemschutz", "Neu"],
 					"help": [
 						{
 							"name": "Lernunterlage Atemschutz",
@@ -1572,7 +1584,7 @@
 							"answer": false
 						},
 						{
-							"text": "Es ist keine Verbindung erforderlich.",
+							"text": "Durch die Mitnahme einer Wärmebildkamera",
 							"answer": false
 						},
 						{
@@ -1581,7 +1593,7 @@
 						}
 					],
 					"image": null,
-					"tags": ["Atemschutz", "Atemschutzeinsatz"],
+					"tags": ["Atemschutz", "Atemschutzeinsatz", "Neu"],
 					"help": []
 				},
 				{
@@ -1990,12 +2002,12 @@
 							"answer": false
 						},
 						{
-							"text": "Chemische Kampfstoffe können flüchtig, wenigflüchtig oder sesshaft sein.",
+							"text": "Chemische Kampfstoffe können flüchtig, wenig flüchtig oder sesshaft sein.",
 							"answer": true
 						}
 					],
 					"image": null,
-					"tags": ["ABC-Gefahrstoffe", "Besondere Gefahren"],
+					"tags": ["ABC-Gefahrstoffe", "Besondere Gefahren", "Neu"],
 					"help": []
 				},
 				{
@@ -2070,7 +2082,7 @@
 							"answer": false
 						},
 						{
-							"text": "auch über die Haut",
+							"text": "über die Haut, Atemwege und Verdauungstrakt",
 							"answer": true
 						},
 						{
@@ -2079,7 +2091,7 @@
 						}
 					],
 					"image": null,
-					"tags": ["ABC-Gefahrstoffe", "Besondere Gefahren"],
+					"tags": ["ABC-Gefahrstoffe", "Besondere Gefahren", "Neu"],
 					"help": []
 				},
 				{
@@ -3029,7 +3041,7 @@
 				},
 				{
 					"id": 121,
-					"question": "Welche Maßeinheit ist die SI-Einheit der Wärme?",
+					"question": "Welche Maßeinheit ist die abgeleitete SI-Einheit der Wärme?",
 					"choices": [
 						{
 							"text": "Kelvin",
@@ -3045,7 +3057,7 @@
 						}
 					],
 					"image": null,
-					"tags": ["Brennen", "Wärmelehre"],
+					"tags": ["Brennen", "Wärmelehre", "Neu"],
 					"help": []
 				},
 				{
@@ -4056,6 +4068,48 @@
 							"page": 10
 						}
 					]
+				},
+				{
+					"id": 166,
+					"question": "Wie nennt man den durch Auftrieb oder Wind verursachten Flug größerer Teile von brennenden Stoffen?",
+					"choices": [
+						{
+							"text": "Flugfeuer",
+							"answer": true
+						},
+						{
+							"text": "Funken",
+							"answer": false
+						},
+						{
+							"text": "Feuerbrücke",
+							"answer": false
+						}
+					],
+					"image": null,
+					"tags": ["Neu"],
+					"help": []
+				},
+				{
+					"id": 167,
+					"question": "Was ist eine Raumdurchzündung?",
+					"choices": [
+						{
+							"text": "Diesen Begriff gibt es nicht.",
+							"answer": false
+						},
+						{
+							"text": "Durchzündung entzündbarer Pyrolyseprodukte und Schwelgase, die sich in der Regel als Rauchschicht in einem Raum ansammeln",
+							"answer": false
+						},
+						{
+							"text": "schlagartige Ausbreitung eines Brandes auf alle thermisch aufbereiteten Oberflächen brennbarer Stoffe in einem Raum",
+							"answer": true
+						}
+					],
+					"image": null,
+					"tags": ["Neu"],
+					"help": []
 				}
 			]
 		},
@@ -4063,7 +4117,7 @@
 			"name": "Fahrzeugkunde",
 			"questions": [
 				{
-					"id": 166,
+					"id": 168,
 					"question": "Welches der nachfolgenden Feuerwehrfahrzeuge hat keinen Löschwasserbehälter?",
 					"choices": [
 						{
@@ -4089,7 +4143,7 @@
 					]
 				},
 				{
-					"id": 167,
+					"id": 169,
 					"question": "Welche Mannschaftsstärke hat ein HLF 20?",
 					"choices": [
 						{
@@ -4115,7 +4169,7 @@
 					]
 				},
 				{
-					"id": 168,
+					"id": 170,
 					"question": "Wie viel Liter Löschwasser führt ein LF 10 im Löschwasserbehälter mit?",
 					"choices": [
 						{
@@ -4141,7 +4195,7 @@
 					]
 				},
 				{
-					"id": 169,
+					"id": 171,
 					"question": "Welche Mannschaftsstärke hat ein TSF-W?",
 					"choices": [
 						{
@@ -4167,7 +4221,7 @@
 					]
 				},
 				{
-					"id": 170,
+					"id": 172,
 					"question": "Wie viel Meter B-Druckschlauchleitung kann mit den auf einem HLF 20 untergebrachten B-Druckschläuchen (ohne den 5 m B-Druckschlauch) verlegt werden?",
 					"choices": [
 						{
@@ -4193,7 +4247,7 @@
 					]
 				},
 				{
-					"id": 171,
+					"id": 173,
 					"question": "Welche der nachfolgend aufgeführten tragbaren Leitern gehört nicht zur Normbeladung eines LF 20?",
 					"choices": [
 						{
@@ -4219,7 +4273,7 @@
 					]
 				},
 				{
-					"id": 172,
+					"id": 174,
 					"question": "Was bedeutet die Fahrzeugkurzbezeichnung KLF?",
 					"choices": [
 						{
@@ -4240,7 +4294,7 @@
 					"help": []
 				},
 				{
-					"id": 173,
+					"id": 175,
 					"question": "Was versteht man bei einer Drehleiter unter der Nennrettungshöhe?",
 					"choices": [
 						{
@@ -4261,7 +4315,7 @@
 					"help": []
 				},
 				{
-					"id": 174,
+					"id": 176,
 					"question": "Welche Mannschaftsstärke hat ein Kleinlöschfahrzeug KLF?",
 					"choices": [
 						{
@@ -4287,7 +4341,7 @@
 					]
 				},
 				{
-					"id": 175,
+					"id": 177,
 					"question": "Mit welcher Feuerlöschkreiselpumpe ist ein TLF 2000 ausgerüstet?",
 					"choices": [
 						{
@@ -4313,7 +4367,7 @@
 					]
 				},
 				{
-					"id": 176,
+					"id": 178,
 					"question": "Welches nachfolgende Feuerwehrfahrzeug gehört zu der Fahrzeuggruppe der Hubrettungsfahrzeuge?",
 					"choices": [
 						{
@@ -4339,7 +4393,7 @@
 					]
 				},
 				{
-					"id": 177,
+					"id": 179,
 					"question": "Welche Aufgaben kann im Rahmen der Gefahrenabwehr ein TSF-W im Wesentlichen nicht abdecken?",
 					"choices": [
 						{
@@ -4365,7 +4419,7 @@
 					]
 				},
 				{
-					"id": 178,
+					"id": 180,
 					"question": "Welchem Fahrzeugtyp wird der RW zugeordnet?",
 					"choices": [
 						{
@@ -4391,7 +4445,7 @@
 					]
 				},
 				{
-					"id": 179,
+					"id": 181,
 					"question": "Welche feuerwehrtechnische Einrichtung gehört zur Ausstattung eines RW?",
 					"choices": [
 						{
@@ -4417,7 +4471,7 @@
 					]
 				},
 				{
-					"id": 180,
+					"id": 182,
 					"question": "Welches der nachfolgenden Hubrettungsfahrzeuge ist keine Drehleiter im Sinne der DIN EN 14043?",
 					"choices": [
 						{
@@ -4443,7 +4497,7 @@
 					]
 				},
 				{
-					"id": 181,
+					"id": 183,
 					"question": "Welche Mannschaftsstärke hat ein GW-L1?",
 					"choices": [
 						{
@@ -4469,7 +4523,7 @@
 					]
 				},
 				{
-					"id": 182,
+					"id": 184,
 					"question": "Was kennzeichnen die beiden letzten Ziffern in der Typenbezeichnung DLAK 23/12?",
 					"choices": [
 						{
@@ -4495,7 +4549,7 @@
 					]
 				},
 				{
-					"id": 183,
+					"id": 185,
 					"question": "Welche Aussage über den GW-G ist richtig?",
 					"choices": [
 						{
@@ -4521,7 +4575,7 @@
 					]
 				},
 				{
-					"id": 184,
+					"id": 186,
 					"question": "Welches Einsatzmittel gehört zur Standardbeladung einer DLAK 23/12?",
 					"choices": [
 						{
@@ -4542,7 +4596,7 @@
 					"help": []
 				},
 				{
-					"id": 185,
+					"id": 187,
 					"question": "Welches wesentliche Merkmal zeichnet ein MLF aus?",
 					"choices": [
 						{
@@ -4568,7 +4622,7 @@
 					]
 				},
 				{
-					"id": 186,
+					"id": 188,
 					"question": "Wie viele C-Druckschläuche gehören zur Standardbeladung eines TSF-W mit einer Schnellangriffseinrichtung (Wasser)?",
 					"choices": [
 						{
@@ -4594,7 +4648,7 @@
 					]
 				},
 				{
-					"id": 187,
+					"id": 189,
 					"question": "Wie lang ist die Schnellangriffseinrichtung (Wasser) bei einem TLF 3000?",
 					"choices": [
 						{
@@ -4620,7 +4674,7 @@
 					]
 				},
 				{
-					"id": 188,
+					"id": 190,
 					"question": "Welche Feuerlöschkreiselpumpe ist in einem TLF 4000 eingebaut?",
 					"choices": [
 						{
@@ -4646,7 +4700,7 @@
 					]
 				},
 				{
-					"id": 189,
+					"id": 191,
 					"question": "Welches Einsatzmittel gehört nicht zur Standardbeladung eines TSF?",
 					"choices": [
 						{
@@ -4672,7 +4726,7 @@
 					]
 				},
 				{
-					"id": 190,
+					"id": 192,
 					"question": "Wozu wird eine DLAK 23/12 im Wesentlichen eingesetzt?",
 					"choices": [
 						{
@@ -4693,7 +4747,7 @@
 					"help": []
 				},
 				{
-					"id": 191,
+					"id": 193,
 					"question": "Welche nachfolgende Ausstattung hat eine DLAK 23/12?",
 					"choices": [
 						{
@@ -4714,7 +4768,7 @@
 					"help": []
 				},
 				{
-					"id": 192,
+					"id": 194,
 					"question": "Welche Bedeutung hat die Ziffer \"23\" bei der Typkennzeichnung DLAK 23/12?",
 					"choices": [
 						{
@@ -4740,7 +4794,7 @@
 					]
 				},
 				{
-					"id": 193,
+					"id": 195,
 					"question": "Welche Aussage über den Anwendungsbereich eines LF 20 ist richtig?",
 					"choices": [
 						{
@@ -4761,7 +4815,7 @@
 					"help": []
 				},
 				{
-					"id": 194,
+					"id": 196,
 					"question": "Welches der nachfolgend aufgeführten Einsatzmittel gehört zur feuerwehrtechnischen Standardbeladung eines LF 10?",
 					"choices": [
 						{
@@ -4787,7 +4841,7 @@
 					]
 				},
 				{
-					"id": 195,
+					"id": 197,
 					"question": "Welches nachfolgende Feuerwehrfahrzeug hat eine Truppbesatzung?",
 					"choices": [
 						{
@@ -4813,7 +4867,7 @@
 					]
 				},
 				{
-					"id": 196,
+					"id": 198,
 					"question": "Welche der nachfolgenden Aussagen sind für ein TLF 3000 zutreffend?",
 					"choices": [
 						{
@@ -4839,7 +4893,7 @@
 					]
 				},
 				{
-					"id": 197,
+					"id": 199,
 					"question": "Welche nutzbare Löschwassermenge wird auf einem TLF 4000 mitgeführt?",
 					"choices": [
 						{
@@ -4865,7 +4919,7 @@
 					]
 				},
 				{
-					"id": 198,
+					"id": 200,
 					"question": "Welche Aufgabe kann im Rahmen der Gefahrenabwehr mit einem TLF 3000 nicht abgedeckt werden?",
 					"choices": [
 						{
@@ -4891,7 +4945,7 @@
 					]
 				},
 				{
-					"id": 199,
+					"id": 201,
 					"question": "Welche Aussage über ein MLF ist richtig?",
 					"choices": [
 						{
@@ -4917,7 +4971,7 @@
 					]
 				},
 				{
-					"id": 200,
+					"id": 202,
 					"question": "Welches der nachfolgenden Feuerwehrfahrzeuge hat den gleichen Anwendungsbereich wie der inzwischen aus der Norm zurückgezogene SW 2000?",
 					"choices": [
 						{
@@ -4943,7 +4997,7 @@
 					]
 				},
 				{
-					"id": 201,
+					"id": 203,
 					"question": "Welche Aussage über den Anwendungsbereich eines LF 10 ist richtig?",
 					"choices": [
 						{
@@ -4969,7 +5023,7 @@
 					]
 				},
 				{
-					"id": 202,
+					"id": 204,
 					"question": "Wie viele B-Druckschläuche mit einer Länge von 20 m gehören zur Normbeladung eines TSF-W?",
 					"choices": [
 						{
@@ -4995,7 +5049,7 @@
 					]
 				},
 				{
-					"id": 203,
+					"id": 205,
 					"question": "Wozu dienen hydraulische Winden, die auf Feuerwehrfahrzeugen mitgeführt werden können?",
 					"choices": [
 						{
@@ -5021,7 +5075,7 @@
 					]
 				},
 				{
-					"id": 204,
+					"id": 206,
 					"question": "Welches nachfolgende Löschfahrzeug hat eine Staffelbesatzung?",
 					"choices": [
 						{
@@ -5047,7 +5101,7 @@
 					]
 				},
 				{
-					"id": 205,
+					"id": 207,
 					"question": "Welche der nachfolgenden Aussagen treffen für ein LF 10 zu?",
 					"choices": [
 						{
@@ -5073,7 +5127,7 @@
 					]
 				},
 				{
-					"id": 206,
+					"id": 208,
 					"question": "Welches der nachfolgenden Löschfahrzeuge kann mit einer Schnellangriffseinrichtung (Wasser) ausgerüstet sein?",
 					"choices": [
 						{
@@ -5099,7 +5153,7 @@
 					]
 				},
 				{
-					"id": 207,
+					"id": 209,
 					"question": "Welche Besatzung hat ein TLF 3000?",
 					"choices": [
 						{
@@ -5125,7 +5179,7 @@
 					]
 				},
 				{
-					"id": 208,
+					"id": 210,
 					"question": "Welche Besatzung hat ein TLF 4000?",
 					"choices": [
 						{
@@ -5151,7 +5205,7 @@
 					]
 				},
 				{
-					"id": 209,
+					"id": 211,
 					"question": "Welche nutzbare Menge hat der eingebaute Schaummittelbehälter des TLF 4000?",
 					"choices": [
 						{
@@ -5177,7 +5231,7 @@
 					]
 				},
 				{
-					"id": 210,
+					"id": 212,
 					"question": "Welches nachfolgende Löschfahrzeug hat eine Truppbesatzung?",
 					"choices": [
 						{
@@ -5203,7 +5257,7 @@
 					]
 				},
 				{
-					"id": 211,
+					"id": 213,
 					"question": "Welche der nachfolgenden Aussagen treffen für ein TSF-W zu?",
 					"choices": [
 						{
@@ -5229,7 +5283,7 @@
 					]
 				},
 				{
-					"id": 212,
+					"id": 214,
 					"question": "Welche nutzbare Wassermenge enthält der Löschmittelbehälter des TLF 3000?",
 					"choices": [
 						{
@@ -5255,7 +5309,7 @@
 					]
 				},
 				{
-					"id": 213,
+					"id": 215,
 					"question": "Wie viele B-Druckschläuche mit einer Länge von 20 m gehören zur Normbeladung eines LF 10?",
 					"choices": [
 						{
@@ -5281,7 +5335,7 @@
 					]
 				},
 				{
-					"id": 214,
+					"id": 216,
 					"question": "Welches nachfolgende Löschfahrzeug hat eine Staffelbesatzung?",
 					"choices": [
 						{
@@ -5307,7 +5361,7 @@
 					]
 				},
 				{
-					"id": 215,
+					"id": 217,
 					"question": "Welches nachfolgende Löschfahrzeug kann nach Norm mit einer maschinellen Zugeinrichtung (Seilwinde) ausgerüstet sein?",
 					"choices": [
 						{
@@ -5333,7 +5387,7 @@
 					]
 				},
 				{
-					"id": 216,
+					"id": 218,
 					"question": "Welche Aussage über Tragkraftspritzenfahrzeuge ist richtig?",
 					"choices": [
 						{
@@ -5354,7 +5408,7 @@
 					"help": []
 				},
 				{
-					"id": 217,
+					"id": 219,
 					"question": "Wozu dient u. a. die Ausrüstung eines RW?",
 					"choices": [
 						{
@@ -5375,7 +5429,7 @@
 					"help": []
 				},
 				{
-					"id": 218,
+					"id": 220,
 					"question": "Wozu dienen vorrangig Hubrettungsfahrzeuge in Form von Drehleitern?",
 					"choices": [
 						{
@@ -5396,7 +5450,7 @@
 					"help": []
 				},
 				{
-					"id": 219,
+					"id": 221,
 					"question": "Welche der nachfolgend aufgeführten Leitern gehören zur Normbeladung eines MLF?",
 					"choices": [
 						{
@@ -5422,7 +5476,7 @@
 					]
 				},
 				{
-					"id": 220,
+					"id": 222,
 					"question": "Welche Aussage trifft für ein HLF 10 nicht zu?",
 					"choices": [
 						{
@@ -5448,7 +5502,7 @@
 					]
 				},
 				{
-					"id": 221,
+					"id": 223,
 					"question": "Welche Aufgaben kann im Rahmen der Gefahrenabwehr ein RW im Wesentlichen abdecken?",
 					"choices": [
 						{
@@ -5474,7 +5528,7 @@
 			"name": "Geräte für die technische Hilfeleistung",
 			"questions": [
 				{
-					"id": 222,
+					"id": 224,
 					"question": "Dürfen nach FwDV 1 \"Grundtätigkeiten\" gehärtete Metallteile mit hydraulisch betriebenen Schneidgeräten getrennt werden?",
 					"choices": [
 						{
@@ -5500,7 +5554,7 @@
 					]
 				},
 				{
-					"id": 223,
+					"id": 225,
 					"question": "Welcher Sicherheitsabstand ist grundsätzlich bei unter Last stehenden Drahtseilen mindestens einzuhalten?",
 					"choices": [
 						{
@@ -5526,7 +5580,7 @@
 					]
 				},
 				{
-					"id": 224,
+					"id": 226,
 					"question": "Beim Einsatz eines Mehrzweckzuges ist die Überlastsicherung (Scherstift) wirksam geworden! Welche Maßnahmen sind erforderlich?",
 					"choices": [
 						{
@@ -5552,7 +5606,7 @@
 					]
 				},
 				{
-					"id": 225,
+					"id": 227,
 					"question": "Bis zu welchem Winkel darf die hydraulische Winde bei der Verwendung der balligrunden Fußplatte höchstens genutzt werden?",
 					"choices": [
 						{
@@ -5578,7 +5632,7 @@
 					]
 				},
 				{
-					"id": 226,
+					"id": 228,
 					"question": "Welchem Zweck dienen hydraulische Winden, die auf Feuerwehrfahrzeugen mitgeführt werden?",
 					"choices": [
 						{
@@ -5604,7 +5658,7 @@
 					]
 				},
 				{
-					"id": 227,
+					"id": 229,
 					"question": "Wie hoch ist der zulässige Betriebsdruck von hydraulischen Rettungsgeräten nach DIN EN 13204 (doppelt wirkende hydraulische Rettungsgeräte)?",
 					"choices": [
 						{
@@ -5625,7 +5679,7 @@
 					"help": []
 				},
 				{
-					"id": 228,
+					"id": 230,
 					"question": "Welche Kraft entwickelt der einfach wirkende Hydraulikzylinder des hydraulischen Hebesatzes nach DIN 14800-6 2007-05?",
 					"choices": [
 						{
@@ -5646,7 +5700,7 @@
 					"help": []
 				},
 				{
-					"id": 229,
+					"id": 231,
 					"question": "Welche Aussage über Druckluftquellen bei Hebekissensystemen > 1 bar ist richtig?",
 					"choices": [
 						{
@@ -5667,7 +5721,7 @@
 					"help": []
 				},
 				{
-					"id": 230,
+					"id": 232,
 					"question": "Wer darf Werkzeuge/Zubehör aus dem Feuerwehr-Elektrowerkzeugkasten einsetzen?",
 					"choices": [
 						{
@@ -5693,7 +5747,7 @@
 					]
 				},
 				{
-					"id": 231,
+					"id": 233,
 					"question": "Welchem Einsatzzweck dienen Bindemittel?",
 					"choices": [
 						{
@@ -5719,7 +5773,7 @@
 					]
 				},
 				{
-					"id": 232,
+					"id": 234,
 					"question": "Was ist beim Anheben einer Last bei einem Hebekissensystem > 1 bar zu beachten?",
 					"choices": [
 						{
@@ -5745,7 +5799,7 @@
 					]
 				},
 				{
-					"id": 233,
+					"id": 235,
 					"question": "Welche der nachfolgenden Aussagen trifft für einen Hebebaum zu?",
 					"choices": [
 						{
@@ -5771,7 +5825,7 @@
 					]
 				},
 				{
-					"id": 234,
+					"id": 236,
 					"question": "Welche Aussage zum Einsatz von Druckkissen ist nach der FwDV 1 \"Grundtätigkeiten\" richtig?",
 					"choices": [
 						{
@@ -5797,7 +5851,7 @@
 					]
 				},
 				{
-					"id": 235,
+					"id": 237,
 					"question": "Durch welche Einschlagrichtung der Erdnägel kann ein Erdanker die größte Zugkraft aufnehmen?",
 					"choices": [
 						{
@@ -5828,7 +5882,7 @@
 			"name": "Grundlagen des Zivil und Katastrophenschutzes",
 			"questions": [
 				{
-					"id": 236,
+					"id": 238,
 					"question": "Wem obliegt die Gesetzgebungskompetenz im Rahmen des Zivilschutzes?",
 					"choices": [
 						{
@@ -5849,7 +5903,7 @@
 					"help": []
 				},
 				{
-					"id": 237,
+					"id": 239,
 					"question": "Welche Aufgabenbereiche werden im Rahmen des Zivilschutzes durch den Bund ergänzend ausgestattet?",
 					"choices": [
 						{
@@ -5870,7 +5924,7 @@
 					"help": []
 				},
 				{
-					"id": 238,
+					"id": 240,
 					"question": "Wer nimmt nach HBKG für den Katastrophenschutz die Aufgaben der Informations- und Kommunikationszentrale wahr?",
 					"choices": [
 						{
@@ -5891,24 +5945,24 @@
 					"help": []
 				},
 				{
-					"id": 239,
+					"id": 241,
 					"question": "Wer ist die untere KatS-Behörde nach § 25 HBKG?",
 					"choices": [
 						{
-							"text": "der Regierungspräsident eines Regierungsbezirkes",
+							"text": "die Regierungspräsidentin / der Regierungspräsident eines Regierungsbezirkes",
 							"answer": false
 						},
 						{
-							"text": "der Landrat eines Landkreises bzw. der Oberbürgermeister einer kreisfreien Stadt",
+							"text": "die Landrätin / der Landrat eines Landkreises bzw. die Oberbürgermeisterin / der Oberbürgermeister einer kreisfreien Stadt",
 							"answer": true
 						},
 						{
-							"text": "der Bürgermeister einer Gemeinde",
+							"text": "die Bürgermeisterin / der Bürgermeister einer Gemeinde",
 							"answer": false
 						}
 					],
 					"image": null,
-					"tags": ["Verwaltung", "Grundlagen des Zivil und Katastrophenschutzes"],
+					"tags": ["Verwaltung", "Grundlagen des Zivil und Katastrophenschutzes", "Neu"],
 					"help": [
 						{
 							"name": "HBKG",
@@ -5917,11 +5971,11 @@
 					]
 				},
 				{
-					"id": 240,
+					"id": 242,
 					"question": "Woraus setzt sich eine Katastrophenschutzleitung mindestens zusammen?",
 					"choices": [
 						{
-							"text": "aus einem Katastrophenschutzstab, aus einem Verwaltungsstab, einer GABC-Mess- sowie einer Informations- und Kommunikationszentrale",
+							"text": "aus einem Katastrophenschutzstab, aus einem Verwaltungsstab, einer GABC-Messzentrale sowie einer Informations- und Kommunikationszentrale",
 							"answer": true
 						},
 						{
@@ -5934,7 +5988,7 @@
 						}
 					],
 					"image": null,
-					"tags": ["Verwaltung", "Grundlagen des Zivil und Katastrophenschutzes"],
+					"tags": ["Verwaltung", "Grundlagen des Zivil und Katastrophenschutzes", "Neu"],
 					"help": [
 						{
 							"name": "HBKG",
@@ -5943,7 +5997,7 @@
 					]
 				},
 				{
-					"id": 241,
+					"id": 243,
 					"question": "Wer übernimmt in der Regel die Messaufträge für die GABC-Messzentrale?",
 					"choices": [
 						{
@@ -5968,7 +6022,7 @@
 					"help": []
 				},
 				{
-					"id": 242,
+					"id": 244,
 					"question": "Welche Einheiten und Einrichtungen werden für den Aufgabenbereich Führung vorgesehen?",
 					"choices": [
 						{
@@ -5989,7 +6043,7 @@
 					"help": []
 				},
 				{
-					"id": 243,
+					"id": 245,
 					"question": "Für welchen Aufgabenbereich stellt das Land Hessen keine eigenen Einheiten auf?",
 					"choices": [
 						{
@@ -6015,28 +6069,28 @@
 					]
 				},
 				{
-					"id": 244,
-					"question": "Was ist keine Aufgabe des Kreisauskunftsbüros (KAB)?",
+					"id": 246,
+					"question": "Was ist keine Aufgabe des Personenauskunftstelle?",
 					"choices": [
 						{
-							"text": "Das Kreisauskunftsbüro gibt Pressvertretern Auskunft über die Anzahl von toten, vermissten und verletzten Personen.",
+							"text": "Das Personenauskunftstelle gibt Pressvertretern Auskunft über die Anzahl von toten, vermissten und verletzten Personen.",
 							"answer": true
 						},
 						{
-							"text": "Das Kreisauskunftsbüro nimmt Suchanfragen aus der Bevölkerung entgegen.",
+							"text": "Die Personenauskunftstelle nimmt Suchanfragen aus der Bevölkerung entgegen.",
 							"answer": false
 						},
 						{
-							"text": "Das Kreisauskunftsbüro richtet die Personenauskunftsstelle als zentrale Anlaufstelle ein",
+							"text": "Die Personenauskunftstelle erfasst, speichert und aktualisiert laufend Personendaten während eines Katastrophenfalls und gibt Angehörigen Auskunft über deren Verbleib.",
 							"answer": false
 						}
 					],
 					"image": null,
-					"tags": ["Verwaltung", "Grundlagen des Zivil und Katastrophenschutzes"],
+					"tags": ["Verwaltung", "Grundlagen des Zivil und Katastrophenschutzes", "Neu"],
 					"help": []
 				},
 				{
-					"id": 245,
+					"id": 247,
 					"question": "Wer übernimmt die operativ-taktische Führung im Katastrophenfall?",
 					"choices": [
 						{
@@ -6057,7 +6111,7 @@
 					"help": []
 				},
 				{
-					"id": 246,
+					"id": 248,
 					"question": "Welche nachstehende Gefahr kann von detonierenden Kampfmitteln ausgehen?",
 					"choices": [
 						{
@@ -6078,7 +6132,7 @@
 					"help": []
 				},
 				{
-					"id": 247,
+					"id": 249,
 					"question": "Welche Aufgabe fällt im Verteidigungsfall in die Zuständigkeit des Zivilschutzes?",
 					"choices": [
 						{
@@ -6099,24 +6153,24 @@
 					"help": []
 				},
 				{
-					"id": 248,
+					"id": 250,
 					"question": "Welche aufgeführte Person nimmt nach § 25 HBKG die Aufgaben einer unteren Katastrophenschutzbehörde wahr, wenn eine kreisangehörige Gemeinde während einer Katastrophe ohne Verbindung mit der zuständigen Katastrophenschutzbehörde ist?",
 					"choices": [
 						{
-							"text": "der Stadtrat",
+							"text": "die Stadträtin / der Stadtrat",
 							"answer": false
 						},
 						{
-							"text": "der Bürgermeister",
+							"text": "die Bürgermeisterin / der Bürgermeister",
 							"answer": true
 						},
 						{
-							"text": "der Leiter des örtlichen Ordnungsamtes",
+							"text": "die Leiterin / der Leiter des örtlichen Ordnungsamtes",
 							"answer": false
 						}
 					],
 					"image": null,
-					"tags": ["Verwaltung", "Grundlagen des Zivil und Katastrophenschutzes"],
+					"tags": ["Verwaltung", "Grundlagen des Zivil und Katastrophenschutzes", "Neu"],
 					"help": [
 						{
 							"name": "HBKG",
@@ -6125,15 +6179,15 @@
 					]
 				},
 				{
-					"id": 249,
+					"id": 251,
 					"question": "Wer stellt das größte Helferkontingent für den Katastrophenschutz zur Verfügung?",
 					"choices": [
 						{
-							"text": "das Technische Hilfswerk (THW)",
+							"text": "das Technische Hilfswerk",
 							"answer": false
 						},
 						{
-							"text": "das Deutsche Rote Kreuz (DRK)",
+							"text": "das Deutsche Rote Kreuz",
 							"answer": false
 						},
 						{
@@ -6142,11 +6196,11 @@
 						}
 					],
 					"image": null,
-					"tags": ["Grundlagen des Zivil und Katastrophenschutzes"],
+					"tags": ["Grundlagen des Zivil und Katastrophenschutzes", "Neu"],
 					"help": []
 				},
 				{
-					"id": 250,
+					"id": 252,
 					"question": "In welcher Feuerwehr-Dienstvorschrift (FwDV) ist die Führungsorganisation im Katastrophenfall u. a. festgelegt?",
 					"choices": [
 						{
@@ -6172,7 +6226,7 @@
 					]
 				},
 				{
-					"id": 251,
+					"id": 253,
 					"question": "Welche Einheiten und Einrichtungen gehören nach dem Katastrophenschutzkonzept Hessen nicht zum Bereich Führung?",
 					"choices": [
 						{
@@ -6197,7 +6251,7 @@
 					"help": []
 				},
 				{
-					"id": 252,
+					"id": 254,
 					"question": "Welche Aussage zur Führungsorganisation im Katastrophenfall ist nicht richtig?",
 					"choices": [
 						{
@@ -6222,7 +6276,7 @@
 					"help": []
 				},
 				{
-					"id": 253,
+					"id": 255,
 					"question": "Welche Aufgaben hat der Zivilschutz-Hubschrauber (ZSH)?",
 					"choices": [
 						{
@@ -6248,7 +6302,7 @@
 			"name": "Lebensrettende Sofortmaßnahmen",
 			"questions": [
 				{
-					"id": 254,
+					"id": 256,
 					"question": "Sie finden an der Einsatzstelle eine Person vor, die eine stark blutende Arterienverletzung am Unterarm hat. Welche Maßnahmen müssen Sie als Ersthelfer durchführen?",
 					"choices": [
 						{
@@ -6269,7 +6323,7 @@
 					"help": []
 				},
 				{
-					"id": 255,
+					"id": 257,
 					"question": "Wann darf eine Herz-Lungen-Wiederbelebung eingestellt werden?",
 					"choices": [
 						{
@@ -6290,7 +6344,7 @@
 					"help": []
 				},
 				{
-					"id": 256,
+					"id": 258,
 					"question": "Welche Maßnahmen sind zulässig, um eine lebensbedrohende Blutung zu stillen?",
 					"choices": [
 						{
@@ -6311,7 +6365,7 @@
 					"help": []
 				},
 				{
-					"id": 257,
+					"id": 259,
 					"question": "Wie sind Verätzungen durch Säuren oder Laugen zu behandeln?",
 					"choices": [
 						{
@@ -6332,7 +6386,7 @@
 					"help": []
 				},
 				{
-					"id": 258,
+					"id": 260,
 					"question": "Bei einem Unfall hat sich eine Person eine Schnittwunde am Unterarm zugezogen. Eine Glasscherbe steckt noch tief in der Wunde, es blutet leicht. Welche Vorgehensweise ist richtig?",
 					"choices": [
 						{
@@ -6353,7 +6407,7 @@
 					"help": []
 				},
 				{
-					"id": 259,
+					"id": 261,
 					"question": "Worauf muss beim Spülen einer verätzten Wunde geachtet werden?",
 					"choices": [
 						{
@@ -6374,7 +6428,7 @@
 					"help": []
 				},
 				{
-					"id": 260,
+					"id": 262,
 					"question": "Welche Methode ist richtig, um die Atmung bei einer bewusstlosen Person zu überprüfen?",
 					"choices": [
 						{
@@ -6395,7 +6449,7 @@
 					"help": []
 				},
 				{
-					"id": 261,
+					"id": 263,
 					"question": "Wodurch wird die Schwere einer Hautschädigung durch eine Verbrennung hauptsächlich bestimmt?",
 					"choices": [
 						{
@@ -6416,7 +6470,7 @@
 					"help": []
 				},
 				{
-					"id": 262,
+					"id": 264,
 					"question": "Warum wird bei einer schweren Augenverletzung ein Verband über beide Augen angelegt?",
 					"choices": [
 						{
@@ -6437,7 +6491,7 @@
 					"help": []
 				},
 				{
-					"id": 263,
+					"id": 265,
 					"question": "Welche lebensrettenden Sofortmaßnahmen sind von einem Ersthelfer durchzuführen, wenn er eine bewusstlose Person vorfindet?",
 					"choices": [
 						{
@@ -6463,7 +6517,7 @@
 					]
 				},
 				{
-					"id": 264,
+					"id": 266,
 					"question": "Welcher Rhythmus ist bei der Herz-Lungen-Wiederbelebung eines Erwachsenen richtig?",
 					"choices": [
 						{
@@ -6489,7 +6543,7 @@
 					]
 				},
 				{
-					"id": 265,
+					"id": 267,
 					"question": "Einem Unfallopfer wurde das Bein am Becken abgerissen. Was ist zu tun, um die Blutung zu stillen?",
 					"choices": [
 						{
@@ -6510,7 +6564,7 @@
 					"help": []
 				},
 				{
-					"id": 266,
+					"id": 268,
 					"question": "Eine bewusstlose Person hat für Sie erkennbar einseitig mehrere Rippen gebrochen. Wie ist diese Person zu lagern?",
 					"choices": [
 						{
@@ -6536,7 +6590,7 @@
 					]
 				},
 				{
-					"id": 267,
+					"id": 269,
 					"question": "Können großflächige Verbrennungen die Ursache für einen Schock sein?",
 					"choices": [
 						{
@@ -6557,7 +6611,7 @@
 					"help": []
 				},
 				{
-					"id": 268,
+					"id": 270,
 					"question": "Eine bewusstlose Person blutet stark aus Mund und Nase. Wie ist diese Person zu lagern?",
 					"choices": [
 						{
@@ -6583,7 +6637,7 @@
 					]
 				},
 				{
-					"id": 269,
+					"id": 271,
 					"question": "Welche Maßnahmen sind bei einer offensichtlich unterkühlten Person durchzuführen?",
 					"choices": [
 						{
@@ -6604,7 +6658,7 @@
 					"help": []
 				},
 				{
-					"id": 270,
+					"id": 272,
 					"question": "Welche Symptome deuten auf eine Gehirnerschütterung hin?",
 					"choices": [
 						{
@@ -6625,7 +6679,7 @@
 					"help": []
 				},
 				{
-					"id": 271,
+					"id": 273,
 					"question": "Welche Symptome veranlassen Sie, eine Person in der stabilen Seitenlage zu lagern?",
 					"choices": [
 						{
@@ -6651,7 +6705,7 @@
 					]
 				},
 				{
-					"id": 272,
+					"id": 274,
 					"question": "Was ist beim Anlegen eines Druckverbandes zu beachten?",
 					"choices": [
 						{
@@ -6672,7 +6726,7 @@
 					"help": []
 				},
 				{
-					"id": 273,
+					"id": 275,
 					"question": "Wann darf der Rautek-Rettungsgriff angewendet werden?",
 					"choices": [
 						{
@@ -6693,7 +6747,7 @@
 					"help": []
 				},
 				{
-					"id": 274,
+					"id": 276,
 					"question": "Welche der genannten Maßnahmen ist bei der Versorgung eines Stromunfallopfers zuerst durchzuführen?",
 					"choices": [
 						{
@@ -6714,7 +6768,7 @@
 					"help": []
 				},
 				{
-					"id": 275,
+					"id": 277,
 					"question": "Welche Aussage zur Kühlung einer Verbrennung ist richtig?",
 					"choices": [
 						{
@@ -6740,7 +6794,7 @@
 					]
 				},
 				{
-					"id": 276,
+					"id": 278,
 					"question": "Welche Maßnahme muss bei einer bewusstlosen Person durchgeführt werden, nachdem diese in die stabile Seitenlage gebracht worden ist?",
 					"choices": [
 						{
@@ -6761,7 +6815,7 @@
 					"help": []
 				},
 				{
-					"id": 277,
+					"id": 279,
 					"question": "Welche Drucktiefe ist bei der Reanimation eines Erwachsenen erforderlich?",
 					"choices": [
 						{
@@ -6792,7 +6846,7 @@
 			"name": "Löscheinsatz",
 			"questions": [
 				{
-					"id": 278,
+					"id": 280,
 					"question": "Woraus besteht eine taktische Einheit?",
 					"choices": [
 						{
@@ -6818,7 +6872,7 @@
 					]
 				},
 				{
-					"id": 279,
+					"id": 281,
 					"question": "Wo tritt die Mannschaft nach der FwDV 3 nach dem Kommando \"Absitzen\" an?",
 					"choices": [
 						{
@@ -6844,7 +6898,7 @@
 					]
 				},
 				{
-					"id": 280,
+					"id": 282,
 					"question": "Wer nimmt nach der FwDV 3 in der Regel das erste einzusetzende Strahlrohr vor?",
 					"choices": [
 						{
@@ -6870,7 +6924,7 @@
 					]
 				},
 				{
-					"id": 281,
+					"id": 283,
 					"question": "Wer bestimmt die Fahrzeugaufstellung?",
 					"choices": [
 						{
@@ -6896,7 +6950,7 @@
 					]
 				},
 				{
-					"id": 282,
+					"id": 284,
 					"question": "Wer unterstützt nach der FwDV 3 auf Befehl die Atemschutzüberwachung an der Einsatzstelle?",
 					"choices": [
 						{
@@ -6926,7 +6980,7 @@
 					]
 				},
 				{
-					"id": 283,
+					"id": 285,
 					"question": "Welche der nachfolgenden Aufgaben übernimmt der Angriffstrupp nach der FwDV 3?",
 					"choices": [
 						{
@@ -6952,7 +7006,7 @@
 					]
 				},
 				{
-					"id": 284,
+					"id": 286,
 					"question": "Wer bringt nach der FwDV 3 auf Befehl tragbare Leitern in Stellung?",
 					"choices": [
 						{
@@ -6978,7 +7032,7 @@
 					]
 				},
 				{
-					"id": 285,
+					"id": 287,
 					"question": "Wer setzt nach der FwDV 3 den Verteiler?",
 					"choices": [
 						{
@@ -7004,7 +7058,7 @@
 					]
 				},
 				{
-					"id": 286,
+					"id": 288,
 					"question": "Wer unterstützt ggf. den Maschinisten bei der Entnahme der fahrbaren Schlauchhaspel?",
 					"choices": [
 						{
@@ -7034,7 +7088,7 @@
 					]
 				},
 				{
-					"id": 287,
+					"id": 289,
 					"question": "Welche der nachfolgenden Aufgaben übernimmt der Wassertrupp nach der FwDV 3?",
 					"choices": [
 						{
@@ -7060,7 +7114,7 @@
 					]
 				},
 				{
-					"id": 288,
+					"id": 290,
 					"question": "Wer wird nach der FwDV 3 bei einem Atemschutzeinsatz des Angriffstrupps ohne besonderen Befehl zum Sicherheitstrupp?",
 					"choices": [
 						{
@@ -7086,7 +7140,7 @@
 					]
 				},
 				{
-					"id": 289,
+					"id": 291,
 					"question": "Wie gliedert sich nach der FwDV 3 die Mannschaft einer Gruppe?",
 					"choices": [
 						{
@@ -7112,7 +7166,7 @@
 					]
 				},
 				{
-					"id": 290,
+					"id": 292,
 					"question": "Wer bestimmt nach der FwDV 3 die Anzahl der benötigten Saugschläuche?",
 					"choices": [
 						{
@@ -7138,7 +7192,7 @@
 					]
 				},
 				{
-					"id": 291,
+					"id": 293,
 					"question": "Wer bringt nach der FwDV 3 bei einem Einsatz einer Gruppe die Tragkraftspritze in Stellung?",
 					"choices": [
 						{
@@ -7164,7 +7218,7 @@
 					]
 				},
 				{
-					"id": 292,
+					"id": 294,
 					"question": "Wer kommandiert nach der FwDV 3 bei einem Einsatz einer Gruppe bei der Wasserentnahme aus offenem Gewässer \"Saugleitung zu Wasser!\"?",
 					"choices": [
 						{
@@ -7190,7 +7244,7 @@
 					]
 				},
 				{
-					"id": 293,
+					"id": 295,
 					"question": "Wer rüstet sich nach der FwDV 3 bei einem Einsatz einer Gruppe mit B-Rohr mit dem BM-Strahlrohr und dem Stützkrümmer aus?",
 					"choices": [
 						{
@@ -7216,7 +7270,7 @@
 					]
 				},
 				{
-					"id": 294,
+					"id": 296,
 					"question": "Wer verlegt nach der FwDV 3 bei einem Einsatz einer Gruppe mit B-Rohr die B-Rollschläuche vom Verteiler zum befohlenen Ziel?",
 					"choices": [
 						{
@@ -7242,7 +7296,7 @@
 					]
 				},
 				{
-					"id": 295,
+					"id": 297,
 					"question": "Wer verlegt nach der FwDV 3 bei einem Einsatz einer Gruppe mit B-Rohr die B-Schlauchleitung mit der fahrbaren Schlauchhaspel bis zum befohlenen Ziel?",
 					"choices": [
 						{
@@ -7268,7 +7322,7 @@
 					]
 				},
 				{
-					"id": 296,
+					"id": 298,
 					"question": "Wer rüstet sich nach der FwDV 3 bei der Vornahme eines Schaumrohres durch eine Gruppe mit dem Schaumstrahlrohr aus?",
 					"choices": [
 						{
@@ -7294,7 +7348,7 @@
 					]
 				},
 				{
-					"id": 297,
+					"id": 299,
 					"question": "Was stellt der Schlauchtrupp nach der FwDV 3 bei der Vornahme eines Schaumrohres am Verteiler bereit?",
 					"choices": [
 						{
@@ -7320,7 +7374,7 @@
 					]
 				},
 				{
-					"id": 298,
+					"id": 300,
 					"question": "Wer bedient nach der FwDV 3 bei der Vornahme eines Schaumrohres durch eine Gruppe den Zumischer?",
 					"choices": [
 						{
@@ -7346,7 +7400,7 @@
 					]
 				},
 				{
-					"id": 299,
+					"id": 301,
 					"question": "Wer stellt nach der FwDV 3 bei der Vornahme eines Schaumrohres die Verfügbarkeit des Schaummittels am Zumischer sicher?",
 					"choices": [
 						{
@@ -7372,7 +7426,7 @@
 					]
 				},
 				{
-					"id": 300,
+					"id": 302,
 					"question": "Wer kuppelt nach der FwDV 3 bei der Vornahme eines Schaumrohres durch eine Gruppe den Zumischer in die Schlauchleitung ein?",
 					"choices": [
 						{
@@ -7398,7 +7452,7 @@
 					]
 				},
 				{
-					"id": 301,
+					"id": 303,
 					"question": "Wer stellt nach der FwDV 3 bei der Vornahme eines Schaumrohres die Verbindung zwischen Zumischer und Schaummittelbehälter her?",
 					"choices": [
 						{
@@ -7424,7 +7478,7 @@
 					]
 				},
 				{
-					"id": 302,
+					"id": 304,
 					"question": "Welche taktische Einheit ist mindestens notwendig, um einen Innenangriff mit Atemschutzgeräten durchführen zu können?",
 					"choices": [
 						{
@@ -7450,7 +7504,7 @@
 					]
 				},
 				{
-					"id": 303,
+					"id": 305,
 					"question": "Wer unterstützt nach der FwDV 3 die Trupps bei der Entnahme der Geräte vom Fahrzeug?",
 					"choices": [
 						{
@@ -7476,7 +7530,7 @@
 					]
 				},
 				{
-					"id": 304,
+					"id": 306,
 					"question": "Wer verlegt nach der FwDV 3 die C-Schlauchleitung für den Angriffstrupp bei Vornahme des ersten Rohres?",
 					"choices": [
 						{
@@ -7502,7 +7556,7 @@
 					]
 				},
 				{
-					"id": 305,
+					"id": 307,
 					"question": "Womit rüstet sich nach der FwDV 1 der Angriffstrupp bei der Vornahme eines BM-Strahlrohres mit B-Rollschläuchen aus?",
 					"choices": [
 						{
@@ -7528,7 +7582,7 @@
 					]
 				},
 				{
-					"id": 306,
+					"id": 308,
 					"question": "Wie viele Rohre können nach der FwDV 3 mit einer Staffelbesatzung bei der Vornahme eines Schaumohres noch zusätzlich vorgenommen werden?",
 					"choices": [
 						{
@@ -7554,7 +7608,7 @@
 					]
 				},
 				{
-					"id": 307,
+					"id": 309,
 					"question": "Wie verhalten sich Einsatzkräfte, wenn sie eine besondere Gefahr (Einsturz, Explosion, ...) bemerken?",
 					"choices": [
 						{
@@ -7575,7 +7629,7 @@
 					"help": []
 				},
 				{
-					"id": 308,
+					"id": 310,
 					"question": "Welche Funktionen entfallen bei einer Staffel im Vergleich zur Gruppe?",
 					"choices": [
 						{
@@ -7601,7 +7655,7 @@
 					]
 				},
 				{
-					"id": 309,
+					"id": 311,
 					"question": "Wer unterstützt innerhalb einer Staffel den Wassertrupp ggf. beim Kuppeln der Saugschläuche?",
 					"choices": [
 						{
@@ -7627,7 +7681,7 @@
 					]
 				},
 				{
-					"id": 310,
+					"id": 312,
 					"question": "Nach dem Kommando: \"Absitzen und vor dem Fahrzeug antreten!\" tritt die Gruppe vor dem Fahrzeug an. Welcher Trupp steht aus der Sicht des Gruppenführers ganz rechts?",
 					"choices": [
 						{
@@ -7653,7 +7707,7 @@
 					]
 				},
 				{
-					"id": 311,
+					"id": 313,
 					"question": "Wer kann von den Regelungen der FwDV 3 abweichen, wenn dies zur Sicherstellung des Einsatzerfolges erforderlich ist?",
 					"choices": [
 						{
@@ -7679,7 +7733,7 @@
 					]
 				},
 				{
-					"id": 312,
+					"id": 314,
 					"question": "Wo sollen nach der FwDV 3 die erforderlichen Geräte abgelegt werden, wenn zwischen Löschfahrzeug und Verteiler ungünstige Wegverhältnisse bestehen?",
 					"choices": [
 						{
@@ -7705,7 +7759,7 @@
 					]
 				},
 				{
-					"id": 313,
+					"id": 315,
 					"question": "Wie nennt man nach der FwDV 3 die beiden Einsatzmöglichkeiten, nach denen der Einheitsführer seine Mannschaft einsetzen kann?",
 					"choices": [
 						{
@@ -7735,7 +7789,7 @@
 					]
 				},
 				{
-					"id": 314,
+					"id": 316,
 					"question": "Was muss nach der FwDV 3 der Befehl des Gruppenführers bei der Vornahme des dritten Rohres beinhalten?",
 					"choices": [
 						{
@@ -7765,7 +7819,7 @@
 					]
 				},
 				{
-					"id": 315,
+					"id": 317,
 					"question": "Nach dem Kommando: \"Absitzen!\" tritt die Mannschaft hinter dem Fahrzeug an. Wer steht aus der Sicht des Gruppenführers ganz links?",
 					"choices": [
 						{
@@ -7791,7 +7845,7 @@
 					]
 				},
 				{
-					"id": 316,
+					"id": 318,
 					"question": "Welche Geräte legt der Maschinist nach der FwDV 3 bei einer Wasserentnahme aus einem offenen Gewässer bereit?",
 					"choices": [
 						{
@@ -7817,7 +7871,7 @@
 					]
 				},
 				{
-					"id": 317,
+					"id": 319,
 					"question": "Welche der nachstehenden Aufgaben übernimmt der Maschinist nach der FwDV 3?",
 					"choices": [
 						{
@@ -7843,7 +7897,7 @@
 					]
 				},
 				{
-					"id": 318,
+					"id": 320,
 					"question": "Welche der nachfolgenden Maßnahmen ist nach der FwDV 3 beim Einsatz mit Bereitstellung richtig?",
 					"choices": [
 						{
@@ -7869,7 +7923,7 @@
 					]
 				},
 				{
-					"id": 319,
+					"id": 321,
 					"question": "Wann rüstet sich nach der FwDV 3 der Angriffstrupp mit Atemschutzgeräten aus?",
 					"choices": [
 						{
@@ -7895,7 +7949,7 @@
 					]
 				},
 				{
-					"id": 320,
+					"id": 322,
 					"question": "Wer stellt nach der FwDV 3 die Wasserversorgung her?",
 					"choices": [
 						{
@@ -7921,7 +7975,7 @@
 					]
 				},
 				{
-					"id": 321,
+					"id": 323,
 					"question": "Der Einheitsführer bestimmt die Fahrzeugaufstellung und befiehlt: \"Wasserentnahmestelle, ... Lage des Verteilers, ... ZUM EINSATZ FERTIG!\". Um welche Einsatzart handelt es sich hierbei?",
 					"choices": [
 						{
@@ -7947,7 +8001,7 @@
 					]
 				},
 				{
-					"id": 322,
+					"id": 324,
 					"question": "Wo werden nach der FwDV 3 bei der Vornahme eines Schaumrohres vom Angriffstrupp die beiden Schaummittelbehälter, der Zumischer und der D-Ansaugschlauch abgelegt?",
 					"choices": [
 						{
@@ -7973,7 +8027,7 @@
 					]
 				},
 				{
-					"id": 323,
+					"id": 325,
 					"question": "Woraus besteht nach der FwDV 3 eine Staffel?",
 					"choices": [
 						{
@@ -7999,7 +8053,7 @@
 					]
 				},
 				{
-					"id": 324,
+					"id": 326,
 					"question": "Welche Aufgabe hat nach der FwDV 3 der Angriffstrupp?",
 					"choices": [
 						{
@@ -8025,7 +8079,7 @@
 					]
 				},
 				{
-					"id": 325,
+					"id": 327,
 					"question": "Wie definiert die FwDV 3 den Begriff \"Retten\"?",
 					"choices": [
 						{
@@ -8051,7 +8105,7 @@
 					]
 				},
 				{
-					"id": 326,
+					"id": 328,
 					"question": "Der Einheitsführer befiehlt: \"Angriffstrupp; ... Rohr zurück!\" Wo legt nach der FwDV 3 der angesprochene Trupp seine vorgenommenen Geräte und Schläuche ab?",
 					"choices": [
 						{
@@ -8077,7 +8131,7 @@
 					]
 				},
 				{
-					"id": 327,
+					"id": 329,
 					"question": "Wo ist nach der FwDV 3 der Standort des Einheitsführers?",
 					"choices": [
 						{
@@ -8103,7 +8157,7 @@
 					]
 				},
 				{
-					"id": 328,
+					"id": 330,
 					"question": "Welche Aufgaben hat nach der FwDV 3 der Einheitsführer?",
 					"choices": [
 						{
@@ -8129,7 +8183,7 @@
 					]
 				},
 				{
-					"id": 329,
+					"id": 331,
 					"question": "Beim Einsatz einer Staffel kuppelt der Wassertrupp die Saugschläuche. Wer unterstützt ihn ggf. nach der FwDV 3?",
 					"choices": [
 						{
@@ -8155,7 +8209,7 @@
 					]
 				},
 				{
-					"id": 330,
+					"id": 332,
 					"question": "Der Staffelführer befiehlt: \"Angriffstrupp mit Schnellangriff vor!\" Wer unterstützt den Angriffstrupp beim Verlegen der Leitung?",
 					"choices": [
 						{
@@ -8181,7 +8235,7 @@
 					]
 				},
 				{
-					"id": 331,
+					"id": 333,
 					"question": "Wer verlegt die B-Schlauchleitung mit der fahrbaren B-Schlauchhaspel zum Angriffstrupp, wenn eine Staffel nach der FwDV 3 mit einem LF 20 arbeitet?",
 					"choices": [
 						{
@@ -8207,7 +8261,7 @@
 					]
 				},
 				{
-					"id": 332,
+					"id": 334,
 					"question": "Wo sollen nach der FwDV 3 die erforderlichen Geräte abgelegt werden, wenn der Abstand zwischen Löschfahrzeug und Verteiler z. B. mehr als fünf B-Druckschlauchlängen beträgt?",
 					"choices": [
 						{
@@ -8233,7 +8287,7 @@
 					]
 				},
 				{
-					"id": 333,
+					"id": 335,
 					"question": "Wer unterstützt nach der FwDV 3 die Trupps bei der Entnahme der Geräte vom Fahrzeug?",
 					"choices": [
 						{
@@ -8259,7 +8313,7 @@
 					]
 				},
 				{
-					"id": 334,
+					"id": 336,
 					"question": "Wer verlegt die Saugleitung, wenn nur zwei Saugschlauchlängen benötigt werden?",
 					"choices": [
 						{
@@ -8285,7 +8339,7 @@
 					]
 				},
 				{
-					"id": 335,
+					"id": 337,
 					"question": "Welchen Einsatz hat der Gruppenführer gewählt, wenn sein Befehl wie folgt lautet: \"Wasserentnahmestelle Überflurhydrant, Verteiler 5 m vor den Hauseingang. Zum Einsatz fertig!\"?",
 					"choices": [
 						{
@@ -8311,7 +8365,7 @@
 					]
 				},
 				{
-					"id": 336,
+					"id": 338,
 					"question": "Wer verlegt nach der FwDV 3 die B-Schlauchleitung mit Rollschläuchen zwischen dem Löschfahrzeug und dem Verteiler?",
 					"choices": [
 						{
@@ -8337,7 +8391,7 @@
 					]
 				},
 				{
-					"id": 337,
+					"id": 339,
 					"question": "Welche Hauptaufgabe hat der Maschinist nach der FwDV 3?",
 					"choices": [
 						{
@@ -8363,7 +8417,7 @@
 					]
 				},
 				{
-					"id": 338,
+					"id": 340,
 					"question": "Wer bedient den Zumischer nach der FwDV 3 bei der Vornahme eines Schaumstrahlrohres durch eine Gruppe?",
 					"choices": [
 						{
@@ -8389,7 +8443,7 @@
 					]
 				},
 				{
-					"id": 339,
+					"id": 341,
 					"question": "Mit welchen Geräten rüstet sich der Angriffstruppführer bei der Vornahme eines Schaumrohres durch eine Staffel aus?",
 					"choices": [
 						{
@@ -8415,7 +8469,7 @@
 					]
 				},
 				{
-					"id": 340,
+					"id": 342,
 					"question": "Aus wie vielen Personen besteht ein Selbstständiger Trupp im Sinne der taktischen Einheit oder der Fahrzeugbesatzung nach der FwDV 3?",
 					"choices": [
 						{
@@ -8441,7 +8495,7 @@
 					]
 				},
 				{
-					"id": 341,
+					"id": 343,
 					"question": "Wer kuppelt nach der FwDV 3 bei der Vornahme eines Schaumrohres durch eine Gruppe den Zumischer in die Schlauchleitung ein und stellt mit dem D-Ansaugschlauch die Verbindung zwischen Zumischer und Schaummittelbehälter her?",
 					"choices": [
 						{
@@ -8467,7 +8521,7 @@
 					]
 				},
 				{
-					"id": 342,
+					"id": 344,
 					"question": "In welche Richtung ist nach der FwDV 3 bei der Wasserentnahme über Saugschläuche die Saugleitung zu kuppeln?",
 					"choices": [
 						{
@@ -8497,7 +8551,7 @@
 					]
 				},
 				{
-					"id": 343,
+					"id": 345,
 					"question": "Wer bedient nach der FwDV 3 die im Löschfahrzeug eingebauten Aggregate?",
 					"choices": [
 						{
@@ -8523,7 +8577,7 @@
 					]
 				},
 				{
-					"id": 344,
+					"id": 346,
 					"question": "Welche hauptsächlichen Aufgaben hat der Melder nach der FwDV 3?",
 					"choices": [
 						{
@@ -8549,7 +8603,7 @@
 					]
 				},
 				{
-					"id": 345,
+					"id": 347,
 					"question": "Welchen Befehl erteilt nach der FwDV 3 der Einheitsführer zur Beendigung des Einsatzes?",
 					"choices": [
 						{
@@ -8575,7 +8629,7 @@
 					]
 				},
 				{
-					"id": 346,
+					"id": 348,
 					"question": "In welcher Situation ist nach der FwDV 3 ein Einsatz mit Bereitstellung durchzuführen?",
 					"choices": [
 						{
@@ -8601,7 +8655,7 @@
 					]
 				},
 				{
-					"id": 347,
+					"id": 349,
 					"question": "Wer gibt nach der FwDV 3 bei der Wasserentnahme über Saugschläuche das Kommando: \"Saugleitung zu Wasser!\"?",
 					"choices": [
 						{
@@ -8627,7 +8681,7 @@
 					]
 				},
 				{
-					"id": 348,
+					"id": 350,
 					"question": "Wer bestimmt nach der FwDV 3 die Fahrzeugaufstellung?",
 					"choices": [
 						{
@@ -8653,7 +8707,7 @@
 					]
 				},
 				{
-					"id": 349,
+					"id": 351,
 					"question": "Wer setzt nach der FwDV 3 das Standrohr?",
 					"choices": [
 						{
@@ -8679,7 +8733,7 @@
 					]
 				},
 				{
-					"id": 350,
+					"id": 352,
 					"question": "Wer rüstet sich nach der FwDV 3 bei der Vornahme eines Schaumrohres durch eine Gruppe mit Schaummittelbehältern aus?",
 					"choices": [
 						{
@@ -8705,7 +8759,7 @@
 					]
 				},
 				{
-					"id": 351,
+					"id": 353,
 					"question": "Beim Einsatz einer Gruppe hat der Wassertrupp zwischen Löschfahrzeug und Hydrant eine längere Strecke B-Druckschläuche (ca. 180 m) zu verlegen! Wer unterstützt ihn ggf. nach der FwDV 3?",
 					"choices": [
 						{
@@ -8731,7 +8785,7 @@
 					]
 				},
 				{
-					"id": 352,
+					"id": 354,
 					"question": "Wer erteilt dem Melder die Anweisung, eine Lagemeldung an die Leitstelle abzusetzen?",
 					"choices": [
 						{
@@ -8757,7 +8811,7 @@
 					]
 				},
 				{
-					"id": 353,
+					"id": 355,
 					"question": "Welche Tätigkeiten verrichtet der Schlauchtrupp bei einem Einsatz mit Bereitstellung?",
 					"choices": [
 						{
@@ -8783,7 +8837,7 @@
 					]
 				},
 				{
-					"id": 354,
+					"id": 356,
 					"question": "Welche Tätigkeiten verrichtet der Angriffstrupp bei einem Einsatz mit Bereitstellung?",
 					"choices": [
 						{
@@ -8809,7 +8863,7 @@
 					]
 				},
 				{
-					"id": 355,
+					"id": 357,
 					"question": "Der Wassertrupp hat die Wasserversorgung bis zum Verteiler hergerichtet. Welche Tätigkeit verrichtet er in der Regel bei einem Atemschutzeinsatz danach?",
 					"choices": [
 						{
@@ -8835,7 +8889,7 @@
 					]
 				},
 				{
-					"id": 356,
+					"id": 358,
 					"question": "Welche Funktionen gehören zu einer Staffel?",
 					"choices": [
 						{
@@ -8861,7 +8915,7 @@
 					]
 				},
 				{
-					"id": 357,
+					"id": 359,
 					"question": "Welches ist nach der FwDV 3 die taktische Grundeinheit der Feuerwehr?",
 					"choices": [
 						{
@@ -8887,7 +8941,7 @@
 					]
 				},
 				{
-					"id": 358,
+					"id": 360,
 					"question": "Wie muss sich ein Trupp verhalten, der seinen Auftrag erledigt hat und jetzt wieder einsatzbereit ist?",
 					"choices": [
 						{
@@ -8913,7 +8967,7 @@
 					]
 				},
 				{
-					"id": 359,
+					"id": 361,
 					"question": "Wer wiederholt bei einem Einsatz mit Bereitstellung nach der FwDV 3 das Kommando \"Zum Einsatz fertig\"?",
 					"choices": [
 						{
@@ -8944,7 +8998,7 @@
 			"name": "Löschen",
 			"questions": [
 				{
-					"id": 360,
+					"id": 362,
 					"question": "Welches Löschmittel eignet sich besonders zur Brandbekämpfung von Bränden in empfindlichen elektrischen Anlagen?",
 					"choices": [
 						{
@@ -8970,7 +9024,7 @@
 					]
 				},
 				{
-					"id": 361,
+					"id": 363,
 					"question": "Welche Menge Schaum (m³) kann mit einem Zumischer mit der Typenbezeichnung \"Z 2\" und mit einem Schaumstrahlrohr mit der Typenbezeichnung \"S 2\" bei einer 3 %igen Zumischung des Schaummittels in 6 Minuten hergestellt werden (Verschäumungszahl = 15)?",
 					"choices": [
 						{
@@ -8996,7 +9050,7 @@
 					]
 				},
 				{
-					"id": 362,
+					"id": 364,
 					"question": "Wie bezeichnet man den Vorgang, wenn Wasser bei einem brennenden, hoch siedenden Öl falsch eingesetzt wurde?",
 					"choices": [
 						{
@@ -9022,7 +9076,7 @@
 					]
 				},
 				{
-					"id": 363,
+					"id": 365,
 					"question": "Aus welchen Komponenten wird Luftschaum hergestellt?",
 					"choices": [
 						{
@@ -9043,7 +9097,7 @@
 					"help": []
 				},
 				{
-					"id": 364,
+					"id": 366,
 					"question": "Wie nennt man Gase, welche einen Brand in erster Linie durch eine Reduzierung der Sauerstoffkonzentration löschen?",
 					"choices": [
 						{
@@ -9069,7 +9123,7 @@
 					]
 				},
 				{
-					"id": 365,
+					"id": 367,
 					"question": "Bei welchen Bränden wird das Löschverfahren \"Abkühlen\" hauptsächlich angewendet?",
 					"choices": [
 						{
@@ -9090,7 +9144,7 @@
 					"help": []
 				},
 				{
-					"id": 366,
+					"id": 368,
 					"question": "Welche Brände können den Einsatz von Netzmitteln erforderlich machen?",
 					"choices": [
 						{
@@ -9111,7 +9165,7 @@
 					"help": []
 				},
 				{
-					"id": 367,
+					"id": 369,
 					"question": "Was versteht man unter dem Begriff \"Zumischung\"?",
 					"choices": [
 						{
@@ -9132,7 +9186,7 @@
 					"help": []
 				},
 				{
-					"id": 368,
+					"id": 370,
 					"question": "Welche Löschwirkung besitzt D-Löschpulver bei Metallbränden?",
 					"choices": [
 						{
@@ -9153,7 +9207,7 @@
 					"help": []
 				},
 				{
-					"id": 369,
+					"id": 371,
 					"question": "Welche Aussage zu Proteinschaummitteln ist richtig?",
 					"choices": [
 						{
@@ -9174,7 +9228,7 @@
 					"help": []
 				},
 				{
-					"id": 370,
+					"id": 372,
 					"question": "Welche Löschwirkung hat Kohlenstoffdioxid?",
 					"choices": [
 						{
@@ -9195,7 +9249,7 @@
 					"help": []
 				},
 				{
-					"id": 371,
+					"id": 373,
 					"question": "Aus welchen Bestandteilen besteht das Löschgas INERGEN®?",
 					"choices": [
 						{
@@ -9216,7 +9270,7 @@
 					"help": []
 				},
 				{
-					"id": 372,
+					"id": 374,
 					"question": "Was ist bei der Anwendung von Schaummitteln zu beachten?",
 					"choices": [
 						{
@@ -9237,7 +9291,7 @@
 					"help": []
 				},
 				{
-					"id": 373,
+					"id": 375,
 					"question": "Welche Aussage über die Benutzung von Feuerlöschern ist richtig?",
 					"choices": [
 						{
@@ -9258,7 +9312,7 @@
 					"help": []
 				},
 				{
-					"id": 374,
+					"id": 376,
 					"question": "Was ist bei der Handhabung von Schaumstrahlrohren zu beachten?",
 					"choices": [
 						{
@@ -9279,7 +9333,7 @@
 					"help": []
 				},
 				{
-					"id": 375,
+					"id": 377,
 					"question": "Wie heißt die Schaumart, die mit Schaumstrahlrohren hergestellt wird?",
 					"choices": [
 						{
@@ -9300,7 +9354,7 @@
 					"help": []
 				},
 				{
-					"id": 376,
+					"id": 378,
 					"question": "Wie bezeichnet man das Löschverfahren, bei dem der Löscherfolg durch Wärmeentzug erreicht wird?",
 					"choices": [
 						{
@@ -9321,7 +9375,7 @@
 					"help": []
 				},
 				{
-					"id": 377,
+					"id": 379,
 					"question": "Was ist Schwerschaum?",
 					"choices": [
 						{
@@ -9342,7 +9396,7 @@
 					"help": []
 				},
 				{
-					"id": 378,
+					"id": 380,
 					"question": "Was bedeutet bei einem Schaummittel-Zumischer vom Typ Z 4 R das \"R\"?",
 					"choices": [
 						{
@@ -9363,7 +9417,7 @@
 					"help": []
 				},
 				{
-					"id": 379,
+					"id": 381,
 					"question": "Welches der nachfolgenden Löschmittel hat das kleinste Wärmebindungsvermögen?",
 					"choices": [
 						{
@@ -9384,7 +9438,7 @@
 					"help": []
 				},
 				{
-					"id": 380,
+					"id": 382,
 					"question": "Welches Löschmittel eignet sich besonders für die Bekämpfung einer brennbaren Flüssigkeit, die bei einem Tankwagenunfall in Brand geraten ist?",
 					"choices": [
 						{
@@ -9405,7 +9459,7 @@
 					"help": []
 				},
 				{
-					"id": 381,
+					"id": 383,
 					"question": "Worauf ist beim Einbau des Schaummittel-Zumischers zu achten?",
 					"choices": [
 						{
@@ -9426,7 +9480,7 @@
 					"help": []
 				},
 				{
-					"id": 382,
+					"id": 384,
 					"question": "Welche Löschwirkung hat ABC-Löschpulver bei einem Flammenbrand?",
 					"choices": [
 						{
@@ -9447,7 +9501,7 @@
 					"help": []
 				},
 				{
-					"id": 383,
+					"id": 385,
 					"question": "Welches Löschmittel wird vorzugsweise bei dem Brand einer Kohlenhalde eingesetzt?",
 					"choices": [
 						{
@@ -9468,7 +9522,7 @@
 					"help": []
 				},
 				{
-					"id": 384,
+					"id": 386,
 					"question": "Ein Schaumstrahlrohr M 4 mit 150facher Verschäumung benötigt in 5 Minuten 60 l Schaummittel bei einer Einstellung des Zumischers von 3 %. Wie viel Liter Luftschaum werden erzeugt?",
 					"choices": [
 						{
@@ -9489,7 +9543,7 @@
 					"help": []
 				},
 				{
-					"id": 385,
+					"id": 387,
 					"question": "Was bedeutet die Typenbezeichnung \"Z 4\" bei einem genormten Schaummittel-Zumischer?",
 					"choices": [
 						{
@@ -9510,7 +9564,7 @@
 					"help": []
 				},
 				{
-					"id": 386,
+					"id": 388,
 					"question": "Welches Fassungsvermögen hat ein genormter Schaummittelbehälter?",
 					"choices": [
 						{
@@ -9531,7 +9585,7 @@
 					"help": []
 				},
 				{
-					"id": 387,
+					"id": 389,
 					"question": "Welche Löschwirkungen haben Löschmittel?",
 					"choices": [
 						{
@@ -9552,7 +9606,7 @@
 					"help": []
 				},
 				{
-					"id": 388,
+					"id": 390,
 					"question": "Was geschieht, wenn ein brennender fester Stoff unter seine Zündtemperatur abgekühlt wird?",
 					"choices": [
 						{
@@ -9573,7 +9627,7 @@
 					"help": []
 				},
 				{
-					"id": 389,
+					"id": 391,
 					"question": "Welchen Aggregatzustand (Erscheinungsform eines Stoffes) haben die bei der Feuerwehr verwendeten Löschmittel?",
 					"choices": [
 						{
@@ -9594,7 +9648,7 @@
 					"help": []
 				},
 				{
-					"id": 390,
+					"id": 392,
 					"question": "Welcher nachfolgende Stoff kann durch seine Anwesenheit das Brennen unterbinden?",
 					"choices": [
 						{
@@ -9615,7 +9669,7 @@
 					"help": []
 				},
 				{
-					"id": 391,
+					"id": 393,
 					"question": "Warum ist Wasser das geeignetste Löschmittel in der Brandklasse A?",
 					"choices": [
 						{
@@ -9636,7 +9690,7 @@
 					"help": []
 				},
 				{
-					"id": 392,
+					"id": 394,
 					"question": "Worin besteht die Hauptlöschwirkung von Leichtschaum?",
 					"choices": [
 						{
@@ -9657,7 +9711,7 @@
 					"help": []
 				},
 				{
-					"id": 393,
+					"id": 395,
 					"question": "Wonach richtet sich überwiegend die Anwendung der verschiedenen Löschmittel?",
 					"choices": [
 						{
@@ -9678,7 +9732,7 @@
 					"help": []
 				},
 				{
-					"id": 394,
+					"id": 396,
 					"question": "Was versteht man unter dem Begriff Löschen?",
 					"choices": [
 						{
@@ -9699,7 +9753,7 @@
 					"help": []
 				},
 				{
-					"id": 395,
+					"id": 397,
 					"question": "Welche Brände werden hauptsächlich durch das Löschverfahren \"Ersticken\" gelöscht?",
 					"choices": [
 						{
@@ -9720,7 +9774,7 @@
 					"help": []
 				},
 				{
-					"id": 396,
+					"id": 398,
 					"question": "Wie heißt das Löschverfahren, bei dem das Mengenverhältnis zwischen brennbarem Stoff und Sauerstoff verändert wird?",
 					"choices": [
 						{
@@ -9741,7 +9795,7 @@
 					"help": []
 				},
 				{
-					"id": 397,
+					"id": 399,
 					"question": "Warum ist die abkühlende Löschwirkung des Wassers beim Sprühstrahl größer als beim Vollstrahl?",
 					"choices": [
 						{
@@ -9762,7 +9816,7 @@
 					"help": []
 				},
 				{
-					"id": 398,
+					"id": 400,
 					"question": "Worauf beruht der Löscherfolg beim Löschverfahren \"Ersticken\"?",
 					"choices": [
 						{
@@ -9783,7 +9837,7 @@
 					"help": []
 				},
 				{
-					"id": 399,
+					"id": 401,
 					"question": "Mit welcher Löschmethode lässt sich in der Regel bei glutbildenden Bränden der größte Kühleffekt erzielen?",
 					"choices": [
 						{
@@ -9804,7 +9858,7 @@
 					"help": []
 				},
 				{
-					"id": 400,
+					"id": 402,
 					"question": "Was ist ein Netzmittel?",
 					"choices": [
 						{
@@ -9825,7 +9879,7 @@
 					"help": []
 				},
 				{
-					"id": 401,
+					"id": 403,
 					"question": "Wie sind Reifenlagerbrände vorzugsweise zu löschen?",
 					"choices": [
 						{
@@ -9846,7 +9900,7 @@
 					"help": []
 				},
 				{
-					"id": 402,
+					"id": 404,
 					"question": "Was wird beim Sprühstrahl durch eine Erhöhung des Druckes am Strahlrohr erreicht?",
 					"choices": [
 						{
@@ -9872,7 +9926,7 @@
 					]
 				},
 				{
-					"id": 403,
+					"id": 405,
 					"question": "Was ist beim Einsatz von Wasser als Löschmittel zu beachten?",
 					"choices": [
 						{
@@ -9893,7 +9947,7 @@
 					"help": []
 				},
 				{
-					"id": 404,
+					"id": 406,
 					"question": "Welchen Nachteil hat der Sprühstrahl gegenüber dem Vollstrahl?",
 					"choices": [
 						{
@@ -9914,7 +9968,7 @@
 					"help": []
 				},
 				{
-					"id": 405,
+					"id": 407,
 					"question": "Wodurch wird die hohe Verschäumungszahl bei Leichtschaum erreicht?",
 					"choices": [
 						{
@@ -9935,7 +9989,7 @@
 					"help": []
 				},
 				{
-					"id": 406,
+					"id": 408,
 					"question": "Wie verhalten sich brennende Leichtmetalle bei Berührung mit Wasser?",
 					"choices": [
 						{
@@ -9956,7 +10010,7 @@
 					"help": []
 				},
 				{
-					"id": 407,
+					"id": 409,
 					"question": "Wie kann bei brennbaren Stäuben die Gefahr einer Staubexplosion vermindert bzw. vermieden werden?",
 					"choices": [
 						{
@@ -9977,7 +10031,7 @@
 					"help": []
 				},
 				{
-					"id": 408,
+					"id": 410,
 					"question": "Welchen Vorteil hat die Wasserabgabe mittels Vollstrahl gegenüber der mittels Sprühstrahl?",
 					"choices": [
 						{
@@ -9998,7 +10052,7 @@
 					"help": []
 				},
 				{
-					"id": 409,
+					"id": 411,
 					"question": "Welche Vorgehensweise ist bei Bränden von unter Druck austretenden Gasen richtig?",
 					"choices": [
 						{
@@ -10019,7 +10073,7 @@
 					"help": []
 				},
 				{
-					"id": 410,
+					"id": 412,
 					"question": "Welches Löschmittel eignet sich zur Brandbekämpfung von brennenden festen, flüssigen und gasförmigen Stoffen?",
 					"choices": [
 						{
@@ -10040,7 +10094,7 @@
 					"help": []
 				},
 				{
-					"id": 411,
+					"id": 413,
 					"question": "Welche Schaumart wird bei der Verwendung eines Schaumstrahlrohres mit der Verschäumungszahl 15 hergestellt?",
 					"choices": [
 						{
@@ -10061,7 +10115,7 @@
 					"help": []
 				},
 				{
-					"id": 412,
+					"id": 414,
 					"question": "Welche Substanz kann als Löschmittel für die Brandklasse D verwendet werden?",
 					"choices": [
 						{
@@ -10082,7 +10136,7 @@
 					"help": []
 				},
 				{
-					"id": 413,
+					"id": 415,
 					"question": "Wofür verwendet man Mehrbereichsschaummittel?",
 					"choices": [
 						{
@@ -10103,7 +10157,7 @@
 					"help": []
 				},
 				{
-					"id": 414,
+					"id": 416,
 					"question": "Nach welcher Zeit sind beim Schaumrohreinsatz 20 l Schaummittel zugemischt, wenn ein Zumischer Z 4 R mit einer Zumischrate von ZR = 3 % eingesetzt wird?",
 					"choices": [
 						{
@@ -10124,7 +10178,7 @@
 					"help": []
 				},
 				{
-					"id": 415,
+					"id": 417,
 					"question": "Welchen Vorteil hat der Sprühstrahl bei der Brandbekämpfung?",
 					"choices": [
 						{
@@ -10145,7 +10199,7 @@
 					"help": []
 				},
 				{
-					"id": 416,
+					"id": 418,
 					"question": "Für welche Brände ist ein Wasserlöscher geeignet?",
 					"choices": [
 						{
@@ -10166,7 +10220,7 @@
 					"help": []
 				},
 				{
-					"id": 417,
+					"id": 419,
 					"question": "Durch welches Löschverfahren wird Wärme aus der Reaktionszone entzogen?",
 					"choices": [
 						{
@@ -10187,7 +10241,7 @@
 					"help": []
 				},
 				{
-					"id": 418,
+					"id": 420,
 					"question": "Für welche Brände ist Metallbrandpulver geeignet?",
 					"choices": [
 						{
@@ -10208,7 +10262,7 @@
 					"help": []
 				},
 				{
-					"id": 419,
+					"id": 421,
 					"question": "Welches Löschmittel ist bei Bränden, die der Brandklasse B zugeordnet sind, geeignet?",
 					"choices": [
 						{
@@ -10229,7 +10283,7 @@
 					"help": []
 				},
 				{
-					"id": 420,
+					"id": 422,
 					"question": "Welche der folgenden Löschregeln trifft zu?",
 					"choices": [
 						{
@@ -10250,7 +10304,7 @@
 					"help": []
 				},
 				{
-					"id": 421,
+					"id": 423,
 					"question": "Welches Löschverfahren löscht durch Entziehen des brennbaren Stoffes?",
 					"choices": [
 						{
@@ -10271,7 +10325,7 @@
 					"help": []
 				},
 				{
-					"id": 422,
+					"id": 424,
 					"question": "Welche Aussage über das Löschmittel Wasser ist richtig?",
 					"choices": [
 						{
@@ -10292,7 +10346,7 @@
 					"help": []
 				},
 				{
-					"id": 423,
+					"id": 425,
 					"question": "Welches Löschverfahren findet beim Einsatz von Schwerschaum bei einer brennenden Flüssigkeit Anwendung?",
 					"choices": [
 						{
@@ -10313,7 +10367,7 @@
 					"help": []
 				},
 				{
-					"id": 424,
+					"id": 426,
 					"question": "Leichtschaum eignet sich besonders gut...",
 					"choices": [
 						{
@@ -10334,7 +10388,7 @@
 					"help": []
 				},
 				{
-					"id": 425,
+					"id": 427,
 					"question": "Was ist beim Einsatz von Kohlenstoffdioxid als Löschmittel zu beachten?",
 					"choices": [
 						{
@@ -10355,7 +10409,7 @@
 					"help": []
 				},
 				{
-					"id": 426,
+					"id": 428,
 					"question": "Was ist beim Einsatz von Löschpulver zu beachten?",
 					"choices": [
 						{
@@ -10376,7 +10430,7 @@
 					"help": []
 				},
 				{
-					"id": 427,
+					"id": 429,
 					"question": "Welche Aussage zum Fettbrandlöschmittel ist richtig?",
 					"choices": [
 						{
@@ -10395,6 +10449,48 @@
 					"image": null,
 					"tags": ["Löschen"],
 					"help": []
+				},
+				{
+					"id": 430,
+					"question": "Was ist beim Einsatz eines Schaum-Feuerlöschers zu beachten?",
+					"choices": [
+						{
+							"text": "Dieser Feuerlöscher darf nicht im Bereich elektrischer Anlagen eingesetzt werden.",
+							"answer": false
+						},
+						{
+							"text": "Dieser Feuerlöscher ist nur für die Brandklasse A zugelassen.",
+							"answer": false
+						},
+						{
+							"text": "Dieser Feuerlöscher darf nur im Bereich elektrischer Anlagen bis 1.000 V eingesetzt werden.",
+							"answer": true
+						}
+					],
+					"image": null,
+					"tags": ["Neu", "Löschen"],
+					"help": []
+				},
+				{
+					"id": 431,
+					"question": "Welches Löschverfahren löscht durch Senken der Sauerstoffkonzentration?",
+					"choices": [
+						{
+							"text": "Abmagern",
+							"answer": false
+						},
+						{
+							"text": "Verdünnen",
+							"answer": true
+						},
+						{
+							"text": "Hemmen der Reaktion",
+							"answer": false
+						}
+					],
+					"image": null,
+					"tags": ["Neu", "Löschen"],
+					"help": []
 				}
 			]
 		},
@@ -10402,7 +10498,7 @@
 			"name": "Löschgeräte Schläuche Armaturen",
 			"questions": [
 				{
-					"id": 428,
+					"id": 432,
 					"question": "In welche Richtung legt nach der FwDV 1 \"Grundtätigkeiten\" ein Trupp seine Schlauchleitung, wenn er sie selbst verlegt?",
 					"choices": [
 						{
@@ -10428,7 +10524,7 @@
 					]
 				},
 				{
-					"id": 429,
+					"id": 433,
 					"question": "Bis zu welchem Obergeschoss dürfen leere C-Druckschläuche nach der FwDV 1 \"Grundtätigkeiten\" über tragbare Leitern vorgenommen werden?",
 					"choices": [
 						{
@@ -10454,7 +10550,7 @@
 					]
 				},
 				{
-					"id": 430,
+					"id": 434,
 					"question": "Welche Durchflussmenge stellt der Truppmann nach der FwDV 1 \"Grundtätigkeiten\" bei der Vornahme eines Hohlstrahlrohres ein, wenn der Trupp ein Hohlstrahlrohr mit veränderbarer Durchflussmenge zur Brandbekämpfung einsetzt?",
 					"choices": [
 						{
@@ -10480,7 +10576,7 @@
 					]
 				},
 				{
-					"id": 431,
+					"id": 435,
 					"question": "Welche Leine ist bei der Vornahme von Saugschläuchen grundsätzlich immer anzubringen?",
 					"choices": [
 						{
@@ -10506,7 +10602,7 @@
 					]
 				},
 				{
-					"id": 432,
+					"id": 436,
 					"question": "Wie viel m³ Schwerschaum können mit einem Zumischer mit der Bezeichnung \"Z 4 R\" und einem Kombinationsschaumstrahlrohr \"M4/S4\" (Verschäumungszahl 15) in 5 Minuten hergestellt werden?",
 					"choices": [
 						{
@@ -10532,7 +10628,7 @@
 					]
 				},
 				{
-					"id": 433,
+					"id": 437,
 					"question": "Welche Längen haben genormte B 75-Druckschläuche?",
 					"choices": [
 						{
@@ -10558,7 +10654,7 @@
 					]
 				},
 				{
-					"id": 434,
+					"id": 438,
 					"question": "Für welches Gerät zur Schaumerzeugung wird die Verschäumungszahl angegeben?",
 					"choices": [
 						{
@@ -10584,7 +10680,7 @@
 					]
 				},
 				{
-					"id": 435,
+					"id": 439,
 					"question": "Wie viel Liter Wasser fließen durch ein \"BM-Strahlrohr\" ohne Mundstück in einer Minute bei einem Strahlrohrdruck von 5 bar (Faustwert)?",
 					"choices": [
 						{
@@ -10610,7 +10706,7 @@
 					]
 				},
 				{
-					"id": 436,
+					"id": 440,
 					"question": "Was ist ein Verteiler?",
 					"choices": [
 						{
@@ -10636,7 +10732,7 @@
 					]
 				},
 				{
-					"id": 437,
+					"id": 441,
 					"question": "Wer ist beim Einsatz einer C-Druckschlauchleitung für eine ausreichende Schlauchreserve verantwortlich?",
 					"choices": [
 						{
@@ -10662,7 +10758,7 @@
 					]
 				},
 				{
-					"id": 438,
+					"id": 442,
 					"question": "Welche Innendurchmesser haben die in Deutschland vornehmlich verwendeten Druckschläuche?",
 					"choices": [
 						{
@@ -10688,7 +10784,7 @@
 					]
 				},
 				{
-					"id": 439,
+					"id": 443,
 					"question": "Welchen Innendurchmesser haben die in Deutschland verwendeten A-Druckschläuche?",
 					"choices": [
 						{
@@ -10714,7 +10810,7 @@
 					]
 				},
 				{
-					"id": 440,
+					"id": 444,
 					"question": "Welche Längen haben D 25-Druckschläuche?",
 					"choices": [
 						{
@@ -10740,7 +10836,7 @@
 					]
 				},
 				{
-					"id": 441,
+					"id": 445,
 					"question": "Welchen Innendurchmesser haben die in Deutschland verwendeten B-Druckschläuche?",
 					"choices": [
 						{
@@ -10766,7 +10862,7 @@
 					]
 				},
 				{
-					"id": 442,
+					"id": 446,
 					"question": "Welche Länge hat ein genormter C 52-Druckschlauch?",
 					"choices": [
 						{
@@ -10792,7 +10888,7 @@
 					]
 				},
 				{
-					"id": 443,
+					"id": 447,
 					"question": "Welchen Innendurchmesser haben B-Druck- und B-Saugschläuche?",
 					"choices": [
 						{
@@ -10818,7 +10914,7 @@
 					]
 				},
 				{
-					"id": 444,
+					"id": 448,
 					"question": "Welche Innendurchmesser haben C-Druckschläuche?",
 					"choices": [
 						{
@@ -10844,7 +10940,7 @@
 					]
 				},
 				{
-					"id": 445,
+					"id": 449,
 					"question": "Welche Längen haben genormte C 42-Druckschläuche?",
 					"choices": [
 						{
@@ -10870,7 +10966,7 @@
 					]
 				},
 				{
-					"id": 446,
+					"id": 450,
 					"question": "Welche Bautypen von Verteilern kommen vornehmlich auf Löschfahrzeugen Typ TSF zum Einsatz?",
 					"choices": [
 						{
@@ -10896,7 +10992,7 @@
 					]
 				},
 				{
-					"id": 447,
+					"id": 451,
 					"question": "Welchen Innendurchmesser haben genormte A-Saugschläuche?",
 					"choices": [
 						{
@@ -10922,7 +11018,7 @@
 					]
 				},
 				{
-					"id": 448,
+					"id": 452,
 					"question": "Wie sind die an der Brandstelle verwendeten Druckschläuche nach dem Einsatz zu behandeln?",
 					"choices": [
 						{
@@ -10948,7 +11044,7 @@
 					]
 				},
 				{
-					"id": 449,
+					"id": 453,
 					"question": "Warum ist im Innern eines Saugschlauches eine Drahtspirale (Wendel) eingearbeitet?",
 					"choices": [
 						{
@@ -10974,7 +11070,7 @@
 					]
 				},
 				{
-					"id": 450,
+					"id": 454,
 					"question": "Wie viel Liter Wasser liefern überschlagsmäßig ein \"BM-Strahlrohr\" und ein \"CM-Strahlrohr\" (beide ohne Mundstück) in 6 Minuten bei einem Strahlrohrdruck von 5 bar?",
 					"choices": [
 						{
@@ -11000,7 +11096,7 @@
 					]
 				},
 				{
-					"id": 451,
+					"id": 455,
 					"question": "Welche nachfolgende wasserführende Armatur wird bei der Wasserentnahme aus einem Hydranten am Sauganschluss der Feuerlöschkreiselpumpe angekuppelt?",
 					"choices": [
 						{
@@ -11026,7 +11122,7 @@
 					]
 				},
 				{
-					"id": 452,
+					"id": 456,
 					"question": "Was sind wasserführende Armaturen?",
 					"choices": [
 						{
@@ -11047,7 +11143,7 @@
 					"help": []
 				},
 				{
-					"id": 453,
+					"id": 457,
 					"question": "Welche Strahlrohrkombination liefert überschlagsmäßig ca. 600 l/min bei 5 bar Strahlrohr-druck?",
 					"choices": [
 						{
@@ -11073,7 +11169,7 @@
 					]
 				},
 				{
-					"id": 454,
+					"id": 458,
 					"question": "Wie viel Liter Wasser liefert überschlagsmäßig ein \"DM-Strahlrohr\" mit Mundstück bei einem Strahlrohrdruck von 5 bar in 6 Minuten?",
 					"choices": [
 						{
@@ -11099,7 +11195,7 @@
 					]
 				},
 				{
-					"id": 455,
+					"id": 459,
 					"question": "Was ist ein \"DM-Strahlrohr\"?",
 					"choices": [
 						{
@@ -11125,7 +11221,7 @@
 					]
 				},
 				{
-					"id": 456,
+					"id": 460,
 					"question": "Wo wird das Sammelstück in der Regel verwendet?",
 					"choices": [
 						{
@@ -11151,7 +11247,7 @@
 					]
 				},
 				{
-					"id": 457,
+					"id": 461,
 					"question": "Welche Aufgabe hat der Stützkrümmer?",
 					"choices": [
 						{
@@ -11177,7 +11273,7 @@
 					]
 				},
 				{
-					"id": 458,
+					"id": 462,
 					"question": "Welche wasserführende Armatur ermöglicht den Einsatz eines \"BM-Strahlrohres\" mit nur zwei Feuerwehrangehörigen?",
 					"choices": [
 						{
@@ -11203,7 +11299,7 @@
 					]
 				},
 				{
-					"id": 459,
+					"id": 463,
 					"question": "Welche Aufgabe hat das Sammelstück?",
 					"choices": [
 						{
@@ -11229,7 +11325,7 @@
 					]
 				},
 				{
-					"id": 460,
+					"id": 464,
 					"question": "Welche Aufgabe hat die Rückschlagklappe im Sammelstück A-2B?",
 					"choices": [
 						{
@@ -11255,7 +11351,7 @@
 					]
 				},
 				{
-					"id": 461,
+					"id": 465,
 					"question": "Welche Abgänge hat ein genormtes Standrohr?",
 					"choices": [
 						{
@@ -11281,7 +11377,7 @@
 					]
 				},
 				{
-					"id": 462,
+					"id": 466,
 					"question": "Was bedeutet die Kurzbezeichnung \"Z 4 R\" für einen Zumischer?",
 					"choices": [
 						{
@@ -11307,7 +11403,7 @@
 					]
 				},
 				{
-					"id": 463,
+					"id": 467,
 					"question": "Welche Einstellungen für den Schaummittelzusatz sind an einem genormten Zumischer (Z4R) laut DIN EN 16712:2015-12 vorgesehen?",
 					"choices": [
 						{
@@ -11333,7 +11429,7 @@
 					]
 				},
 				{
-					"id": 464,
+					"id": 468,
 					"question": "Welche Kupplungsarten befinden sich an einem Sammelstück A-2B?",
 					"choices": [
 						{
@@ -11359,7 +11455,7 @@
 					]
 				},
 				{
-					"id": 465,
+					"id": 469,
 					"question": "Wovon ist die Löschwirksamkeit eines Löschmittelstrahls abhängig?",
 					"choices": [
 						{
@@ -11380,7 +11476,7 @@
 					"help": []
 				},
 				{
-					"id": 466,
+					"id": 470,
 					"question": "Welche Festkupplungen haben genormte Zumischer am Ein- und Ausgang?",
 					"choices": [
 						{
@@ -11406,7 +11502,7 @@
 					]
 				},
 				{
-					"id": 467,
+					"id": 471,
 					"question": "Welche Mundstück- und Düsenweite hat ein \"DM-Strahlrohr\"?",
 					"choices": [
 						{
@@ -11432,7 +11528,7 @@
 					]
 				},
 				{
-					"id": 468,
+					"id": 472,
 					"question": "Was ist ein \"CM-Strahlrohr\"?",
 					"choices": [
 						{
@@ -11458,7 +11554,7 @@
 					]
 				},
 				{
-					"id": 469,
+					"id": 473,
 					"question": "Aus welchen zwei Hauptteilen besteht das genormte Standrohr?",
 					"choices": [
 						{
@@ -11484,7 +11580,7 @@
 					]
 				},
 				{
-					"id": 470,
+					"id": 474,
 					"question": "In welcher Ausführung gibt es genormte Standrohre?",
 					"choices": [
 						{
@@ -11510,7 +11606,7 @@
 					]
 				},
 				{
-					"id": 471,
+					"id": 475,
 					"question": "Wozu dient das Sammelstück A-2B?",
 					"choices": [
 						{
@@ -11536,7 +11632,7 @@
 					]
 				},
 				{
-					"id": 472,
+					"id": 476,
 					"question": "Wozu dient das Sammelstück A-3B?",
 					"choices": [
 						{
@@ -11562,7 +11658,7 @@
 					]
 				},
 				{
-					"id": 473,
+					"id": 477,
 					"question": "Welche Durchmesser hat das Übergangsstück A-B?",
 					"choices": [
 						{
@@ -11588,7 +11684,7 @@
 					]
 				},
 				{
-					"id": 474,
+					"id": 478,
 					"question": "Worauf ist bei der Bedienung eines Verteilers mit Kugelhähnen besonders zu achten?",
 					"choices": [
 						{
@@ -11609,7 +11705,7 @@
 					"help": []
 				},
 				{
-					"id": 475,
+					"id": 479,
 					"question": "Welche Hauptaufgabe hat das Rückschlagorgan im Saugkorb?",
 					"choices": [
 						{
@@ -11635,7 +11731,7 @@
 					]
 				},
 				{
-					"id": 476,
+					"id": 480,
 					"question": "Zu welchem Zweck werden Übergangsstücke benötigt?",
 					"choices": [
 						{
@@ -11661,7 +11757,7 @@
 					]
 				},
 				{
-					"id": 477,
+					"id": 481,
 					"question": "Welche Wasserlieferung hat ein \"BM-Strahlrohr\" ohne Mundstück in 5 Minuten bei einem Strahlrohrdruck von 5 bar?",
 					"choices": [
 						{
@@ -11687,7 +11783,7 @@
 					]
 				},
 				{
-					"id": 478,
+					"id": 482,
 					"question": "Welche Mundstücks- und Düsenweite hat ein \"BM-Strahlrohr\"?",
 					"choices": [
 						{
@@ -11713,7 +11809,7 @@
 					]
 				},
 				{
-					"id": 479,
+					"id": 483,
 					"question": "Welches Strahlrohr liefert bei 5 bar Strahlrohrdruck in 10 Minuten ca. 500 l Wasser?",
 					"choices": [
 						{
@@ -11739,7 +11835,7 @@
 					]
 				},
 				{
-					"id": 480,
+					"id": 484,
 					"question": "Welche Durchmesser hat das B-C-Übergangsstück?",
 					"choices": [
 						{
@@ -11765,7 +11861,7 @@
 					]
 				},
 				{
-					"id": 481,
+					"id": 485,
 					"question": "Welche Mundstücks- und Düsenweite hat ein \"CM-Strahlrohr\"?",
 					"choices": [
 						{
@@ -11791,7 +11887,7 @@
 					]
 				},
 				{
-					"id": 482,
+					"id": 486,
 					"question": "Sie setzen ein Standrohr auf einen Unterflurhydranten. Nachdem Sie den Unterflurhydranten aufgedreht haben, spritzt Wasser aus dem Standrohrsitz! Was kann der Grund für diese undichte Stelle sein?",
 					"choices": [
 						{
@@ -11812,7 +11908,7 @@
 					"help": []
 				},
 				{
-					"id": 483,
+					"id": 487,
 					"question": "Welcher Abgang ist für das 1. Rohr vorgesehen?",
 					"choices": [
 						{
@@ -11838,7 +11934,7 @@
 					]
 				},
 				{
-					"id": 484,
+					"id": 488,
 					"question": "Welche Schaltvorgänge sind mit dem Schaltorgan eines \"DM-Strahlrohres\" möglich?",
 					"choices": [
 						{
@@ -11864,7 +11960,7 @@
 					]
 				},
 				{
-					"id": 485,
+					"id": 489,
 					"question": "Ein Hohlstrahlrohr der Funktionskategorie 1 verändert bei der Strahlformänderung die ...",
 					"choices": [
 						{
@@ -11895,7 +11991,7 @@
 			"name": "Persönliche Ausrüstung",
 			"questions": [
 				{
-					"id": 486,
+					"id": 490,
 					"question": "Welche Teile gehören zur Schutzkleidung eines Angriffstrupps bei der Brandbekämpfung im Innenangriff?",
 					"choices": [
 						{
@@ -11929,7 +12025,7 @@
 					]
 				},
 				{
-					"id": 487,
+					"id": 491,
 					"question": "Welche Schutzausrüstung ist nach der FwDV 1 \"Grundtätigkeiten\" beim Umgang mit hydraulischen Rettungsgeräten über die Mindestschutzausrüstung hinaus zu tragen?",
 					"choices": [
 						{
@@ -11959,7 +12055,7 @@
 					]
 				},
 				{
-					"id": 488,
+					"id": 492,
 					"question": "Wie müssen nach der FwDV 1 \"Grundtätigkeiten\" die Übenden bei Selbstrettungsübungen gegen Absturz zusätzlich gesichert sein?",
 					"choices": [
 						{
@@ -11985,7 +12081,7 @@
 					]
 				},
 				{
-					"id": 489,
+					"id": 493,
 					"question": "Sie sind während eines Feuerwehreinsatzes als Schlauchtruppmann am Verteiler eingesetzt. Dürfen Sie hierbei eigenmächtig auf das Tragen von Teilen der persönlichen Mindestschutzausrüstung verzichten?",
 					"choices": [
 						{
@@ -12011,7 +12107,7 @@
 					]
 				},
 				{
-					"id": 490,
+					"id": 494,
 					"question": "Der Gruppenführer befiehlt, dass sich der Angriffstrupp mit Atemschutz ausrüsten soll. Darf sich jeder Feuerwehrangehörige mit Atemschutzgeräten ausrüsten?",
 					"choices": [
 						{
@@ -12037,7 +12133,7 @@
 					]
 				},
 				{
-					"id": 491,
+					"id": 495,
 					"question": "Was gehört nach der FwDV 1 \"Grundtätigkeiten\" zur persönlichen Mindestschutzausrüstung?",
 					"choices": [
 						{
@@ -12063,7 +12159,7 @@
 					]
 				},
 				{
-					"id": 492,
+					"id": 496,
 					"question": "In welcher Situation muss der Gesichtsschutz am Feuerwehrhelm getragen und benutzt werden?",
 					"choices": [
 						{
@@ -12089,7 +12185,7 @@
 					]
 				},
 				{
-					"id": 493,
+					"id": 497,
 					"question": "Wie muss der Nackenschutz am Feuerwehrhelm getragen werden?",
 					"choices": [
 						{
@@ -12110,7 +12206,7 @@
 					"help": []
 				},
 				{
-					"id": 494,
+					"id": 498,
 					"question": "Welche Schutzausrüstung ist nach der FwDV 1 \"Grundtätigkeiten\" beim Einsatz von Hebekissensystemen über die Mindestschutzausrüstung hinaus zu tragen?",
 					"choices": [
 						{
@@ -12140,7 +12236,7 @@
 					]
 				},
 				{
-					"id": 495,
+					"id": 499,
 					"question": "Wovor schützt die Hitzeschutzkleidung?",
 					"choices": [
 						{
@@ -12166,7 +12262,7 @@
 					]
 				},
 				{
-					"id": 496,
+					"id": 500,
 					"question": "Bei welcher Tätigkeit muss die Schnittschutzkleidung getragen werden?",
 					"choices": [
 						{
@@ -12192,7 +12288,7 @@
 					]
 				},
 				{
-					"id": 497,
+					"id": 501,
 					"question": "Welche Sonderausrüstung müssen Feuerwehrangehörige tragen, die der Gefahr durch fließenden Verkehr ausgesetzt sind?",
 					"choices": [
 						{
@@ -12223,7 +12319,7 @@
 			"name": "Physische und psychische Belastung",
 			"questions": [
 				{
-					"id": 498,
+					"id": 502,
 					"question": "Welcher Einsatz ist psychisch besonders belastend?",
 					"choices": [
 						{
@@ -12244,7 +12340,7 @@
 					"help": []
 				},
 				{
-					"id": 499,
+					"id": 503,
 					"question": "Wodurch kann Stress im Einsatz entstehen?",
 					"choices": [
 						{
@@ -12265,7 +12361,7 @@
 					"help": []
 				},
 				{
-					"id": 500,
+					"id": 504,
 					"question": "Wie kann sich Stress im Einsatz auswirken?",
 					"choices": [
 						{
@@ -12286,7 +12382,7 @@
 					"help": []
 				},
 				{
-					"id": 501,
+					"id": 505,
 					"question": "Welche Maßnahme ist geeignet, um eine persönliche Belastung zu minimieren?",
 					"choices": [
 						{
@@ -12307,7 +12403,7 @@
 					"help": []
 				},
 				{
-					"id": 502,
+					"id": 506,
 					"question": "Welche Maßnahme ist geeignet, um Stressreaktionen der Einsatzkräfte zu senken?",
 					"choices": [
 						{
@@ -12328,7 +12424,7 @@
 					"help": []
 				},
 				{
-					"id": 503,
+					"id": 507,
 					"question": "Auf der Rückfahrt von einem schwierigen Einsatz ist ein ansonsten sehr ruhiger Kamerad ausgesprochen redselig. Was könnte die Ursache für dieses Verhalten sein?",
 					"choices": [
 						{
@@ -12349,7 +12445,7 @@
 					"help": []
 				},
 				{
-					"id": 504,
+					"id": 508,
 					"question": "Nach einem schwierigen Einsatz fällt Ihnen auf, dass ein Kamerad mehr als üblich raucht und sich gereizt verhält. Welche der nachstehenden Verhaltensweisen ist in einer solchen Situation angemessen?",
 					"choices": [
 						{
@@ -12370,7 +12466,7 @@
 					"help": []
 				},
 				{
-					"id": 505,
+					"id": 509,
 					"question": "Sie bemerken bei sich selbst, dass Sie in letzter Zeit häufig gereizt reagieren und schlecht schlafen. Ständig müssen Sie an den Einsatz mit dem schwerverletzten Kind vor ein paar Wochen denken. Dadurch sind Sie auch häufig unkonzentriert. Welche der nachstehenden Maßnahmen ist zur Lösung dieses Problems angemessen?",
 					"choices": [
 						{
@@ -12391,7 +12487,7 @@
 					"help": []
 				},
 				{
-					"id": 506,
+					"id": 510,
 					"question": "Wie kann Stress für Einsatzkräfte vermieden werden?",
 					"choices": [
 						{
@@ -12410,6 +12506,27 @@
 					"image": null,
 					"tags": ["Physische und psychische Belastung"],
 					"help": []
+				},
+				{
+					"id": 511,
+					"question": "Durch welche sinnvolle Maßnahme kann eine Wärmebelastung des Körpers unmittelbar nach einem Atemschutzeinsatz verringert werden?",
+					"choices": [
+						{
+							"text": "Ich öffne die Feuerwehrüberjacke.",
+							"answer": true
+						},
+						{
+							"text": "Ich verzichte auf Hygienemaßnahmen und nehme Flüssigkeit zu mir.",
+							"answer": false
+						},
+						{
+							"text": "Ich stelle mich in die Zuluftöffnung und lasse mich vom Belüftungsgerät abkühlen.",
+							"answer": false
+						}
+					],
+					"image": null,
+					"tags": ["Neu", "Physische und psychische Belastung"],
+					"help": []
 				}
 			]
 		},
@@ -12417,7 +12534,7 @@
 			"name": "Rechtsgrundlagen",
 			"questions": [
 				{
-					"id": 507,
+					"id": 512,
 					"question": "Was gehört zu den Pflichtaufgaben der Feuerwehr?",
 					"choices": [
 						{
@@ -12443,7 +12560,7 @@
 					]
 				},
 				{
-					"id": 508,
+					"id": 513,
 					"question": "Was gehört zu den Pflichtaufgaben der Feuerwehrangehörigen?",
 					"choices": [
 						{
@@ -12469,7 +12586,7 @@
 					]
 				},
 				{
-					"id": 509,
+					"id": 514,
 					"question": "Wer ist Träger der Feuerwehr?",
 					"choices": [
 						{
@@ -12495,7 +12612,7 @@
 					]
 				},
 				{
-					"id": 510,
+					"id": 515,
 					"question": "Wer ist für die Ausrüstung der örtlichen Feuerwehr verantwortlich?",
 					"choices": [
 						{
@@ -12521,7 +12638,7 @@
 					]
 				},
 				{
-					"id": 511,
+					"id": 516,
 					"question": "Welche Feuerwehren sind \"hoheitlich\" tätig?",
 					"choices": [
 						{
@@ -12542,7 +12659,7 @@
 					"help": []
 				},
 				{
-					"id": 512,
+					"id": 517,
 					"question": "Wer ist der Leiter der Feuerwehr?",
 					"choices": [
 						{
@@ -12568,7 +12685,7 @@
 					]
 				},
 				{
-					"id": 513,
+					"id": 518,
 					"question": "Wer leitet, gebunden an die Weisungen des Gemeinde-/Stadtbrandinspektors, die Orts- bzw. Stadtteilfeuerwehr?",
 					"choices": [
 						{
@@ -12594,7 +12711,7 @@
 					]
 				},
 				{
-					"id": 514,
+					"id": 519,
 					"question": "Welche Qualifikation besitzt eine Führungskraft einer Freiwilligen Feuerwehr, deren Feuerwehrhelm mit jeweils einem roten Streifen auf beiden Helmseiten gekennzeichnet ist?",
 					"choices": [
 						{
@@ -12620,7 +12737,7 @@
 					]
 				},
 				{
-					"id": 515,
+					"id": 520,
 					"question": "Welche Qualifikation besitzt eine Führungskraft einer Freiwilligen Feuerwehr, deren Feuerwehrhelm mit jeweils zwei roten Streifen auf beiden Helmseiten gekennzeichnet ist?",
 					"choices": [
 						{
@@ -12646,7 +12763,7 @@
 					]
 				},
 				{
-					"id": 516,
+					"id": 521,
 					"question": "In welchen Situationen hat ein Feuerwehrangehöriger den Weisungen seines Vorgesetzten Folge zu leisten?",
 					"choices": [
 						{
@@ -12672,7 +12789,7 @@
 					]
 				},
 				{
-					"id": 517,
+					"id": 522,
 					"question": "Wer zahlt den Lohnausfall eines Feuerwehrangehörigen, wenn dieser aufgrund von Einsätzen oder Übungen entsteht?",
 					"choices": [
 						{
@@ -12693,7 +12810,7 @@
 					"help": []
 				},
 				{
-					"id": 518,
+					"id": 523,
 					"question": "Welche ehrenamtlichen Feuerwehrangehörigen erhalten eine angemessene Dienstaufwandsentschädigung?",
 					"choices": [
 						{
@@ -12714,7 +12831,7 @@
 					"help": []
 				},
 				{
-					"id": 519,
+					"id": 524,
 					"question": "Wer versichert die Feuerwehrangehörigen gegen Unfälle im Feuerwehrdienst?",
 					"choices": [
 						{
@@ -12740,7 +12857,7 @@
 					]
 				},
 				{
-					"id": 520,
+					"id": 525,
 					"question": "Wer muss die erforderliche Dienst- und Schutzkleidung für Feuerwehrangehörige stellen?",
 					"choices": [
 						{
@@ -12766,7 +12883,7 @@
 					]
 				},
 				{
-					"id": 521,
+					"id": 526,
 					"question": "In welchen Situationen müssen am Einsatzort anwesende Personen der Räumung des Einsatzortes unverzüglich Folge leisten?",
 					"choices": [
 						{
@@ -12792,7 +12909,7 @@
 					]
 				},
 				{
-					"id": 522,
+					"id": 527,
 					"question": "Wem müssen Personen einen Brand oder ein anderes Schadenereignis, bei dem Menschen gefährdet sind, unverzüglich melden?",
 					"choices": [
 						{
@@ -12818,7 +12935,7 @@
 					]
 				},
 				{
-					"id": 523,
+					"id": 528,
 					"question": "Welche Aussage zum Hessischen Brand- und Katastrophenschutzgesetz (HBKG) ist richtig?",
 					"choices": [
 						{
@@ -12844,7 +12961,7 @@
 					]
 				},
 				{
-					"id": 524,
+					"id": 529,
 					"question": "Welche Aussage zur Kennzeichnung von Atemschutzgeräteträgern ist richtig?",
 					"choices": [
 						{
@@ -12870,7 +12987,7 @@
 					]
 				},
 				{
-					"id": 525,
+					"id": 530,
 					"question": "Wer wählt den Leiter der Feuerwehr?",
 					"choices": [
 						{
@@ -12896,7 +13013,7 @@
 					]
 				},
 				{
-					"id": 526,
+					"id": 531,
 					"question": "Welche Qualifikation besitzt ein Feuerwehrangehöriger, dessen Feuerwehrhelm mit jeweils einem blauen Punkt auf beiden Helmseiten gekennzeichnet ist?",
 					"choices": [
 						{
@@ -12922,7 +13039,7 @@
 					]
 				},
 				{
-					"id": 527,
+					"id": 532,
 					"question": "Welche Antwortmöglichkeit nennt ausschließlich öffentliche Feuerwehren?",
 					"choices": [
 						{
@@ -12948,7 +13065,7 @@
 					]
 				},
 				{
-					"id": 528,
+					"id": 533,
 					"question": "Sie werden an einer Einsatzstelle von einem Pressevertreter angesprochen. Welches Verhalten ist richtig?",
 					"choices": [
 						{
@@ -12969,7 +13086,7 @@
 					"help": []
 				},
 				{
-					"id": 529,
+					"id": 534,
 					"question": "Wo sind u. a. die Rechte und Pflichten der Feuerwehrangehörigen festgelegt?",
 					"choices": [
 						{
@@ -12995,7 +13112,7 @@
 					]
 				},
 				{
-					"id": 530,
+					"id": 535,
 					"question": "Welches ist keine Aufgabe der Gemeinde nach dem HBKG?",
 					"choices": [
 						{
@@ -13026,7 +13143,7 @@
 			"name": "Rettung und Absturzsicherung",
 			"questions": [
 				{
-					"id": 531,
+					"id": 536,
 					"question": "Welche Aussage über das Anschlagen der Feuerwehrleine beim Selbstretten im Einsatz ist richtig?",
 					"choices": [
 						{
@@ -13052,7 +13169,7 @@
 					]
 				},
 				{
-					"id": 532,
+					"id": 537,
 					"question": "Die FwDV 1 \"Grundtätigkeiten\" beschreibt das Aussteigen beim Selbstretten. Welche Aussage trifft zu?",
 					"choices": [
 						{
@@ -13078,7 +13195,7 @@
 					]
 				},
 				{
-					"id": 533,
+					"id": 538,
 					"question": "Wie wird die Abseilgeschwindigkeit beim Selbstretten geregelt?",
 					"choices": [
 						{
@@ -13104,7 +13221,7 @@
 					]
 				},
 				{
-					"id": 534,
+					"id": 539,
 					"question": "Welche Aufgabe erfüllt die freie Hand beim Selbstretten?",
 					"choices": [
 						{
@@ -13130,7 +13247,7 @@
 					]
 				},
 				{
-					"id": 535,
+					"id": 540,
 					"question": "Was ist beim Einsatz einer Feuerwehrleine zu beachten?",
 					"choices": [
 						{
@@ -13151,7 +13268,7 @@
 					"help": []
 				},
 				{
-					"id": 536,
+					"id": 541,
 					"question": "Welche Aussage über den Gerätesatz \"Absturzsicherung\" ist richtig?",
 					"choices": [
 						{
@@ -13172,7 +13289,7 @@
 					"help": []
 				},
 				{
-					"id": 537,
+					"id": 542,
 					"question": "Welche Aussage zum \"Auffangen\" ist richtig?",
 					"choices": [
 						{
@@ -13198,7 +13315,7 @@
 					]
 				},
 				{
-					"id": 538,
+					"id": 543,
 					"question": "Welche Aussage zum \"Halten\" ist richtig?",
 					"choices": [
 						{
@@ -13224,7 +13341,7 @@
 					]
 				},
 				{
-					"id": 539,
+					"id": 544,
 					"question": "Welche Leinen und Seile finden im Feuerwehrdienst Verwendung?",
 					"choices": [
 						{
@@ -13250,7 +13367,7 @@
 					]
 				},
 				{
-					"id": 540,
+					"id": 545,
 					"question": "Welche Aussage zu Anschlagpunkten ist richtig?",
 					"choices": [
 						{
@@ -13276,7 +13393,7 @@
 					]
 				},
 				{
-					"id": 541,
+					"id": 546,
 					"question": "Wann darf eine Sichtprüfung der Feuerwehrleine mit dem Einlegen der Feuerwehrleine in den Feuerwehrmehrzweckbeutel kombiniert werden?",
 					"choices": [
 						{
@@ -13302,7 +13419,7 @@
 					]
 				},
 				{
-					"id": 542,
+					"id": 547,
 					"question": "Wie wird das lose Feuerwehrleinenende beim Selbstretten am Boden befestigt?",
 					"choices": [
 						{
@@ -13328,7 +13445,7 @@
 					]
 				},
 				{
-					"id": 543,
+					"id": 548,
 					"question": "Was ist beim Selbstretten zu beachten?",
 					"choices": [
 						{
@@ -13354,7 +13471,7 @@
 			"name": "Rettungsgeräte",
 			"questions": [
 				{
-					"id": 544,
+					"id": 549,
 					"question": "Wie viele Feuerwehrangehörige werden nach der FwDV 1 \"Grundtätigkeiten\" zum Transport einer verletzten Person in einem Rettungstuch benötigt?",
 					"choices": [
 						{
@@ -13380,7 +13497,7 @@
 					]
 				},
 				{
-					"id": 545,
+					"id": 550,
 					"question": "Welche Seile bzw. Leinen dürfen nach der FwDV 1 \"Grundtätigkeiten\" verwendet werden, um einen Absturz (Halten) auszuschließen?",
 					"choices": [
 						{
@@ -13406,7 +13523,7 @@
 					]
 				},
 				{
-					"id": 546,
+					"id": 551,
 					"question": "Wozu ist die Schaufeltrage besonders geeignet?",
 					"choices": [
 						{
@@ -13432,7 +13549,7 @@
 					]
 				},
 				{
-					"id": 547,
+					"id": 552,
 					"question": "Wie viele Personen dürfen eine aufgerichtete dreiteilige Schiebleiter gleichzeitig besteigen?",
 					"choices": [
 						{
@@ -13453,7 +13570,7 @@
 					"help": []
 				},
 				{
-					"id": 548,
+					"id": 553,
 					"question": "Wie wird eine Steckleiter auf engem Raum in Stellung gebracht?",
 					"choices": [
 						{
@@ -13479,7 +13596,7 @@
 					]
 				},
 				{
-					"id": 549,
+					"id": 554,
 					"question": "Wie viele Personen dürfen eine aufgerichtete Steckleiter gleichzeitig besteigen?",
 					"choices": [
 						{
@@ -13500,7 +13617,7 @@
 					"help": []
 				},
 				{
-					"id": 550,
+					"id": 555,
 					"question": "Wie viele Feuerwehrangehörige sind nach der FwDV 10 \"Die Tragbaren Leitern\" zur Aufstellung einer vierteiligen Steckleiter mindestens einzusetzen?",
 					"choices": [
 						{
@@ -13526,7 +13643,7 @@
 					]
 				},
 				{
-					"id": 551,
+					"id": 556,
 					"question": "Darf der vorgehende Trupp die Steckleiter selbst sichern?",
 					"choices": [
 						{
@@ -13552,7 +13669,7 @@
 					]
 				},
 				{
-					"id": 552,
+					"id": 557,
 					"question": "Darf eine Steckleiter als Hilfsgerät (z. B. als Bockleiter) benutzt werden?",
 					"choices": [
 						{
@@ -13582,7 +13699,7 @@
 					]
 				},
 				{
-					"id": 553,
+					"id": 558,
 					"question": "Wie wird nach der FwDV 10 \"Die Tragbaren Leitern\" die dreiteilige Schiebleiter von den Trupps zur Einsatzstelle getragen?",
 					"choices": [
 						{
@@ -13608,7 +13725,7 @@
 					]
 				},
 				{
-					"id": 554,
+					"id": 559,
 					"question": "Wie groß muss der Sicherheitsabstand beim Aufrichten einer Leiter in der Nähe einer elektrischen Freileitung mit mehr als 220.000 Volt Spannung mindestens sein?",
 					"choices": [
 						{
@@ -13634,7 +13751,7 @@
 					]
 				},
 				{
-					"id": 555,
+					"id": 560,
 					"question": "Wie groß muss der notwendige Sicherheitsabstand beim Aufrichten einer Leiter in der Nähe einer elektrischen Freileitung mit 30.000 Volt Spannung mindestens sein?",
 					"choices": [
 						{
@@ -13660,7 +13777,7 @@
 					]
 				},
 				{
-					"id": 556,
+					"id": 561,
 					"question": "Wie werden tragbare Leitern zur Einsatzstelle getragen?",
 					"choices": [
 						{
@@ -13686,7 +13803,7 @@
 					]
 				},
 				{
-					"id": 557,
+					"id": 562,
 					"question": "Welches Obergeschoss kann in der Regel mit der 4-teiligen Steckleiter erreicht werden?",
 					"choices": [
 						{
@@ -13712,7 +13829,7 @@
 					]
 				},
 				{
-					"id": 558,
+					"id": 563,
 					"question": "Bei welcher nachfolgenden tragbaren Leiter ist die Transportlänge größer als die Einsatzlänge?",
 					"choices": [
 						{
@@ -13733,7 +13850,7 @@
 					"help": []
 				},
 				{
-					"id": 559,
+					"id": 564,
 					"question": "Mit welchen Knoten wird nach der FwDV 10 \"Die tragbaren Leitern\" das Zugseil der ausgezogenen dreiteiligen Schiebleiter befestigt?",
 					"choices": [
 						{
@@ -13759,7 +13876,7 @@
 					]
 				},
 				{
-					"id": 560,
+					"id": 565,
 					"question": "Wie viele Feuerwehrangehörige sind bei der Vornahme einer 4-teiligen Steckleiter nach der FwDV 10 \"Die tragbaren Leitern\" erforderlich?",
 					"choices": [
 						{
@@ -13785,7 +13902,7 @@
 					]
 				},
 				{
-					"id": 561,
+					"id": 566,
 					"question": "Wer unterstützt nach der FwDV 10 \"Die tragbaren Leitern\" die Trupps bei der Entnahme tragbarer Leitern vom Fahrzeug?",
 					"choices": [
 						{
@@ -13811,7 +13928,7 @@
 					]
 				},
 				{
-					"id": 562,
+					"id": 567,
 					"question": "Wo wird eine vierteilige Steckleiter beim Aufrichten vom Trupp angefasst?",
 					"choices": [
 						{
@@ -13837,7 +13954,7 @@
 					]
 				},
 				{
-					"id": 563,
+					"id": 568,
 					"question": "Welchen Anstellwinkel muss eine angestellte tragbare Leiter haben?",
 					"choices": [
 						{
@@ -13863,7 +13980,7 @@
 					]
 				},
 				{
-					"id": 564,
+					"id": 569,
 					"question": "Wo ist nach der FwDV 10 \"Die tragbaren Leitern\" eine Steckleiter vor dem Aufrichten abzulegen?",
 					"choices": [
 						{
@@ -13889,7 +14006,7 @@
 					]
 				},
 				{
-					"id": 565,
+					"id": 570,
 					"question": "Was sind nach der FwDV 10 \"Die tragbaren Leitern\" tragbare Leitern?",
 					"choices": [
 						{
@@ -13915,7 +14032,7 @@
 					]
 				},
 				{
-					"id": 566,
+					"id": 571,
 					"question": "Wofür können nach der FwDV 10 \"Die tragbaren Leitern\" tragbare Leitern eingesetzt werden?",
 					"choices": [
 						{
@@ -13941,7 +14058,7 @@
 					]
 				},
 				{
-					"id": 567,
+					"id": 572,
 					"question": "Wie viele Steckleiterteile werden maximal benötigt, um das erste Obergeschoss (Oberkante Brüstung ca. 5 m) sicher zu erreichen?",
 					"choices": [
 						{
@@ -13967,7 +14084,7 @@
 					]
 				},
 				{
-					"id": 568,
+					"id": 573,
 					"question": "Bis zu welcher Höhe darf die Hakenleiter eingesetzt werden?",
 					"choices": [
 						{
@@ -13988,7 +14105,7 @@
 					"help": []
 				},
 				{
-					"id": 569,
+					"id": 574,
 					"question": "Wie viele Steckleiterteile dürfen höchstens zusammengesteckt werden, damit die Leiter noch bestiegen werden darf?",
 					"choices": [
 						{
@@ -14014,7 +14131,7 @@
 					]
 				},
 				{
-					"id": 570,
+					"id": 575,
 					"question": "Aus welchem Material können Steckleitern hergestellt werden?",
 					"choices": [
 						{
@@ -14035,7 +14152,7 @@
 					"help": []
 				},
 				{
-					"id": 571,
+					"id": 576,
 					"question": "Darf eine Steckleiter als Hilfsgerät benutzt werden?",
 					"choices": [
 						{
@@ -14061,7 +14178,7 @@
 					]
 				},
 				{
-					"id": 572,
+					"id": 577,
 					"question": "Wie sind tragbare Leitern aufzustellen?",
 					"choices": [
 						{
@@ -14087,7 +14204,7 @@
 					]
 				},
 				{
-					"id": 573,
+					"id": 578,
 					"question": "Wodurch sind Steckleiterteile nach dem Einstecken gesichert?",
 					"choices": [
 						{
@@ -14113,7 +14230,7 @@
 					]
 				},
 				{
-					"id": 574,
+					"id": 579,
 					"question": "Darf von einer tragbaren Leiter Wasser gegeben werden?",
 					"choices": [
 						{
@@ -14139,7 +14256,7 @@
 					]
 				},
 				{
-					"id": 575,
+					"id": 580,
 					"question": "Welche nachfolgende Leiter ist nicht genormt?",
 					"choices": [
 						{
@@ -14165,7 +14282,7 @@
 					]
 				},
 				{
-					"id": 576,
+					"id": 581,
 					"question": "Welches Obergeschoss kann mit der 3-teiligen Schiebleiter maximal erreicht werden?",
 					"choices": [
 						{
@@ -14191,7 +14308,7 @@
 					]
 				},
 				{
-					"id": 577,
+					"id": 582,
 					"question": "Wie viele Trupps werden zum In-Stellung-Bringen der dreiteiligen Schiebleiter benötigt?",
 					"choices": [
 						{
@@ -14217,7 +14334,7 @@
 					]
 				},
 				{
-					"id": 578,
+					"id": 583,
 					"question": "Mit wie vielen Feuerwehrangehörigen wird nach der FwDV 10 \"Die tragbaren Leitern\" die Steckleiter vorgenommen?",
 					"choices": [
 						{
@@ -14243,7 +14360,7 @@
 					]
 				},
 				{
-					"id": 579,
+					"id": 584,
 					"question": "Welche der nachfolgend aufgeführten tragbaren Leitern sind nicht genormt?",
 					"choices": [
 						{
@@ -14269,7 +14386,7 @@
 					]
 				},
 				{
-					"id": 580,
+					"id": 585,
 					"question": "Mit welcher tragbaren Leiter kann nach der FwDV 10 \"Die tragbaren Leitern\" eine Bockleiter errichtet werden?",
 					"choices": [
 						{
@@ -14290,7 +14407,7 @@
 					"help": []
 				},
 				{
-					"id": 581,
+					"id": 586,
 					"question": "Wie viele Feuerwehrangehörige sichern eine Steckleiter, die nur bis zum ersten Obergeschoss eingesetzt wird?",
 					"choices": [
 						{
@@ -14316,7 +14433,7 @@
 					]
 				},
 				{
-					"id": 582,
+					"id": 587,
 					"question": "Muss eine tragbare Leiter bei einer Menschenrettung über die Übersteigebene hinausragen?",
 					"choices": [
 						{
@@ -14337,7 +14454,7 @@
 					"help": []
 				},
 				{
-					"id": 583,
+					"id": 588,
 					"question": "Darf beim Besteigen einer 4-teiligen Steckleiter der vorgehende Trupp sich selbst sichern?",
 					"choices": [
 						{
@@ -14363,7 +14480,7 @@
 					]
 				},
 				{
-					"id": 584,
+					"id": 589,
 					"question": "Wodurch wird die Standsicherheit von tragbaren Leitern beeinträchtigt?",
 					"choices": [
 						{
@@ -14389,7 +14506,7 @@
 					]
 				},
 				{
-					"id": 585,
+					"id": 590,
 					"question": "Eine Steckleiter wird vom Angriffstrupp und dem Melder in Stellung gebracht. An welcher Stelle trägt der Melder nach der FwDV 10 \"die tragbaren Leitern\" die Leiter?",
 					"choices": [
 						{
@@ -14415,7 +14532,7 @@
 					]
 				},
 				{
-					"id": 586,
+					"id": 591,
 					"question": "Bis in welche Höhe darf eine Schlauchleitung über eine tragbare Leiter von einem Feuerwehrangehörigen mitgeführt werden?",
 					"choices": [
 						{
@@ -14441,7 +14558,7 @@
 					]
 				},
 				{
-					"id": 587,
+					"id": 592,
 					"question": "Bis zu welchem seitlichen Winkel darf ein Strahlrohr von einer Leiter eingesetzt werden?",
 					"choices": [
 						{
@@ -14472,7 +14589,7 @@
 			"name": "Sonstige Geräte",
 			"questions": [
 				{
-					"id": 588,
+					"id": 593,
 					"question": "Wie sind Geräte zur Sicherung von Einsatzstellen gegen den fließenden Verkehr bei kurviger Straße aufzustellen?",
 					"choices": [
 						{
@@ -14498,7 +14615,7 @@
 					]
 				},
 				{
-					"id": 589,
+					"id": 594,
 					"question": "Ist der Handscheinwerfer mit farbiger Vorsteckscheibe oder Gelblichtkalotte eine zugelassene Warnleuchte im Straßenverkehr?",
 					"choices": [
 						{
@@ -14524,7 +14641,7 @@
 					]
 				},
 				{
-					"id": 590,
+					"id": 595,
 					"question": "Was ist bei einem Einsatz von Handscheinwerfern in explosionsgefährdeten Atmosphären zu beachten?",
 					"choices": [
 						{
@@ -14550,7 +14667,7 @@
 					]
 				},
 				{
-					"id": 591,
+					"id": 596,
 					"question": "Welche Warngeräte müssen nach FwDV 1 \"Grundtätigkeiten\" bei der Absicherung auf einer geraden Straße innerorts in 100 m vor der Einsatzstelle aufgestellt werden?",
 					"choices": [
 						{
@@ -14576,7 +14693,7 @@
 					]
 				},
 				{
-					"id": 592,
+					"id": 597,
 					"question": "Eine Feuerpatsche ist ein Gerät ...",
 					"choices": [
 						{
@@ -14597,7 +14714,7 @@
 					"help": []
 				},
 				{
-					"id": 593,
+					"id": 598,
 					"question": "Welche Aussage zur Verlegung elektrischer Leitungen ist richtig?",
 					"choices": [
 						{
@@ -14621,32 +14738,6 @@
 							"page": 65
 						}
 					]
-				},
-				{
-					"id": 594,
-					"question": "Welche Aussage zur Verwendung einer Kopflampe ist richtig?",
-					"choices": [
-						{
-							"text": "Durch den universellen Aufbau ist jede Kopflampe an jedem Feuerwehrhelm anzubringen",
-							"answer": false
-						},
-						{
-							"text": "Die Kopflampe muss mit dem Feuerwehrhelm fest verschraubt sein.",
-							"answer": false
-						},
-						{
-							"text": "Die Eignung der Kopflampe für explosionsgefährdete Bereiche ist zu beachten.",
-							"answer": true
-						}
-					],
-					"image": null,
-					"tags": ["Sonstige Geräte"],
-					"help": [
-						{
-							"name": "FwDV 1",
-							"page": 66
-						}
-					]
 				}
 			]
 		},
@@ -14654,7 +14745,7 @@
 			"name": "Sprechfunk",
 			"questions": [
 				{
-					"id": 595,
+					"id": 599,
 					"question": "Sie sind als angerufene Sprechfunkbetriebsstelle nicht in der Lage, eine Nachricht sofort aufzunehmen. Welche Anrufantwort ist zu verwenden?",
 					"choices": [
 						{
@@ -14680,7 +14771,7 @@
 					]
 				},
 				{
-					"id": 596,
+					"id": 600,
 					"question": "Im Digitalfunknetz der BOS werden die Betriebsarten \"Netzbetrieb\" (TMO - Trunked Mode Operation) und \"netzunabhängiger Betrieb\" (DMO - Direct Mode Operation) unterschieden. Welche Aussage ist hierzu richtig?",
 					"choices": [
 						{
@@ -14706,7 +14797,7 @@
 					]
 				},
 				{
-					"id": 597,
+					"id": 601,
 					"question": "Welche Aussage trifft für die Rufart \"Einzelruf\" in der Betriebsart \"Netzbetrieb\" (TMO -Trunked Mode Operation) zu?",
 					"choices": [
 						{
@@ -14732,7 +14823,7 @@
 					]
 				},
 				{
-					"id": 598,
+					"id": 602,
 					"question": "Wer ist für das Endgeräte-Management, die Anwenderbetreuung und für den prozessorientierten Service in seinem Zuständigkeitsbereich für den Digitalfunk in Hessen verantwortlich?",
 					"choices": [
 						{
@@ -14753,7 +14844,7 @@
 					"help": []
 				},
 				{
-					"id": 599,
+					"id": 603,
 					"question": "Kann beim Einsatz tragbarer Sprechfunkanlagen (z. B. HRT) in Stahlbetonkonstruktionen oder Tunnelanlagen die Ausbreitung der elektromagnetischen Wellen behindert werden?",
 					"choices": [
 						{
@@ -14774,7 +14865,7 @@
 					"help": []
 				},
 				{
-					"id": 600,
+					"id": 604,
 					"question": "Wie werden Sprechfunknachrichten unterschieden?",
 					"choices": [
 						{
@@ -14800,7 +14891,7 @@
 					]
 				},
 				{
-					"id": 601,
+					"id": 605,
 					"question": "Buchstabieren Sie das Wort \"FALSCH\" nach der \"Buchstabiertafel Inland\". Ich buchstabiere:",
 					"choices": [
 						{
@@ -14826,7 +14917,7 @@
 					]
 				},
 				{
-					"id": 602,
+					"id": 606,
 					"question": "Welche Einrichtung ist der funkbetriebliche Mittelpunkt eines Funkverkehrskreises?",
 					"choices": [
 						{
@@ -14847,7 +14938,7 @@
 					"help": []
 				},
 				{
-					"id": 603,
+					"id": 607,
 					"question": "Durch welche Tastenkombination wird bei einem HRT die Tastensperre aufgehoben?",
 					"choices": [
 						{
@@ -14868,7 +14959,7 @@
 					"help": []
 				},
 				{
-					"id": 604,
+					"id": 608,
 					"question": "Die zuständige Leitstelle hört nicht ständig alle Gruppen in Ihrem Bereich mit. Daher ist es notwendig, per Status einen Sprechwunsch zu signalisieren. Welche Taste an einem hessischen BOS-TETRA-Funkgerät müssen Sie hierzu betätigen?",
 					"choices": [
 						{
@@ -14898,7 +14989,7 @@
 					]
 				},
 				{
-					"id": 605,
+					"id": 609,
 					"question": "Welche Aussage ist zu dem Funkrufnamen \"Florian Mücke 7-47-14\" zutreffend?",
 					"choices": [
 						{
@@ -14924,7 +15015,7 @@
 					]
 				},
 				{
-					"id": 606,
+					"id": 610,
 					"question": "An einer Einsatzstelle der Feuerwehr wird im Sprechfunkbetrieb zu der primär genutzten Gruppe eine zweite Gruppe im netzunabhängigen Betrieb (DMO) benötigt. Welche Gruppe darf verwendet werden?",
 					"choices": [
 						{
@@ -14955,7 +15046,7 @@
 			"name": "Technische Hilfeleistung",
 			"questions": [
 				{
-					"id": 607,
+					"id": 611,
 					"question": "Welche Hauptaufgabe übernimmt der Angriffstrupp im Hilfeleistungseinsatz?",
 					"choices": [
 						{
@@ -14981,7 +15072,7 @@
 					]
 				},
 				{
-					"id": 608,
+					"id": 612,
 					"question": "Welche Hauptaufgabe übernimmt der Wassertrupp im Hilfeleistungseinsatz?",
 					"choices": [
 						{
@@ -15007,7 +15098,7 @@
 					]
 				},
 				{
-					"id": 609,
+					"id": 613,
 					"question": "Welche Hauptaufgabe übernimmt der Schlauchtrupp im Hilfeleistungseinsatz?",
 					"choices": [
 						{
@@ -15033,7 +15124,7 @@
 					]
 				},
 				{
-					"id": 610,
+					"id": 614,
 					"question": "Welche Aussage über die Aufgaben des Angriffstrupps im Hilfeleistungseinsatz ist richtig?",
 					"choices": [
 						{
@@ -15059,7 +15150,7 @@
 					]
 				},
 				{
-					"id": 611,
+					"id": 615,
 					"question": "Welche Aussage über die Aufgaben des Wassertrupps im Hilfeleistungseinsatz ist richtig?",
 					"choices": [
 						{
@@ -15085,7 +15176,7 @@
 					]
 				},
 				{
-					"id": 612,
+					"id": 616,
 					"question": "Welche Aussage über die Aufgaben des Schlauchtrupps im Hilfeleistungseinsatz ist richtig?",
 					"choices": [
 						{
@@ -15111,7 +15202,7 @@
 					]
 				},
 				{
-					"id": 613,
+					"id": 617,
 					"question": "Wer ist befugt Abweichungen von der persönlichen Ausrüstung im Hilfeleistungseinsatz zu befehlen?",
 					"choices": [
 						{
@@ -15137,7 +15228,7 @@
 					]
 				},
 				{
-					"id": 614,
+					"id": 618,
 					"question": "Welche Ausrüstungsgegenstände nimmt der Angriffstrupp im Hilfeleistungseinsatz vor?",
 					"choices": [
 						{
@@ -15158,7 +15249,7 @@
 					"help": []
 				},
 				{
-					"id": 615,
+					"id": 619,
 					"question": "Wie ist grundsätzlich auf Bundesstraßen und Bundesautobahnen im Hilfeleistungseinsatz vom Fahrzeug abzusitzen?",
 					"choices": [
 						{
@@ -15184,7 +15275,7 @@
 					]
 				},
 				{
-					"id": 616,
+					"id": 620,
 					"question": "Welche Aussage über den Melder im Hilfeleistungseinsatz ist richtig?",
 					"choices": [
 						{
@@ -15210,7 +15301,7 @@
 					]
 				},
 				{
-					"id": 617,
+					"id": 621,
 					"question": "Wer stellt die zur Rettung befohlenen Geräte bereit, wenn der Schlauchtrupp nicht zur Verfügung steht?",
 					"choices": [
 						{
@@ -15236,7 +15327,7 @@
 					]
 				},
 				{
-					"id": 618,
+					"id": 622,
 					"question": "Welche Sicherungsaufgaben im Hilfeleistungseinsatz werden durch den Wassertrupp ohne besonderen Befehl vorgenommen?",
 					"choices": [
 						{
@@ -15262,7 +15353,7 @@
 					]
 				},
 				{
-					"id": 619,
+					"id": 623,
 					"question": "Beim Hilfeleistungseinsatz wird die Ordnung des Raumes gegliedert in...",
 					"choices": [
 						{
@@ -15292,7 +15383,7 @@
 					]
 				},
 				{
-					"id": 620,
+					"id": 624,
 					"question": "Wo befindet sich der Arbeitsbereich beim Hilfeleistungseinsatz nach der FwDV 3?",
 					"choices": [
 						{
@@ -15318,7 +15409,7 @@
 					]
 				},
 				{
-					"id": 621,
+					"id": 625,
 					"question": "Wie werden Einsatzstellen gegen den fließenden Verkehr gesichert?",
 					"choices": [
 						{
@@ -15344,7 +15435,7 @@
 					]
 				},
 				{
-					"id": 622,
+					"id": 626,
 					"question": "Was versteht man nach der FwDV 3 unter dem Begriff \"Absperrbereich\"?",
 					"choices": [
 						{
@@ -15375,7 +15466,7 @@
 			"name": "Unfallverhütungsvorschriften / Unfallversicherung",
 			"questions": [
 				{
-					"id": 623,
+					"id": 627,
 					"question": "In welchen Zeitabständen sind die Feuerwehrangehörigen nach § 8 der UVV-Feuerwehren (DGUV-Vorschrift 49) in Verbindung mit § 4 der UVV \"Grundsätze der Prävention\" (DGUV-Vorschrift 1) über die Gefahren im Feuerwehrdienst sowie über die Maßnahmen zur Verhütung von Unfällen zu unterweisen?",
 					"choices": [
 						{
@@ -15401,7 +15492,7 @@
 					]
 				},
 				{
-					"id": 624,
+					"id": 628,
 					"question": "Der Freiwillige Feuerwehrangehörige in Hessen ist gegen Unfälle im Dienst versichert. Bei welchem Versicherungsträger ist der Feuerwehrangehörige versichert?",
 					"choices": [
 						{
@@ -15422,7 +15513,7 @@
 					"help": []
 				},
 				{
-					"id": 625,
+					"id": 629,
 					"question": "Welcher Prüfung unterliegen nach der UVV-Feuerwehren (DGUV-Vorschrift 49) Feuerwehr-Haltegurte nach jeder Benutzung?",
 					"choices": [
 						{
@@ -15448,7 +15539,7 @@
 					]
 				},
 				{
-					"id": 626,
+					"id": 630,
 					"question": "Wie viele Personen müssen nach der UVV-Feuerwehren (DGUV-Vorschrift 49), in Verbindung mit DGUV-Regel 105-049 \"Feuerwehren\" und der FwDV 1 \"Grundtätigkeiten\" mindestens ein BM-Strahlrohr halten, wenn ein Stützkrümmereinsatz nicht möglich ist?",
 					"choices": [
 						{
@@ -15478,7 +15569,7 @@
 					]
 				},
 				{
-					"id": 627,
+					"id": 631,
 					"question": "Welche Schutzausrüstung ist nach der UVV-Feuerwehren (DGUV-Vorschrift 49) bei Übungen und im Einsatz zu tragen?",
 					"choices": [
 						{
@@ -15504,7 +15595,7 @@
 					]
 				},
 				{
-					"id": 628,
+					"id": 632,
 					"question": "Bis zu welcher Höhe dürfen nach der UVV-Feuerwehren (DGUV-Vorschrift 49), in Verbindung mit DGUV-Regel 105-049 \"Feuerwehren\" Selbstrettungsübungen unter besonderen Sicherungsmaßnahmen durchgeführt werden?",
 					"choices": [
 						{
@@ -15530,7 +15621,7 @@
 					]
 				},
 				{
-					"id": 629,
+					"id": 633,
 					"question": "Worauf bezieht sich der Geltungsbereich der UVV-Feuerwehren (DGUV-Vorschrift 49)?",
 					"choices": [
 						{
@@ -15556,7 +15647,7 @@
 					]
 				},
 				{
-					"id": 630,
+					"id": 634,
 					"question": "Welche Mindestabstände sind mit tragbaren Leitern, nach DIN VDE 0132, bei Annäherung an elektrische, unter Spannung stehende Anlagen einzuhalten?",
 					"choices": [
 						{
@@ -15586,7 +15677,7 @@
 					]
 				},
 				{
-					"id": 631,
+					"id": 635,
 					"question": "Welcher Sicherheitsabstand ist mit tragbaren Leitern, nach DIN VDE 0132, in der Nähe von elektrischen Freileitungen mit einer Spannung von 110000 Volt mindestens einzuhalten?",
 					"choices": [
 						{
@@ -15616,7 +15707,7 @@
 					]
 				},
 				{
-					"id": 632,
+					"id": 636,
 					"question": "Wo ist die Art der Durchführung der regelmäßigen Prüfungen von Ausrüstungen und Geräten nach der UVV-Feuerwehren (DGUV-Vorschrift 49), in Verbindung mit DGUV-Regel 105-049 \"Feuerwehren\" festgelegt?",
 					"choices": [
 						{
@@ -15637,7 +15728,7 @@
 					"help": []
 				},
 				{
-					"id": 633,
+					"id": 637,
 					"question": "Wie ist ein Schlauch beim Besteigen einer Leiter zu tragen?",
 					"choices": [
 						{
@@ -15663,7 +15754,7 @@
 					]
 				},
 				{
-					"id": 634,
+					"id": 638,
 					"question": "In welchem Fall dürfen schadhafte Leitern nach der DGUV Information 208-016 \"Handlungsanleitung für den Umgang mit Leitern und Tritten\" wieder benutzt werden?",
 					"choices": [
 						{
@@ -15684,7 +15775,7 @@
 					"help": []
 				},
 				{
-					"id": 635,
+					"id": 639,
 					"question": "Was ist bei Leitern, die an Verkehrswegen aufgestellt sind, nach der DGUV Information 208-016 \"Handlungsanleitung für den Umgang mit Leitern und Tritten\" zu beachten?",
 					"choices": [
 						{
@@ -15710,7 +15801,7 @@
 					]
 				},
 				{
-					"id": 636,
+					"id": 640,
 					"question": "Wie sind nach der UVV-Feuerwehren (DGUV-Vorschrift 49) Strahlrohre, Schläuche und Verteiler zu benutzen?",
 					"choices": [
 						{
@@ -15736,7 +15827,7 @@
 					]
 				},
 				{
-					"id": 637,
+					"id": 641,
 					"question": "Was ist im Sinne der UVV-Feuerwehren (DGUV-Vorschrift 49) der Einsatzort?",
 					"choices": [
 						{
@@ -15762,7 +15853,7 @@
 					]
 				},
 				{
-					"id": 638,
+					"id": 642,
 					"question": "Worauf ist nach der VDE 0132 \"Brandbekämpfung in elektrischen Anlagen\" beim Aufrichten von Leitern in der Nähe elektrischer Freileitungen oder sonstiger Strom führender Teile zu achten?",
 					"choices": [
 						{
@@ -15792,7 +15883,7 @@
 					]
 				},
 				{
-					"id": 639,
+					"id": 643,
 					"question": "In welchem Fall darf von einer tragbaren Leiter Wasser gegeben werden?",
 					"choices": [
 						{
@@ -15818,7 +15909,7 @@
 					]
 				},
 				{
-					"id": 640,
+					"id": 644,
 					"question": "Welche der folgenden Teile der persönlichen Schutzausrüstung müssen den Feuerwehrangehörigen nach der UVV-Feuerwehren (DGUV-Vorschrift 49) zur Verfügung gestellt werden?",
 					"choices": [
 						{
@@ -15844,7 +15935,7 @@
 					]
 				},
 				{
-					"id": 641,
+					"id": 645,
 					"question": "Müssen aktive Feuerwehrangehörige über Unfallgefahren bezüglich der UVV-Feuerwehren (DGUV-Vorschrift 49) in Verbindung der UVV \"Grundsätze der Prävention\" (DGUV-Vorschrift 1) unterwiesen werden?",
 					"choices": [
 						{
@@ -15870,7 +15961,7 @@
 					]
 				},
 				{
-					"id": 642,
+					"id": 646,
 					"question": "Welche Feuerwehrangehörigen sind bei der Unfallkasse Hessen gesetzlich versichert?",
 					"choices": [
 						{
@@ -15891,7 +15982,7 @@
 					"help": []
 				},
 				{
-					"id": 643,
+					"id": 647,
 					"question": "Sie werden während der Feuerwehrausbildung leicht verletzt. Auf was sollten Sie den behandelnden Arzt hinweisen?",
 					"choices": [
 						{
@@ -15912,7 +16003,7 @@
 					"help": []
 				},
 				{
-					"id": 644,
+					"id": 648,
 					"question": "Sie sind aktives Mitglied der Freiwilligen Feuerwehr und werden auf dem Heimweg nach einer Feuerwehrübung durch einen Unfall verletzt. Deckt die gesetzliche Unfallversicherung diesen Fall ab?",
 					"choices": [
 						{
@@ -15933,7 +16024,7 @@
 					"help": []
 				},
 				{
-					"id": 645,
+					"id": 649,
 					"question": "Wer entrichtet die Beiträge zur Finanzierung der gesetzlichen Unfallkassen im Falle der Freiwilligen Feuerwehren?",
 					"choices": [
 						{
@@ -15954,7 +16045,7 @@
 					"help": []
 				},
 				{
-					"id": 646,
+					"id": 650,
 					"question": "Welche Rechtsvorschrift ist gesetzliche Grundlage der Unfallversicherung?",
 					"choices": [
 						{
@@ -15975,7 +16066,7 @@
 					"help": []
 				},
 				{
-					"id": 647,
+					"id": 651,
 					"question": "Wer ist der zuständige Unfallversicherungsträger der Freiwilligen Feuerwehren in Hessen?",
 					"choices": [
 						{
@@ -15996,7 +16087,7 @@
 					"help": []
 				},
 				{
-					"id": 648,
+					"id": 652,
 					"question": "Ein Feuerwehrangehöriger hat sich beim Einsatz eine leichte Schnittverletzung zugezogen, die mit einem Pflasterverband versorgt worden ist. Welche Aussage ist zutreffend?",
 					"choices": [
 						{
@@ -16017,7 +16108,7 @@
 					"help": []
 				},
 				{
-					"id": 649,
+					"id": 653,
 					"question": "Was ist beim Betrieb von elektrischen Betriebsmitteln zur Vermeidung eines Stromschlags zu beachten?",
 					"choices": [
 						{
@@ -16038,7 +16129,7 @@
 					"help": []
 				},
 				{
-					"id": 650,
+					"id": 654,
 					"question": "Was ist nach UVV-Feuerwehren (DGUV-Vorschrift 49) nach jeder Benutzung von Ausrüstungen, Geräten und persönliche Schutzausrüstungen zu beachten?",
 					"choices": [
 						{
@@ -16064,7 +16155,7 @@
 					]
 				},
 				{
-					"id": 651,
+					"id": 655,
 					"question": "Was ist nach UVV-Feuerwehren (DGUV-Vorschrift 49) bei Ausbildungen, Übungen und Vorführungen mit Sprungrettungsgeräten zu beachten?",
 					"choices": [
 						{
@@ -16099,7 +16190,7 @@
 			"name": "Verhalten bei Gefahr",
 			"questions": [
 				{
-					"id": 652,
+					"id": 656,
 					"question": "In welchem Abstand muss, innerhalb einer geschlossenen Ortschaft, mit der Absicherung der Einsatzstelle gegen den fließenden Verkehr begonnen werden?",
 					"choices": [
 						{
@@ -16129,7 +16220,7 @@
 					]
 				},
 				{
-					"id": 653,
+					"id": 657,
 					"question": "Während des Vollbrandes eines Hauses platzen beim Nachbarhaus durch Wärmeübertragung Fensterscheiben. Um welche Art der Wärmeübertragung handelt es sich hier?",
 					"choices": [
 						{
@@ -16150,7 +16241,7 @@
 					"help": []
 				},
 				{
-					"id": 654,
+					"id": 658,
 					"question": "Welche Möglichkeit ist nicht geeignet, um bei Einsatzkräften einer Angst- oder Panikreaktion vorzubeugen?",
 					"choices": [
 						{
@@ -16171,7 +16262,7 @@
 					"help": []
 				},
 				{
-					"id": 655,
+					"id": 659,
 					"question": "Welche Aussage über die Gefahr durch Atemgifte ist richtig?",
 					"choices": [
 						{
@@ -16197,7 +16288,7 @@
 					]
 				},
 				{
-					"id": 656,
+					"id": 660,
 					"question": "Welches ist keine geeignete Möglichkeit, beim Atemschutzeinsatz in verrauchten Bereichen das Auffinden des Rückweges sicherzustellen?",
 					"choices": [
 						{
@@ -16227,7 +16318,7 @@
 					]
 				},
 				{
-					"id": 657,
+					"id": 661,
 					"question": "Beim Absuchen der Räume eines verrauchten Gebäudes gelangt ein Trupp an eine Tür zu einem Raum, der als elektrischer Betriebsraum gekennzeichnet ist. Welche Aussage bezüglich des weiteren Vorgehens trifft zu?",
 					"choices": [
 						{
@@ -16253,7 +16344,7 @@
 					]
 				},
 				{
-					"id": 658,
+					"id": 662,
 					"question": "Welche Aussage über die Anwendung von Löschschaum bei der Brandbekämpfung unter Spannung stehender elektrischer Anlagen ist richtig?",
 					"choices": [
 						{
@@ -16279,7 +16370,7 @@
 					]
 				},
 				{
-					"id": 659,
+					"id": 663,
 					"question": "Bei welcher Einsatzsituation kann es beim Einsatz eines Belüftungsgerätes zu einer Explosion kommen?",
 					"choices": [
 						{
@@ -16300,7 +16391,7 @@
 					"help": []
 				},
 				{
-					"id": 660,
+					"id": 664,
 					"question": "Welche Maßnahmen schützen im Einsatz vor der Gefahr einer Explosion?",
 					"choices": [
 						{
@@ -16321,7 +16412,7 @@
 					"help": []
 				},
 				{
-					"id": 661,
+					"id": 665,
 					"question": "Welche Aussage zur Selbstsicherung mit dem Feuerwehr-Haltegurt ist falsch?",
 					"choices": [
 						{
@@ -16347,7 +16438,7 @@
 					]
 				},
 				{
-					"id": 662,
+					"id": 666,
 					"question": "Mit welchem Knoten wird eine Feuerwehrleine an einem Festpunkt angeschlagen?",
 					"choices": [
 						{
@@ -16373,7 +16464,7 @@
 					]
 				},
 				{
-					"id": 663,
+					"id": 667,
 					"question": "Sie werden im Rahmen eines Hochwassereinsatzes tätig. Welche Gefahren können hierbei vorhanden sein?",
 					"choices": [
 						{
@@ -16394,7 +16485,7 @@
 					"help": []
 				},
 				{
-					"id": 664,
+					"id": 668,
 					"question": "Ein Feuerwehrangehöriger nimmt unter Medikamenteneinfluss an einem Einsatz teil. Welche Folge kann dieses Verhalten haben?",
 					"choices": [
 						{
@@ -16415,7 +16506,7 @@
 					"help": []
 				},
 				{
-					"id": 665,
+					"id": 669,
 					"question": "Bei welchen Einsatzsituationen kann es zur Rauchgasdurchzündung kommen?",
 					"choices": [
 						{
@@ -16436,7 +16527,7 @@
 					"help": []
 				},
 				{
-					"id": 666,
+					"id": 670,
 					"question": "Mit welcher Farbe werden Druckgasbehälter für brennbare Gase, außer Acetylen, gekennzeichnet?",
 					"choices": [
 						{
@@ -16462,7 +16553,7 @@
 					]
 				},
 				{
-					"id": 667,
+					"id": 671,
 					"question": "Bei einem Brand sehen Sie mehrere Gasflaschen mit unterschiedlichem Farbanstrich. Welche Kombination Farbe / Gas ist richtig?",
 					"choices": [
 						{
@@ -16488,7 +16579,7 @@
 					]
 				},
 				{
-					"id": 668,
+					"id": 672,
 					"question": "In welchem Abstand muss auf Kraftfahrstraßen mit getrennten Richtungsfahrbahnen mit der Absicherung der Einsatzstelle gegen den fließenden Verkehr begonnen werden?",
 					"choices": [
 						{
@@ -16518,7 +16609,7 @@
 					]
 				},
 				{
-					"id": 669,
+					"id": 673,
 					"question": "Wie lautet die Merkregel zu den Gefahren der Einsatzstelle?",
 					"choices": [
 						{
@@ -16544,7 +16635,7 @@
 					]
 				},
 				{
-					"id": 670,
+					"id": 674,
 					"question": "Welcher Sicherheitsabstand gilt bei einsturzgefährdeten Gebäudeteilen?",
 					"choices": [
 						{
@@ -16565,7 +16656,7 @@
 					"help": []
 				},
 				{
-					"id": 671,
+					"id": 675,
 					"question": "In welchem Abstand muss, außerhalb einer geschlossenen Ortschaft, mit der Absicherung der Einsatzstelle gegen den fließenden Verkehr begonnen werden?",
 					"choices": [
 						{
@@ -16595,7 +16686,7 @@
 					]
 				},
 				{
-					"id": 672,
+					"id": 676,
 					"question": "Welcher Sicherheitsabstand ist zu spannungsführenden Anlagen bis 1000 V mindestens einzuhalten?",
 					"choices": [
 						{
@@ -16621,7 +16712,7 @@
 					]
 				},
 				{
-					"id": 673,
+					"id": 677,
 					"question": "Welches Truppmitglied geht beim Atemschutzeinsatz beim Absuchen von verrauchten Bereichen grundsätzlich vor?",
 					"choices": [
 						{
@@ -16652,7 +16743,7 @@
 			"name": "Wasserförderung",
 			"questions": [
 				{
-					"id": 674,
+					"id": 678,
 					"question": "Welche Bedeutung hat die Zahl \"100\" nach dem Buchstaben \"H\" auf einem Hinweisschild für Unterflurhydranten?",
 					"choices": [
 						{
@@ -16678,7 +16769,7 @@
 					]
 				},
 				{
-					"id": 675,
+					"id": 679,
 					"question": "Wie viel Liter Wasser liefern ein BM- und ein CM-Strahlrohr bei einem Strahlrohrdruck von 5 bar in 10 Minuten, wenn beide Strahlrohre ohne Mundstück eingesetzt sind?",
 					"choices": [
 						{
@@ -16704,7 +16795,7 @@
 					]
 				},
 				{
-					"id": 676,
+					"id": 680,
 					"question": "Was ist beim Einsatz von Schlauchbrücken nach der FwDV 1 \"Grundtätigkeiten\" zu beachten?",
 					"choices": [
 						{
@@ -16730,7 +16821,7 @@
 					]
 				},
 				{
-					"id": 677,
+					"id": 681,
 					"question": "Was ist beim Aufbau einer Löschwasserförderstrecke über lange Wege zu beachten?",
 					"choices": [
 						{
@@ -16751,7 +16842,7 @@
 					"help": []
 				},
 				{
-					"id": 678,
+					"id": 682,
 					"question": "Was ist beim Aufbau einer Löschwasserförderstrecke über lange Wege zu beachten?",
 					"choices": [
 						{
@@ -16772,7 +16863,7 @@
 					"help": []
 				},
 				{
-					"id": 679,
+					"id": 683,
 					"question": "Bei einer geschlossenen Schaltreihe fördert man den Förderstrom ...",
 					"choices": [
 						{
@@ -16798,7 +16889,7 @@
 					]
 				},
 				{
-					"id": 680,
+					"id": 684,
 					"question": "Welche Aussage bezüglich des Förderstroms bei einer Löschwasserförderung ist richtig?",
 					"choices": [
 						{
@@ -16824,7 +16915,7 @@
 					]
 				},
 				{
-					"id": 681,
+					"id": 685,
 					"question": "Wie ändert sich der Druckverlust, bezogen auf die Veränderung der Streckenlänge bei einer Löschwasserförderstrecke?",
 					"choices": [
 						{
@@ -16850,7 +16941,7 @@
 					]
 				},
 				{
-					"id": 682,
+					"id": 686,
 					"question": "Wie muss der Schlauch bei Verlegung einer Schlauchleitung mit einer fahrbaren Schlauchhaspel abrollen?",
 					"choices": [
 						{
@@ -16876,7 +16967,7 @@
 					]
 				},
 				{
-					"id": 683,
+					"id": 687,
 					"question": "Wie viele Ersatzschläuche werden beim Aufbau einer Löschwasserförderstrecke bereitgestellt?",
 					"choices": [
 						{
@@ -16894,6 +16985,263 @@
 					],
 					"image": null,
 					"tags": ["Wasserförderung"],
+					"help": []
+				}
+			]
+		},
+		{
+			"name": "Wald- und Vegetationsbrandbekämpfung",
+			"questions": [
+				{
+					"id": 688,
+					"question": "Wofür stehen die Buchstaben der Sicherheitsregel FRAU in der Wald- und Vegetationsbrandbekämpfung?",
+					"choices": [
+						{
+							"text": "Funkenflug, Rückenwind, Ausbreitung und Unwegsamkeit",
+							"answer": false
+						},
+						{
+							"text": "Flächengröße, Rundumschau, Ausmaß und Überwachung",
+							"answer": false
+						},
+						{
+							"text": "Funk (Kommunikation), Rückweichen/Ankerpunkt, Ausschau und Überwachung",
+							"answer": true
+						}
+					],
+					"image": null,
+					"tags": ["Wald- und Vegetationsbrandbekämpfung", "Neu"],
+					"help": []
+				},
+				{
+					"id": 689,
+					"question": "Welche Aussage zur Flammenlänge ist richtig?",
+					"choices": [
+						{
+							"text": "Die Flammenlänge entspricht der direkten Länge der Flammen, vom Boden aus betrachtet, senkrecht in die Höhe.",
+							"answer": false
+						},
+						{
+							"text": "Die Flammenlänge bezeichnet die Entfernung der Flammenspitze vom Boden, im direkten Verlauf betrachtet.",
+							"answer": true
+						},
+						{
+							"text": "Die Flammenlänge ist gleich der Flammenhöhe und entspricht immer der direkten Länge der Flammen, vom Boden aus betrachtet, senkrecht in die Höhe.",
+							"answer": false
+						}
+					],
+					"image": null,
+					"tags": ["Wald- und Vegetationsbrandbekämpfung", "Neu"],
+					"help": []
+				},
+				{
+					"id": 690,
+					"question": "Welche waldbaulichen Maßnahmen dienen zur Vorbeugung von Waldbränden und deren Ausbreitung?",
+					"choices": [
+						{
+							"text": "Schutzstreifen, Wundstreifen und Waldbrandriegel",
+							"answer": true
+						},
+						{
+							"text": "Schutzriegel, Wundstreifen und Waldbrandriegel",
+							"answer": false
+						},
+						{
+							"text": "Schutzwall, Wundstreifen und Waldbrandriegelstellung",
+							"answer": false
+						}
+					],
+					"image": null,
+					"tags": ["Wald- und Vegetationsbrandbekämpfung", "Neu"],
+					"help": []
+				},
+				{
+					"id": 691,
+					"question": "Welche natürlichen Faktoren beeinflussen unter anderem die Brandintensität bei Wald- und Vegetationsbränden?",
+					"choices": [
+						{
+							"text": "Verfügbarkeit von Löschwasser, Topografie und Wetter",
+							"answer": false
+						},
+						{
+							"text": "Gipfelhöhe, Wetter und Gezeiten",
+							"answer": false
+						},
+						{
+							"text": "Wetter, Topografie und Vegetation",
+							"answer": true
+						}
+					],
+					"image": null,
+					"tags": ["Wald- und Vegetationsbrandbekämpfung", "Neu"],
+					"help": []
+				},
+				{
+					"id": 692,
+					"question": "Welche Aussage zur Brandbeeinflussung durch Topografie trifft zu?",
+					"choices": [
+						{
+							"text": "Durch 10 % Hangneigung wird die Feuergeschwindigkeit verdoppelt.",
+							"answer": false
+						},
+						{
+							"text": "Pro 10° Steigung am Hang verdoppelt sich die Feuergeschwindigkeit.",
+							"answer": true
+						},
+						{
+							"text": "Pro 10° Hangneigung nimmt die Brandausbreitung um die Hälfte zu und ab 30° Steigung ist mit abrollenden Brandgut zu rechnen.",
+							"answer": false
+						}
+					],
+					"image": null,
+					"tags": ["Wald- und Vegetationsbrandbekämpfung", "Neu"],
+					"help": []
+				},
+				{
+					"id": 693,
+					"question": "Welche drei Faktoren der 30-30-30-Regel deuten auf eine erhöhte Waldbrandgefahr hin?",
+					"choices": [
+						{
+							"text": "Bei über 30 °C, über 30 % relative Luftfeuchtigkeit und unter 30 km/h Windgeschwindigkeit ist mit erhöhter Waldbrandgefahr zu rechnen.",
+							"answer": false
+						},
+						{
+							"text": "Bei über 30 °C, unter 30 % relative Luftfeuchtigkeit und unter 30 km/h Windgeschwindigkeit ist mit erhöhter Waldbrandgefahr zu rechnen.",
+							"answer": false
+						},
+						{
+							"text": "Bei über 30 °C, unter 30 % relative Luftfeuchtigkeit und über 30 km/h Windgeschwindigkeit ist mit erhöhter Waldbrandgefahr zu rechnen.",
+							"answer": true
+						}
+					],
+					"image": null,
+					"tags": ["Wald- und Vegetationsbrandbekämpfung", "Neu"],
+					"help": []
+				},
+				{
+					"id": 694,
+					"question": "Was besagen die Buchstaben der AFFE-Regel im Zusammenhang mit der Wald- und Vegetationsbrandbekämpfung?",
+					"choices": [
+						{
+							"text": "Ankerpunkt, Feuerpatschen einsetzen, Facheinheit/-berater anfordern und Eigenschutz beachten",
+							"answer": false
+						},
+						{
+							"text": "Anfahrt sichern, Feuer lokalisieren, Feuer bekämpfen und Einrücken",
+							"answer": false
+						},
+						{
+							"text": "Ankerpunkt, Flanken angreifen, Front angreifen und Einkreisen",
+							"answer": true
+						}
+					],
+					"image": null,
+					"tags": ["Wald- und Vegetationsbrandbekämpfung", "Neu"],
+					"help": []
+				},
+				{
+					"id": 695,
+					"question": "Ab welchem Geländeneigungswinkel (Steinschlagwinkel) kann die Brandausbreitung bergab durch abrollendes, brennendes Material verstärkt werden?",
+					"choices": [
+						{
+							"text": "Ab einem Geländeneigungswinkel von ca. 35°.",
+							"answer": false
+						},
+						{
+							"text": "Ab einem Geländeneigungswinkel von ca. 30 %.",
+							"answer": false
+						},
+						{
+							"text": "Ab einem Geländeneigungswinkel von ca. 30°.",
+							"answer": true
+						}
+					],
+					"image": null,
+					"tags": ["Wald- und Vegetationsbrandbekämpfung", "Neu"],
+					"help": []
+				},
+				{
+					"id": 696,
+					"question": "Welche Arten von Waldbränden, als Sammelbegriff für alle Brände im Wald, gibt es nach Rahmenempfehlung Wald- und Vegetationsbrandbekämpfung in Hessen?",
+					"choices": [
+						{
+							"text": "Laubfeuer, Bodenfeuer, Vollbrand, Moorbrand, Kronen/Wipfelfeuer und Erdfeuer",
+							"answer": false
+						},
+						{
+							"text": "Bodenfeuer, Kronenfeuer/Wipfelfeuer, Vollfeuer, Stammfeuer, Erdfeuer und Wurzelfeuer",
+							"answer": true
+						},
+						{
+							"text": "Bodenfeuer, Kronenfeuer/Wipfelfeuer, Vollbrand, Baumbrand, Erdfeuer, Wurzelfeuer und Deichbrand",
+							"answer": false
+						}
+					],
+					"image": null,
+					"tags": ["Wald- und Vegetationsbrandbekämpfung", "Neu"],
+					"help": []
+				},
+				{
+					"id": 697,
+					"question": "Welche Begrifflichkeiten sind der Wald- und Vegetationsbrandbekämpfung zuzuordnen?",
+					"choices": [
+						{
+							"text": "Schwarzbereich, Feuerflanke, Feuerfront, Flammenhöhe und Flammenlänge",
+							"answer": true
+						},
+						{
+							"text": "Aschebereich, Brandflanken, Feuerfront, Flammentiefe und Flammenbreite",
+							"answer": false
+						},
+						{
+							"text": "Schwarzbereich, Glutbereiche, Feuerflanke, Feuerfront, Flammenhöhe, Flammenlänge und Feuerlinie",
+							"answer": false
+						}
+					],
+					"image": null,
+					"tags": ["Wald- und Vegetationsbrandbekämpfung", "Neu"],
+					"help": []
+				},
+				{
+					"id": 698,
+					"question": "Wofür steht das folgende Zeichen in einer aktuellen Waldbrandeinsatzkarte?",
+					"choices": [
+						{
+							"text": "Saugstelle am offenen Gewässer",
+							"answer": true
+						},
+						{
+							"text": "Saugstelle aus einem Löschwasserbehälter",
+							"answer": false
+						},
+						{
+							"text": "Saugstelle aus einem Brunnen",
+							"answer": false
+						}
+					],
+					"image": 9,
+					"tags": ["Wald- und Vegetationsbrandbekämpfung", "Neu"],
+					"help": []
+				},
+				{
+					"id": 699,
+					"question": "Wofür steht das folgende Zeichen in einer aktuellen Waldbrandeinsatzkarte?",
+					"choices": [
+						{
+							"text": "Einrichtung des Zivil- und Katastrophenschutzes",
+							"answer": false
+						},
+						{
+							"text": "Forstamt",
+							"answer": true
+						},
+						{
+							"text": "Achtung hohe Steinschlaggefahr",
+							"answer": false
+						}
+					],
+					"image": 10,
+					"tags": ["Wald- und Vegetationsbrandbekämpfung", "Neu"],
 					"help": []
 				}
 			]
