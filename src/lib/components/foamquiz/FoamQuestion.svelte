@@ -77,7 +77,7 @@
 			<span class="font-semibold">
 				{question.mixer.mixingRate.toString().replace('.', ',')}%
 			</span>
-			Zumischung des Schaummittel in
+			Zumischung des Schaummittels in
 			<span class="font-semibold">
 				{question.time}
 			</span>

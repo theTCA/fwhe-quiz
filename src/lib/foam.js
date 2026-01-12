@@ -69,13 +69,11 @@ const nozzles = [
 const mixingRates = [0.1, 0.5, 1, 2, 3, 4, 5, 6];
 const times = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-export function generateQuestions() {
-	return [
-		...generateFoamVolumeQuestions(),
-		...generateAgentVolumeQuestions(),
-		...generateTimeQuestions()
-	];
-}
+export const foamQuestions = [
+	...generateFoamVolumeQuestions(),
+	...generateAgentVolumeQuestions(),
+	...generateTimeQuestions()
+];
 
 function generateFoamVolumeQuestions() {
 	/**

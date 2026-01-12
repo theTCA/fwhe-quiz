@@ -3,14 +3,14 @@
 	import FoamHelp from '$lib/components/foamquiz/FoamHelp.svelte';
 	import FoamQuestion from '$lib/components/foamquiz/FoamQuestion.svelte';
 	import Icon from '@iconify/svelte';
-	import { quizTypes, generateQuestions } from '$lib/foam';
+	import { quizTypes, foamQuestions } from '$lib/foam';
 	import { shuffle } from '$lib/helper';
 
 	let selectionCollapsed = $state(true);
 	let compactView = $state(false);
 	let selectedTypes = $state([...quizTypes.map((t) => t.id)]);
-	const questions = shuffle(generateQuestions());
-	let filteredQuestions = $state(questions.filter((q) => selectedTypes.includes(q.type.id)));
+	const questions = shuffle(foamQuestions);
+	let filteredQuestions = $derived(questions.filter((q) => selectedTypes.includes(q.type.id)));
 	let question = $derived(filteredQuestions[0]);
 
 	let answer = $state('');
@@ -103,7 +103,7 @@
 				{/if}
 				<div class="mt-3 flex w-full justify-center lg:w-1/2">
 					<button
-						class="btn w-full btn-outline btn-primary"
+						class="btn w-full btn-soft btn-primary"
 						type="submit"
 						onclick={() => (answered ? nextQuestion() : answerQuestion())}
 					>
