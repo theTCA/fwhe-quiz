@@ -18,9 +18,8 @@
 	<div class="mt-4 rounded-md bg-base-200 p-4 text-center text-lg">
 		<div class="font-semibold">Quiz zum Vorbereiten auf die hessische Feuerwehrleistungsübung.</div>
 		<div class="divider"></div>
-		Die Fragen stammen aus dem Fragenkatalog der<a
-			class="link link-primary"
-			href="https://hlfs.hessen.de/hessische-feuerwehrleistungsuebung"
+		Die Fragen stammen aus dem Fragenkatalog der
+		<a class="link link-primary" href="https://hlfs.hessen.de/hessische-feuerwehrleistungsuebung"
 			>hessischen Landesfeuerwehrschule</a
 		>.
 		<div class="text-sm">
