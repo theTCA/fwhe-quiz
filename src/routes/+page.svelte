@@ -5,6 +5,7 @@
 	import Icon from '@iconify/svelte';
 	import { PUBLIC_APP_NAME } from '$env/static/public';
 	import { resolve } from '$app/paths';
+	import Alert from '$lib/components/Alert.svelte';
 </script>
 
 <svelte:head>
@@ -29,8 +30,7 @@
 				Stand: {meta.date}
 			</div>
 		</div>
-		<div class="alert">
-			<Icon class="size-6 text-info" icon="material-symbols:info-outline" />
+		<Alert>
 			<div class="text-xs">
 				<div>
 					Diese Webseite verwendet statische Seiten und benutzt, wenn möglich, den <a
@@ -50,14 +50,14 @@
 				</div>
 				<div>Die Konsequenz ist, dass alle Ergebnisse nur im Browser gespeichert werden.</div>
 			</div>
-		</div>
+		</Alert>
 	</div>
 	{#each pageGroups as group (group.name)}
 		<div class="flex flex-col gap-2">
 			<div class="divider mb-0 text-lg font-bold">{group.name}</div>
 			<div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
 				{#each group.pages as card (card.href)}
-					<a href={resolve(card.href)} class="btn h-full p-2 shadow-sm">
+					<a href={resolve(card.href)} class="btn h-full p-2 shadow-md">
 						<div class="flex flex-col items-center justify-center">
 							<div
 								class="rounded-full border-2 border-base-content/70 bg-base-100 text-base-content/70"

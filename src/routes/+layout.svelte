@@ -63,12 +63,12 @@
 					{#each pages.filter((p) => p.inNavbar) as link ('menu' + link.name)}
 						<li class="flex items-center">
 							{#if page.url.pathname === link.href}
-								<a class="btn btn-active btn-sm" href={resolve(link.href)}>
+								<a class="btn btn-active btn-sm shadow-md" href={resolve(link.href)}>
 									<Icon icon={link.icon} />
 									{link.name}
 								</a>
 							{:else}
-								<a class="btn btn-sm" href={resolve(link.href)}>
+								<a class="btn btn-sm shadow-md" href={resolve(link.href)}>
 									<Icon icon={link.icon} />
 									{link.name}
 								</a>
@@ -79,7 +79,7 @@
 			</div>
 			<div class="inline-flex flex-1 items-center justify-end gap-3 lg:flex-none">
 				<ThemeSwitcher />
-				<a href={resolve('/bookmarks')} class="btn btn-square indicator">
+				<a href={resolve('/bookmarks')} class="btn btn-square indicator shadow-md">
 					<Icon class="size-4" icon="material-symbols:bookmark-outline" />
 					{#if $bookmarks.length > 0}
 					<span class="badge badge-sm badge-soft indicator-item indicator-top indicator-center">
@@ -109,12 +109,12 @@
 				{#each group.pages as link (link.href)}
 					<li>
 						{#if page.url.pathname === link.href}
-							<a class="active bg-base-100" href={resolve(link.href)} onclick={closeDrawer}>
+							<a class="active bg-base-100 shadow-md" href={resolve(link.href)} onclick={closeDrawer}>
 								<Icon icon={link.icon} />
 								{link.name}
 							</a>
 						{:else}
-							<a class="bg-base-100" href={resolve(link.href)} onclick={closeDrawer}>
+							<a class="bg-base-100 shadow-md" href={resolve(link.href)} onclick={closeDrawer}>
 								<Icon icon={link.icon} />
 								{link.name}
 							</a>
