@@ -1,9 +1,9 @@
-const groups = ['Quiz', 'Informationen'];
+const groups = ['Quiz nach Fragenkatalog', 'Weitere', 'Informationen'];
 
 export const pages = [
 	{
 		name: 'Training',
-		desc: 'Beantworte Fragen aus dem Fragenkatalog nach Wahl.',
+		desc: 'Fragen aus dem Fragenkatalog üben',
 		href: '/training',
 		icon: 'mdi:brain',
 		group: groups[0],
@@ -11,7 +11,7 @@ export const pages = [
 	},
 	{
 		name: 'Endlosquiz',
-		desc: 'Beantworte zufällige Fragen aus dem Fragenkatalog.',
+		desc: 'endlose Fragen aus dem Fragenkatalog',
 		href: '/endless',
 		icon: 'ri:infinity-line',
 		group: groups[0],
@@ -19,7 +19,7 @@ export const pages = [
 	},
 	{
 		name: 'Quiz',
-		desc: 'Beantworte selbst gewählte zufällige Fragen aus dem Fragenkatalog.',
+		desc: 'selbst gewählte Fragen nach Themenbereich',
 		href: '/quiz',
 		icon: 'material-symbols:question-mark',
 		group: groups[0],
@@ -27,23 +27,23 @@ export const pages = [
 	},
 	{
 		name: 'ADR-Quiz',
-		desc: 'Beantworte Fragen zu Gefahrgütern und deren Kennzeichnung.',
+		desc: 'Fragen zur Gefahrguttafel und deren Kennzeichnung',
 		href: '/adrquiz',
 		icon: 'mdi:biohazard',
-		group: groups[0],
+		group: groups[1],
 		inNavbar: true
 	},
 	{
 		name: 'Schaumquiz',
-		desc: 'Berechne die benötigte Menge Schaum oder Schaummittel',
+		desc: 'Fragen zur Berechnung von Schaum',
 		href: '/foamquiz',
 		icon: 'icon-park-outline:soap-bubble',
-		group: groups[0],
+		group: groups[1],
 		inNavbar: false
 	},
 	{
 		name: 'Problemquiz',
-		desc: 'Fragen, die zuvor falsch beantwortet wurden wiederholen.',
+		desc: 'falsch beantwortete Fragen wiederholen',
 		href: '/problemquiz',
 		icon: 'icon-park-outline:thinking-problem',
 		group: groups[0],
@@ -61,16 +61,16 @@ export const pages = [
 		name: 'Durchsuchen',
 		desc: 'Fragenkatalog nach Fragen durchsuchen',
 		href: '/search',
-		icon: 'carbon:catalog',
-		group: groups[1],
+		icon: 'f7:doc-text-search',
+		group: groups[2],
 		inNavbar: false
 	},
 	{
 		name: 'Statistik',
 		desc: 'Informationen über Fragenkatalog',
 		href: '/quizstats',
-		icon: 'material-symbols:query-stats',
-		group: groups[1],
+		icon: 'streamline-plump:graph-bar-increase-solid',
+		group: groups[2],
 		inNavbar: false
 	},
 	{
@@ -78,7 +78,7 @@ export const pages = [
 		desc: 'Historie der beantworteten Fragen',
 		href: '/history',
 		icon: 'material-symbols:history',
-		group: groups[1],
+		group: groups[2],
 		inNavbar: false
 	}
 ];

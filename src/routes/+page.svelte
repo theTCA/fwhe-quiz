@@ -12,12 +12,14 @@
 </svelte:head>
 
 <div>
-	<h1 class="flex justify-center items-center gap-2 text-3xl font-bold">
+	<h1 class="flex items-center justify-center gap-2 text-3xl font-bold">
 		<Icon icon="openmoji:fire-engine" />
 		{PUBLIC_APP_NAME}
 	</h1>
-	<div class="text-center font-semibold">Quiz zum Vorbereiten auf die hessische Feuerwehrleistungsübung.</div>
-	<div class="mt-6 text-center text-lg flex flex-col items-center gap-4">
+	<div class="text-center font-semibold">
+		Quiz zum Vorbereiten auf die hessische Feuerwehrleistungsübung.
+	</div>
+	<div class="mt-6 flex flex-col items-center gap-4 text-center text-lg">
 		<div>
 			Die Fragen stammen aus dem Fragenkatalog der
 			<a class="link" href="https://hlfs.hessen.de/hessische-feuerwehrleistungsuebung"
@@ -33,7 +35,8 @@
 				<div>
 					Diese Webseite verwendet statische Seiten und benutzt, wenn möglich, den <a
 						class="link"
-						href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">LocalStorage</a
+						href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
+						>LocalStorage</a
 					>
 					des
 					<span class="inline-flex items-center gap-2">
@@ -45,9 +48,7 @@
 						{/if}
 					</span>
 				</div>
-				<div>
-					Die Konsequenz ist, dass alle Ergebnisse nur im Browser gespeichert werden.
-				</div>
+				<div>Die Konsequenz ist, dass alle Ergebnisse nur im Browser gespeichert werden.</div>
 			</div>
 		</div>
 	</div>
@@ -58,7 +59,9 @@
 				{#each group.pages as card (card.href)}
 					<a href={resolve(card.href)} class="btn h-full p-2 shadow-sm">
 						<div class="flex flex-col items-center justify-center">
-							<div class="rounded-full border-2 border-base-content/70 bg-base-100 text-base-content/70">
+							<div
+								class="rounded-full border-2 border-base-content/70 bg-base-100 text-base-content/70"
+							>
 								<Icon class="h-16 w-16 p-2" icon={card.icon} />
 							</div>
 							<h2 class="text-xl text-primary">{card.name}</h2>

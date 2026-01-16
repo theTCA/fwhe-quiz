@@ -5,7 +5,7 @@
 	import { page } from '$app/state';
 	import { meta } from '$lib/data.json';
 	import { pages, pageGroups } from '$lib/pages';
-	import { version, clearVersionDependentStores } from '$lib/stores';
+	import { version, clearVersionDependentStores, bookmarks } from '$lib/stores';
 	import { PUBLIC_APP_NAME } from '$env/static/public';
 	import Icon from '@iconify/svelte';
 	import ThemeSwitcher from '$lib/components/ThemeSwitcher.svelte';
@@ -79,8 +79,13 @@
 			</div>
 			<div class="inline-flex flex-1 items-center justify-end gap-3 lg:flex-none">
 				<ThemeSwitcher />
-				<a href={resolve('/bookmarks')} class="btn btn-square">
-					<Icon class="h-5 w-5" icon="material-symbols:bookmark" />
+				<a href={resolve('/bookmarks')} class="btn btn-square indicator">
+					<Icon class="size-4" icon="material-symbols:bookmark-outline" />
+					{#if $bookmarks.length > 0}
+					<span class="badge badge-sm badge-soft indicator-item indicator-top indicator-center">
+						{$bookmarks.length}
+					</span>
+					{/if}
 				</a>
 			</div>
 		</nav>
