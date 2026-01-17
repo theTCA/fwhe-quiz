@@ -9,11 +9,11 @@ import { flattendQuestions } from './data';
  */
 export function getLocalStorage(key, defaultValue) {
 	if (!storageAvailable('localStorage')) return defaultValue;
-    let item = localStorage.getItem(key);
-    if (!item) {
-        return defaultValue;
-    }
-    return JSON.parse(item);
+	let item = localStorage.getItem(key);
+	if (!item) {
+		return defaultValue;
+	}
+	return JSON.parse(item);
 }
 
 /**
@@ -22,17 +22,17 @@ export function getLocalStorage(key, defaultValue) {
  */
 export function putLocalStorage(key, value) {
 	if (!storageAvailable('localStorage')) return;
-    localStorage.setItem(key, JSON.stringify(value));
+	localStorage.setItem(key, JSON.stringify(value));
 }
 
 export function clearVersionDependentStores() {
-    quizQuestions.set([]);
+	quizQuestions.set([]);
 	quizHistory.set({});
-    endlessQuizQuestions.set([]);
-    trainingChapters.set([]);
-    trainingLastChapter.set("");
-    bookmarks.set([]);
-    trainedBookmarks.set([]);
+	endlessQuizQuestions.set([]);
+	trainingChapters.set([]);
+	trainingLastChapter.set('');
+	bookmarks.set([]);
+	trainedBookmarks.set([]);
 }
 
 /** @type {import('svelte/store').Writable<Array<import('$lib/types').Question>>} */
@@ -111,11 +111,11 @@ function exportQuizHistory(history) {
 export const quizHistory = writable(importQuizHistory());
 quizHistory.subscribe((val) => putLocalStorage('quizHistory', exportQuizHistory(val)));
 
-export const trainingChapters = writable(getLocalStorage("trainingChapters", []));
-trainingChapters.subscribe(val => putLocalStorage("trainingChapters", val));
+export const trainingChapters = writable(getLocalStorage('trainingChapters', []));
+trainingChapters.subscribe((val) => putLocalStorage('trainingChapters', val));
 
-export const trainingLastChapter = writable(getLocalStorage("trainingLastChapter", ""));
-trainingLastChapter.subscribe(val => putLocalStorage("trainingLastChapter", val));
+export const trainingLastChapter = writable(getLocalStorage('trainingLastChapter', ''));
+trainingLastChapter.subscribe((val) => putLocalStorage('trainingLastChapter', val));
 
 /** @type {import('svelte/store').Writable<Array<import('$lib/types').Question>>} */
 export const bookmarks = writable(
@@ -127,6 +127,18 @@ export const bookmarks = writable(
 bookmarks.subscribe((val) =>
 	putLocalStorage(
 		'bookmarks',
+		val.map((/** @type { import("$lib/types").Question } */ q) => q.id)
+	)
+);
+
+export const trainedBookmarks = writable(
+	getLocalStorage('trainedBookmarks', []).map((/** @type {number} */ m) =>
+		flattendQuestions.find((q) => q.id === m)
+	)
+);
+trainedBookmarks.subscribe((val) =>
+	putLocalStorage(
+		'trainedBookmarks',
 		val.map((/** @type { import("$lib/types").Question } */ q) => q.id)
 	)
 );
