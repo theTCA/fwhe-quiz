@@ -41,6 +41,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"fuse.js": "^7.1.0",
 		"jspdf": "^4.0.0",
 		"mathlifier": "^3.4.0",
 		"theme-change": "^2.5.0",

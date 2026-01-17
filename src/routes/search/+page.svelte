@@ -1,127 +1,108 @@
 <script>
-    import {catalogues, images} from "$lib/data.json";
-    import Icon from "@iconify/svelte";
-    import Collapsible from "$lib/components/Collapsible.svelte";
-    import QuestionHelp from "$lib/components/QuestionHelp.svelte";
-    import { PUBLIC_APP_NAME } from "$env/static/public";
-    import { onMount } from "svelte";
+	import { PUBLIC_APP_NAME } from '$env/static/public';
+	import Icon from '@iconify/svelte';
+	import { catalogues } from '$lib/data.json';
+	import { flattendQuestions } from '$lib/data';
+	import Fuse from 'fuse.js';
+	import SearchResult from '$lib/components/SearchResult.svelte';
+	import SearchResultModal from '$lib/components/SearchResultModal.svelte';
 
-    let searchInput = "";
-    $: questions = getCatalogues();
+	let filterOptions = $state(['question']);
+	let fuse = $derived(
+		new Fuse(flattendQuestions, { keys: filterOptions, threshold: 0.4, ignoreLocation: true })
+	);
+	let searchQuery = $state('');
+	let debouncedQuery = $state('');
+	let searchResult = $derived(fuse.search(debouncedQuery).map((v) => v.item));
 
-    $: openedQuestion = 0;
-    onMount(() => {
-        openedQuestion = parseInt((new URL(window.location.href)).hash.replace("#", ""));
-    });
+	let modal = $state();
+	let modalQuestion = $state();
 
-    const searchToggles = [
-        {
-            name: "Fragen",
-            value: true
-        },
-        {
-            name: "Antworten",
-            value: false
-        }
-    ];
+	$effect(() => {
+		if (!searchQuery) {
+			debouncedQuery = '';
+			return;
+		}
+		const handler = setTimeout(() => {
+			debouncedQuery = searchQuery;
+		}, 400);
+		return () => clearTimeout(handler);
+	});
 
-    function search() {
-        if(searchInput.length > 0) {
-            questions = getCatalogues().map(c => ({...c, questions: c.questions.map(q => ({...q, hidden: !filterQuestion(q)}))})).filter(c => c.questions.reduce((acc, q) => q.hidden ? acc : acc + 1, 0) > 0);
-        } else {
-            questions = getCatalogues();
-        }
-        questions = questions;
-    }
-
-    function clear() {
-        searchInput = "";
-        search();
-    }
-
-    /**
-     * @param {import("$lib/types").Question} question
-     */
-    function filterQuestion(question) {
-        if(searchToggles.at(0)?.value && question.question.toLowerCase().includes(searchInput.toLowerCase())) return true;
-        if(searchToggles.at(1)?.value && question.choices.some(c => c.text.toLowerCase().includes(searchInput.toLowerCase()))) return true;
-        return false;
-    }
-
-    function getCatalogues() {
-        return catalogues.map(c => ({name: c.name, questions: c.questions.map(q => ({...q, hidden: false}))}));
-    }
+	/**
+	 * @param {import('$lib/types').Question} question
+	 */
+	function selectQuestion(question) {
+		modalQuestion = question;
+		modal.showModal();
+	}
 </script>
 
 <svelte:head>
-    <title>Durchsuchen - {PUBLIC_APP_NAME}</title>
+	<title>Durchsuchen - {PUBLIC_APP_NAME}</title>
 </svelte:head>
 
 <div>
-    <h1 class="text-3xl text-center font-semibold mb-2">Durchsuchen</h1>
-    <form class="mx-auto flex flex-col gap-2 w-3/4 lg:w-2/3">
-        <div class="join flex">
-            <div class="flex-1 relative">
-                <input class="join-item input w-full" type="text" placeholder="Suche" bind:value={searchInput}>
-                <button class="absolute right-4 top-4 text-error" type="button" on:click={clear}>
-                    <Icon icon="material-symbols:close"/>
-                </button>
-            </div>
-            <button class="join-item btn btn-primary" type="submit" on:click|preventDefault={search}>
-                <Icon icon="material-symbols:search"/>
-            </button>
-        </div>
-        <div class="px-4">
-            {#each searchToggles as toggle}
-            <div class="form-control">
-                <label class="label">
-                    <span class="label-text">{toggle.name}</span>
-                    <input class="toggle toggle-primary" type="checkbox" bind:checked={toggle.value}>
-                </label>
-            </div>
-            {/each}
-        </div>
-    </form>
-    <div class="divider"></div>
-    <div>
-        <div class="flex flex-col gap-3">
-            {#each questions as catalog}
-            <div class="flex flex-col gap-1">
-                <span class="font-bold text-lg text-primary">{catalog.name}</span>
-                <div class="flex flex-col gap-1">
-                    {#each catalog.questions as question}
-                    <Collapsible open={question.id === openedQuestion} hidden={question.hidden}>
-                        <div slot="title" id={""+question.id} class="font-semibold select-none">{question.question}</div>
-                        <div slot="content">
-                            {#if question.image}
-                            <div class="w-32 h-32 mx-auto py-1">
-                                <img src={`./img/${images.find(i => i.id === question.image)?.file}`} alt={images.find(i => i.id === question.image)?.description}>
-                            </div>
-                            {/if}
-                            <div class="mb-2">
-                                {#each question.choices as choice}
-                                <div class="flex items-center gap-2 p-1.5 border-2 border-base-200 rounded-md">
-                                    {#if choice.answer}
-                                    <Icon class="h-6 w-6 text-success border border-primary rounded-full" icon="carbon:checkmark-filled"/>
-                                    {:else}
-                                    <span class="h-6 w-6 border border-primary rounded-full"></span>
-                                    {/if}
-                                    <div class="flex-1 text-sm lg:text-base">
-                                        {choice.text}
-                                    </div>
-                                </div>
-                                {/each}
-                            </div>
-                            {#if question.help.length > 0}
-                            <div class="divider font-semibold">Hilfe</div>
-                            <QuestionHelp {question}/>
-                            {/if}
-                        </div>
-                    </Collapsible>
-                    {/each}
-                </div>
-            </div>
-            {/each}
-        </div>
-    </div>
+	<h1 class="mb-2 text-center text-3xl font-semibold">Durchsuchen</h1>
+	<div>
+		<div class="join w-full justify-end">
+			<label class="input join-item w-full md:w-1/2 lg:w-1/3">
+				{#if searchQuery !== debouncedQuery}
+					<span class="loading size-4 loading-spinner"></span>
+				{:else}
+					<Icon class="size-4" icon="mdi:search" />
+				{/if}
+				<input
+					type="search"
+					autocomplete="off"
+					spellcheck="false"
+					placeholder="Suche"
+					bind:value={searchQuery}
+				/>
+			</label>
+			<button
+				type="button"
+				class="btn join-item btn-square btn-soft btn-error"
+				onclick={() => (searchQuery = '')}
+			>
+				<Icon icon="lucide:delete" />
+			</button>
+		</div>
+		{#if debouncedQuery.length > 0}
+			<h2>Optionen</h2>
+			<div>
+				<label class="">
+					<input type="checkbox" class="toggle" bind:group={filterOptions} value="question" />
+					<span class="label cursor-pointer"> Fragen </span>
+				</label>
+				<label class="">
+					<input type="checkbox" class="toggle" bind:group={filterOptions} value="choices.text" />
+					<span class="label cursor-pointer"> Antworten </span>
+				</label>
+			</div>
+		{/if}
+	</div>
+	<div class="flex flex-col gap-2">
+		{#if debouncedQuery.length > 0}
+			<div>
+				Ergebnisse:
+				<span class="font-bold">{searchResult.length}</span>
+			</div>
+			{#each searchResult as question (question.id)}
+				<SearchResult {question} onclick={() => selectQuestion(question)} />
+			{/each}
+		{:else}
+			{#each catalogues as catalog (catalog.name)}
+				<div class="flex flex-col gap-1">
+					<h3 class="font-bold text-primary">{catalog.name}</h3>
+					<div class="flex flex-col gap-2">
+						{#each catalog.questions as question (question.id)}
+							<SearchResult {question} onclick={() => selectQuestion(question)} />
+						{/each}
+					</div>
+				</div>
+			{/each}
+		{/if}
+	</div>
 </div>
+<SearchResultModal question={modalQuestion} bind:modal />
