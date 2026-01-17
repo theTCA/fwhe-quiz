@@ -5,9 +5,7 @@
 
 	let { question, ...props } = $props();
 
-	let inBookmarks = $derived(
-		$bookmarks.some(b => b.id === question.id)
-	);
+	let inBookmarks = $derived($bookmarks.some((b) => b.id === question.id));
 
 	function onClick() {
 		if (inBookmarks) {
@@ -27,7 +25,7 @@
 	}
 
 	function removeQuestion() {
-		$bookmarks = $bookmarks.filter(b => b.id !== question.id);
+		$bookmarks = $bookmarks.filter((b) => b.id !== question.id);
 	}
 </script>
 
