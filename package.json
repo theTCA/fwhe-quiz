@@ -11,6 +11,7 @@
 		"lint": "eslint . && prettier --check .",
 		"deploy": "vite build && npx gh-pages -d build -t true",
 		"format": "prettier --write .",
+		"parser": "peggy -o src/lib/adrparser.js --format es src/lib/parser/adrparser.peggy ",
 		"test:unit": "vitest",
 		"test": "npm run test:unit -- --run"
 	},
@@ -27,6 +28,7 @@
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.14.0",
 		"gh-pages": "^6.3.0",
+		"peggy": "^5.0.6",
 		"postcss": "^8.5.6",
 		"prettier": "^3.7.4",
 		"prettier-plugin-svelte": "^3.4.1",
