@@ -30,10 +30,13 @@
 	});
 
 	function deleteHistory() {
-		if(deleteRange === -1) {
+		if (deleteRange === -1) {
 			$quizHistory[tab.id] = [];
 		} else {
-			$quizHistory[tab.id] = $quizHistory[tab.id].slice(0, $quizHistory[tab.id].length - deleteRange);
+			$quizHistory[tab.id] = $quizHistory[tab.id].slice(
+				0,
+				$quizHistory[tab.id].length - deleteRange
+			);
 		}
 	}
 
@@ -97,7 +100,7 @@
 						<option value={-1}>{$quizHistory[tab.id].length}</option>
 					</select>
 				</label>
-				<button class="btn btn-square btn-error join-item" type="button" onclick={deleteHistory}>
+				<button class="btn join-item btn-square btn-error" type="button" onclick={deleteHistory}>
 					<Icon icon="mi:delete" />
 				</button>
 			</div>

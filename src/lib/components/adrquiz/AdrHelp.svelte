@@ -50,13 +50,19 @@
 					</span>
 					<span class="border-t-2 border-black"> {question.example} </span>
 				</div>
-				<div class="max-w-3xl text-sm/7 bg-base-200 p-2 shadow-md">
-					Die Gefahrnummer ist die <span class="font-semibold">obere Nummer</span> auf den auf allen Gefahrguttransporten angebrachten
-					orangefarbigen Warntafeln (Gefahrentafeln) und beschreibt die Gefahr, die von dem
-					Transportgut ausgeht. Die untere Nummer wird UN-Nummer (Stoffnummer) genannt.
+				<div class="max-w-3xl bg-base-200 p-2 text-sm/7 shadow-md">
+					Die Gefahrnummer ist die <span class="font-semibold">obere Nummer</span> auf den auf allen
+					Gefahrguttransporten angebrachten orangefarbigen Warntafeln (Gefahrentafeln) und
+					beschreibt die Gefahr, die von dem Transportgut ausgeht. Die untere Nummer wird UN-Nummer
+					(Stoffnummer) genannt.
 					<span class="text-xs font-light">
 						Quelle:
-						<a class="link link-info" href="https://de.wikipedia.org/wiki/Nummer_zur_Kennzeichnung_der_Gefahr" target="_blank" rel="noopener noreferrer">Wikipedia</a>
+						<a
+							class="link link-info"
+							href="https://de.wikipedia.org/wiki/Nummer_zur_Kennzeichnung_der_Gefahr"
+							target="_blank"
+							rel="noopener noreferrer">Wikipedia</a
+						>
 					</span>
 				</div>
 				<button class="btn btn-wide btn-soft btn-primary" type="button" onclick={nextStep}>
@@ -91,16 +97,22 @@
 						{helpsExtended.primary.find((h) => h.number === primaryDanger)?.description}
 					</div>
 				</div>
-				<div class="max-w-3xl text-sm/7 bg-base-200 p-2 shadow-md">
+				<div class="max-w-3xl bg-base-200 p-2 text-sm/7 shadow-md">
 					Die <span class="font-semibold">erste Ziffer</span> bezeichnet dabei die Hauptgefahr.
 					{#if deconstructedDanger.primary.double}
-						Wird sie <span class="font-semibold"> wiederholt,</span> wird dadurch eine <span class="font-semibold"> Zunahme der Hauptgefahr </span> ausgedrückt.
+						Wird sie <span class="font-semibold"> wiederholt,</span> wird dadurch eine
+						<span class="font-semibold"> Zunahme der Hauptgefahr </span> ausgedrückt.
 					{:else}
-					Wird sie wiederholt, wird dadurch eine Zunahme der Hauptgefahr ausgedrückt.
+						Wird sie wiederholt, wird dadurch eine Zunahme der Hauptgefahr ausgedrückt.
 					{/if}
 					<span class="text-xs font-light">
 						Quelle:
-						<a class="link link-info" href="https://de.wikipedia.org/wiki/Nummer_zur_Kennzeichnung_der_Gefahr#Aufbau_der_Gefahrnummer" target="_blank" rel="noopener noreferrer">Wikipedia</a>
+						<a
+							class="link link-info"
+							href="https://de.wikipedia.org/wiki/Nummer_zur_Kennzeichnung_der_Gefahr#Aufbau_der_Gefahrnummer"
+							target="_blank"
+							rel="noopener noreferrer">Wikipedia</a
+						>
 					</span>
 				</div>
 				{#if steps > 1}
@@ -153,14 +165,19 @@
 						{/if}
 					</div>
 				</div>
-				<div class="max-w-3xl text-sm/7 bg-base-200 p-2 shadow-md">
+				<div class="max-w-3xl bg-base-200 p-2 text-sm/7 shadow-md">
 					Eine Nebengefahr wird durch eine weitere Ziffer bezeichnet. Ein eventuell
 					<span class=""> vorangestelltes X </span>
 					sagt aus, dass es auf
 					<span> gefährliche Weise mit Wasser reagiert.</span>
 					<span class="text-xs font-light">
 						Quelle:
-						<a class="link link-info" href="https://de.wikipedia.org/wiki/Nummer_zur_Kennzeichnung_der_Gefahr#Aufbau_der_Gefahrnummer" target="_blank" rel="noopener noreferrer">Wikipedia</a>
+						<a
+							class="link link-info"
+							href="https://de.wikipedia.org/wiki/Nummer_zur_Kennzeichnung_der_Gefahr#Aufbau_der_Gefahrnummer"
+							target="_blank"
+							rel="noopener noreferrer">Wikipedia</a
+						>
 					</span>
 				</div>
 			</div>
