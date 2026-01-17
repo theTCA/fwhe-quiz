@@ -1,4 +1,5 @@
 <script>
+	import { asset } from '$app/paths';
 	import { images } from '$lib/data.json';
 
 	let { question, showCatalog } = $props();
@@ -14,7 +15,7 @@
 	{#if question.image}
 		<div class="mx-auto h-32 w-32 py-1">
 			<img
-				src={`./img/${images.find((i) => i.id === question.image)?.file}`}
+				src={asset(`/img/${images.find((i) => i.id === question.image)?.file}`)}
 				alt={images.find((i) => i.id === question.image)?.description}
 			/>
 		</div>
