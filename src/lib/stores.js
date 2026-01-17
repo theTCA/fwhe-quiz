@@ -1,17 +1,17 @@
-import { writable } from "svelte/store";
-import { storageAvailable } from "./helper";
-import { flattendQuestions } from "./data";
+import { writable } from 'svelte/store';
+import { storageAvailable } from './helper';
+import { flattendQuestions } from './data';
 
 /**
  * @param {string} key
- * @param {*} base
+ * @param {*} defaultValue
+ * @returns {*}
  */
-function getLocalStorage(key, base) {
-    if(!storageAvailable("localStorage"))
-        return base;
+export function getLocalStorage(key, defaultValue) {
+    if (!storageAvailable('localStorage'))         return defaultValue;
     let item = localStorage.getItem(key);
-    if(!item) {
-        return base;
+    if (!item) {
+        return defaultValue;
     }
     return JSON.parse(item);
 }
@@ -20,9 +20,8 @@ function getLocalStorage(key, base) {
  * @param {string} key
  * @param {*} value
  */
-function putLocalStorage(key, value) {
-    if(!storageAvailable("localStorage"))
-        return;
+export function putLocalStorage(key, value) {
+    if (!storageAvailable('localStorage'))         return;
     localStorage.setItem(key, JSON.stringify(value));
 }
 
@@ -51,8 +50,19 @@ trainingChapters.subscribe(val => putLocalStorage("trainingChapters", val));
 export const trainingLastChapter = writable(getLocalStorage("trainingLastChapter", ""));
 trainingLastChapter.subscribe(val => putLocalStorage("trainingLastChapter", val));
 
-export const bookmarks = writable(getLocalStorage("bookmarks", []).map((/** @type {number} */ m) => flattendQuestions.find(q => q.id === m)));
-bookmarks.subscribe(val => putLocalStorage("bookmarks", val.map((/** @type { import("$lib/types").Question } */ q) => q.id)));
+/** @type {import('svelte/store').Writable<Array<import('$lib/types').Question>>} */
+export const bookmarks = writable(
+	getLocalStorage('bookmarks', []).map((/** @type {number} */ m) =>
+		flattendQuestions.find((q) => q.id === m)
+	)
+);
+
+bookmarks.subscribe((val) =>
+	putLocalStorage(
+		'bookmarks',
+		val.map((/** @type { import("$lib/types").Question } */ q) => q.id)
+	)
+);
 
 export const trainedBookmarks = writable(getLocalStorage("trainedBookmarks", []).map((/** @type {number} */ m) => flattendQuestions.find(q => q.id === m)));
 trainedBookmarks.subscribe(val => putLocalStorage("trainedBookmarks", val.map((/** @type { import("$lib/types").Question } */ q) => q.id)));

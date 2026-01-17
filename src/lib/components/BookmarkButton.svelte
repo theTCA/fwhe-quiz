@@ -1,17 +1,12 @@
 <script>
 	import Icon from '@iconify/svelte';
 	import { bookmarks } from '$lib/stores';
+	import { flattendQuestions } from '$lib/data';
 
-	/**
-	 * @typedef {Object} Props
-	 * @property {import("$lib/types").Question} question
-	 */
-
-	/** @type {Props & { [key: string]: any }} */
-	let { ...props } = $props();
+	let { question, ...props } = $props();
 
 	let inBookmarks = $derived(
-		$bookmarks.some((/** @type {{ id: number; }} */ b) => b.id === props.question.id)
+		$bookmarks.some(b => b.id === question.id)
 	);
 
 	function onClick() {
@@ -23,13 +18,16 @@
 	}
 
 	function addQuestion() {
-		$bookmarks = [...$bookmarks, props.question];
+		if ('catalog' in question) {
+			$bookmarks = [...$bookmarks, question];
+			return;
+		}
+		let myQuestion = flattendQuestions.find((q) => q.id === question.id);
+		if (myQuestion) $bookmarks = [...$bookmarks, myQuestion];
 	}
 
 	function removeQuestion() {
-		$bookmarks = $bookmarks.filter(
-			(/** @type {{ id: number; }} */ b) => b.id !== props.question.id
-		);
+		$bookmarks = $bookmarks.filter(b => b.id !== question.id);
 	}
 </script>
 
@@ -37,9 +35,9 @@
 	<div class="indicator">
 		<button class="btn btn-square btn-sm lg:btn-md" type="button" onclick={onClick}>
 			{#if inBookmarks}
-			<Icon class="size-5 text-success" icon="material-symbols:bookmark-check-outline" />
+				<Icon class="size-5 text-success" icon="material-symbols:bookmark-check-outline" />
 			{:else}
-			<Icon class="size-5" icon="material-symbols:bookmark-add-outline" />
+				<Icon class="size-5" icon="material-symbols:bookmark-add-outline" />
 			{/if}
 		</button>
 	</div>
