@@ -1,17 +1,17 @@
 /**
  * @typedef {Object} Catalog
  * @prop {string} name
- * @prop {Question[]} questions
+ * @prop {Array<Question>} questions
  */
 
 /**
  * @typedef {Object} Question
  * @prop {number} id
  * @prop {string} question
- * @prop {Choice[]} choices
+ * @prop {Array<Choice>} choices
  * @prop {number | null} image
- * @prop {string[]} tags
- * @prop {QuestionHelp[]} help
+ * @prop {Array<string>} tags
+ * @prop {Array<QuestionHelp>} help
  * @prop {string} [catalog]
  */
 
@@ -32,7 +32,6 @@
  * @prop {Question} question
  * @prop {string} answer
  * @prop {Date} date
- * @prop {string} type
  */
 
 /**

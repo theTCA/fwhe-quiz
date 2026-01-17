@@ -8,7 +8,7 @@ import { flattendQuestions } from './data';
  * @returns {*}
  */
 export function getLocalStorage(key, defaultValue) {
-    if (!storageAvailable('localStorage'))         return defaultValue;
+	if (!storageAvailable('localStorage')) return defaultValue;
     let item = localStorage.getItem(key);
     if (!item) {
         return defaultValue;
@@ -21,13 +21,13 @@ export function getLocalStorage(key, defaultValue) {
  * @param {*} value
  */
 export function putLocalStorage(key, value) {
-    if (!storageAvailable('localStorage'))         return;
+	if (!storageAvailable('localStorage')) return;
     localStorage.setItem(key, JSON.stringify(value));
 }
 
 export function clearVersionDependentStores() {
     quizQuestions.set([]);
-    quizHistory.set([]);
+	quizHistory.set({});
     endlessQuizQuestions.set([]);
     trainingChapters.set([]);
     trainingLastChapter.set("");
@@ -35,14 +35,81 @@ export function clearVersionDependentStores() {
     trainedBookmarks.set([]);
 }
 
-export const endlessQuizQuestions = writable(getLocalStorage("endlessQuizQuestions", []).map((/** @type {number} */ e) => flattendQuestions.find(q => q.id === e)));
-endlessQuizQuestions.subscribe(val => putLocalStorage("endlessQuizQuestions", val.map((/** @type {{ id: number; }} */ q) => q.id)));
+/** @type {import('svelte/store').Writable<Array<import('$lib/types').Question>>} */
+export const endlessQuizQuestions = writable(
+	getLocalStorage('endlessQuizQuestions', []).map((/** @type {number} */ e) => {
+		let question = flattendQuestions.find((q) => q.id === e);
+		if (question) return question;
+		return e;
+	})
+);
+endlessQuizQuestions.subscribe((val) =>
+	putLocalStorage(
+		'endlessQuizQuestions',
+		val.map((q) => q.id)
+	)
+);
 
-export const quizQuestions = writable(getLocalStorage("quizQuestions", []).map((/** @type {{id: number, answer: string, answered: boolean}}*/e) => ({question: flattendQuestions.find(q => q.id === e.id), answer: e.answer, answered: e.answered})));
-quizQuestions.subscribe(val => putLocalStorage("quizQuestions", val.map((/** @type {{question: import("$lib/types").Question, answer: string, answered: boolean}}*/ e) => ({id: e.question.id, answer: e.answer, answered: e.answered}))));
+/**
+ * @type {import('svelte/store').Writable<Array<{question: import("$lib/types").Question, answer: string, answered: boolean}>>}
+ */
+export const quizQuestions = writable(
+	getLocalStorage('quizQuestions', []).map(
+		(/** @type {{id: number, answer: string, answered: boolean}}*/ e) => ({
+			question: flattendQuestions.find((q) => q.id === e.id),
+			answer: e.answer,
+			answered: e.answered
+		})
+	)
+);
+quizQuestions.subscribe((val) =>
+	putLocalStorage(
+		'quizQuestions',
+		val.map((e) => ({
+			id: e.question.id,
+			answer: e.answer,
+			answered: e.answered
+		}))
+	)
+);
+/**
+ * @typedef {import('$lib/types').QuizHistory | {question: number, date: string}} StoredQuizHistory
+ */
+/** @type {Object<string, Array<StoredQuizHistory>>} */
+const defaultQuizHistoryValue = {};
+/**
+ * Import the value in localStorage into a @member {Object}
+ * @returns {Object<string, Array<import('$lib/types').QuizHistory>>}
+ */
+function importQuizHistory() {
+	let history = getLocalStorage('quizHistory', defaultQuizHistoryValue);
+	for (let [key, type] of Object.entries(history)) {
+		history[key] = type.map((/** @type {StoredQuizHistory} */ h) => ({
+			...h,
+			question: flattendQuestions.find((q) => q.id === h.question),
+			date: new Date(h.date)
+		}));
+	}
+	return history;
+}
 
-export const quizHistory = writable(getLocalStorage("quizHistory", []).map((/**@type {{id: number, answer: string, date: Date, type: string}} */ e) => ({question: flattendQuestions.find(q => q.id === e.id), answer: e.answer, date: new Date(e.date), type: e.type})));
-quizHistory.subscribe(val => putLocalStorage("quizHistory", val.map(( /** @type {import("$lib/types").QuizHistory} */ h) => ({id: h.question.id, answer: h.answer, date: h.date, type: h.type}))));
+/**
+ * @param {Object<string, Array<import('$lib/types').QuizHistory >>} history
+ * @returns {Object<string, Array<StoredQuizHistory>>}
+ * */
+function exportQuizHistory(history) {
+	let obj = defaultQuizHistoryValue;
+	for (let [key, type] of Object.entries(history)) {
+		obj[key] = type.map((h) => ({ ...h, question: h.question.id, date: h.date.toJSON() }));
+	}
+	return obj;
+}
+
+/**
+ * @type {import('svelte/store').Writable<Object<string, Array<import("$lib/types").QuizHistory>>>}
+ */
+export const quizHistory = writable(importQuizHistory());
+quizHistory.subscribe((val) => putLocalStorage('quizHistory', exportQuizHistory(val)));
 
 export const trainingChapters = writable(getLocalStorage("trainingChapters", []));
 trainingChapters.subscribe(val => putLocalStorage("trainingChapters", val));
@@ -70,5 +137,5 @@ bookmarks.subscribe((val) =>
 export const theme = writable(getLocalStorage('theme', ''));
 theme.subscribe((val) => putLocalStorage('theme', val));
 
-export const version = writable(getLocalStorage("version", 0));
-version.subscribe(val => putLocalStorage("version", val));
+export const version = writable(getLocalStorage('version', 0));
+version.subscribe((val) => putLocalStorage('version', val));
