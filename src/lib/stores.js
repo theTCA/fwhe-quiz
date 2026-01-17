@@ -64,11 +64,11 @@ bookmarks.subscribe((val) =>
 	)
 );
 
-export const trainedBookmarks = writable(getLocalStorage("trainedBookmarks", []).map((/** @type {number} */ m) => flattendQuestions.find(q => q.id === m)));
-trainedBookmarks.subscribe(val => putLocalStorage("trainedBookmarks", val.map((/** @type { import("$lib/types").Question } */ q) => q.id)));
-
-export const theme = writable(getLocalStorage("theme", ""));
-theme.subscribe(val => putLocalStorage("theme", val));
+/**
+ * @type {import('svelte/store').Writable<string>}
+ */
+export const theme = writable(getLocalStorage('theme', ''));
+theme.subscribe((val) => putLocalStorage('theme', val));
 
 export const version = writable(getLocalStorage("version", 0));
 version.subscribe(val => putLocalStorage("version", val));
