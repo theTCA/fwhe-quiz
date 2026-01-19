@@ -6,6 +6,7 @@
 	import Fuse from 'fuse.js';
 	import SearchResult from '$lib/components/SearchResult.svelte';
 	import SearchResultModal from '$lib/components/SearchResultModal.svelte';
+	import Collapsible from '$lib/components/Collapsible.svelte';
 	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
 
 	let filterOptions = $state(['question']);
@@ -45,7 +46,7 @@
 
 <div>
 	<h1 class="mb-2 text-center text-3xl font-semibold">Durchsuchen</h1>
-	<div>
+	<div class="flex flex-col gap-2">
 		<div class="join w-full justify-end">
 			<label class="input join-item w-full md:w-1/2 lg:w-1/3">
 				{#if searchQuery !== debouncedQuery}
@@ -69,6 +70,23 @@
 				<Icon icon="lucide:delete" />
 			</button>
 		</div>
+		<Collapsible class="shadow-md">
+			{#snippet title()}
+				<span class="font-semibold"> Themenbereiche </span>
+			{/snippet}
+			{#snippet content()}
+				<div class="grid grid-cols-1 gap-1 md:grid-cols-2 md:gap-2 lg:grid-cols-3">
+					{#each catalogues as catalog ('tag' + catalog.name)}
+						<a
+							class="btn shadow-md btn-soft btn-sm"
+							href={`#catalog-${catalog.name.toLowerCase().replace(' ', '_')}`}
+						>
+							{catalog.name}
+						</a>
+					{/each}
+				</div>
+			{/snippet}
+		</Collapsible>
 		{#if debouncedQuery.length > 0}
 			<h2>Optionen</h2>
 			<div>
@@ -83,7 +101,7 @@
 			</div>
 		{/if}
 	</div>
-	<div class="flex flex-col gap-2">
+	<div class="mt-4 flex flex-col gap-2">
 		{#if debouncedQuery.length > 0}
 			<div>
 				Ergebnisse:
@@ -95,7 +113,13 @@
 		{:else}
 			{#each catalogues as catalog (catalog.name)}
 				<div class="flex flex-col gap-1">
-					<h3 class="font-bold text-primary">{catalog.name}</h3>
+					<h3
+						id={`catalog-${catalog.name.toLowerCase().replace(' ', '_')}`}
+						class="flex flex-row items-center gap-1 font-bold text-primary"
+					>
+						<span class="opacity-50"> # </span>
+						<span> {catalog.name} </span>
+					</h3>
 					<div class="flex flex-col gap-2">
 						{#each catalog.questions as question (question.id)}
 							<SearchResult {question} onclick={() => selectQuestion(question)} />
