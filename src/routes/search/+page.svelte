@@ -6,6 +6,7 @@
 	import Fuse from 'fuse.js';
 	import SearchResult from '$lib/components/SearchResult.svelte';
 	import SearchResultModal from '$lib/components/SearchResultModal.svelte';
+	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
 
 	let filterOptions = $state(['question']);
 	let fuse = $derived(
@@ -105,4 +106,5 @@
 		{/if}
 	</div>
 </div>
+<ScrollToTop />
 <SearchResultModal question={modalQuestion} bind:modal />
