@@ -97,7 +97,7 @@
 						<option value={3}>3</option>
 						<option value={10}>10</option>
 						<option value={50}>50</option>
-						<option value={-1}>{$quizHistory[tab.id].length}</option>
+						<option value={-1}>Alle</option>
 					</select>
 				</label>
 				<button class="btn join-item btn-square btn-error" type="button" onclick={deleteHistory}>
