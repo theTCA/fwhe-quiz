@@ -11709,7 +11709,7 @@
 					"question": "Welche Hauptaufgabe hat das Rückschlagorgan im Saugkorb?",
 					"choices": [
 						{
-							"text": "Es soll ein Zurücklaufen der Wassersäule in der Saugleitung bei Unterbrechung der Wasser-förderung verhindern.",
+							"text": "Es soll ein Zurücklaufen der Wassersäule in der Saugleitung bei Unterbrechung der Wasserförderung verhindern.",
 							"answer": true
 						},
 						{
