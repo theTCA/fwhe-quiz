@@ -1,52 +1,58 @@
 <!doctype html>
 <html lang="de">
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-		<meta name="description" content="Webapp zum Üben der Fragen aus der hessischen Feuerwehrleistungsübung">
-		<meta name="keywords" content="hessische Feuerwehrleistungsübung">
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+		/>
+		<meta
+			name="description"
+			content="Webapp zum Üben der Fragen aus der hessischen Feuerwehrleistungsübung"
+		/>
+		<meta name="keywords" content="hessische Feuerwehrleistungsübung" />
 		
-		<link href="./_app/immutable/assets/0.D4N6DMaF.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.Dl7IO_P3.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/entry.BOIEb0H2.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/runtime.BtXH3TXM.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.CMXerwWH.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/paths.tV83-FO2.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index-client.C__TUGa-.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.CaU7Drvf.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.C1FmrZbK.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/disclose-version.BWTWBhB4.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/props.CqWHPKN1.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/store.5iZEm9oW.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/this.BN7HuHOy.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.CFt7c0ON.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/public.Dj7Vthdi.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/each.DRxh5sp6.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/slot.DMeDLYQD.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/Icon.BPb3u_LU.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/stores.CGmyU67k.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/data.CxUiFjb2.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/pages.cIP9c8sP.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/stores.TwdxsUJJ.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/helper.CMGnaNZv.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/3.BNlK043d.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/input.cFgeiN8w.js"><!--[--><link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"> <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png"> <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png"> <link rel="manifest" href="./site.webmanifest"> <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5"> <meta name="msapplication-TileColor" content="#da532c"> <meta name="theme-color" content="#ffffff"><!--]--><!--[--><!--]--><title>ADR-Quiz - HFLÜ-Quiz</title>
+		<link href="./_app/immutable/assets/0.BZHA-g4n.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.CB2xNQiJ.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/DqG7nDFI.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/DN6A0naj.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/DWi8nBnj.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CtN7THKz.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.CW0PWOUw.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/PPVm8Dsz.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/NT8NRc0h.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/kWoj3Qxl.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CkpWWlpt.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.GWCoY6Z_.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/SrmGGwdX.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/nylEWyIz.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CGRCA45q.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/XaqINB52.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/BYfBAJde.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/DqKiQXOL.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/DfCi-hmE.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/EEySsA0e.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/GIsLircH.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CMGnaNZv.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/qVDKZIav.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/3.8k-440Lh.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/DDgTMA0v.js"><!--12qhfyh--><link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"/> <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png"/> <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png"/> <link rel="manifest" href="./site.webmanifest"/> <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5"/> <meta name="msapplication-TileColor" content="#da532c"/> <meta name="theme-color" content="#ffffff"/><!----><!--1attrez--><!----><title>ADR-Quiz - HFLÜ-Quiz</title>
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents"><!--[--><!--[--><!----><div class="drawer"><input id="drawer" type="checkbox" class="drawer-toggle"> <div class="drawer-content flex flex-col"><nav class="w-full navbar bg-base-300"><div class="flex-none lg:hidden"><label for="drawer" aria-label="open sidebar" class="btn btn-square btn-ghost"><!--[!--><!--]--><!----></label></div> <div class="flex-none mr-2"><a class="btn btn-ghost text-lg font-semibold" href="./"><!--[!--><!--]--><!----> HFLÜ-Quiz</a></div> <div class="flex-1 hidden lg:block"><ul class="menu menu-horizontal gap-2"><!--[--><li class="flex items-center"><!--[!--><a class="btn btn-sm" href="/training"><!--[!--><!--]--><!----> Training</a><!--]--></li><li class="flex items-center"><!--[!--><a class="btn btn-sm" href="/endless"><!--[!--><!--]--><!----> Endlosquiz</a><!--]--></li><li class="flex items-center"><!--[!--><a class="btn btn-sm" href="/quiz"><!--[!--><!--]--><!----> Quiz</a><!--]--></li><li class="flex items-center"><!--[--><a class="btn btn-sm btn-active" href="/adrquiz"><!--[!--><!--]--><!----> ADR-Quiz</a><!--]--></li><li class="flex items-center"><!--[!--><a class="btn btn-sm" href="/pdfquiz"><!--[!--><!--]--><!----> PDF-Quiz</a><!--]--></li><!--]--></ul></div> <div class="flex-1 lg:flex-none gap-3 justify-end"><div><label class="swap btn"><input type="checkbox"> <!--[!--><!--]--><!----> <!--[!--><!--]--><!----></label> <input class="theme-controller" type="checkbox" checked value="" hidden></div><!----> <a href="./bookmarks" class="btn btn-square"><!--[!--><!--]--><!----></a></div></nav> <main class="w-full lg:w-[80%] mx-auto p-1 mt-2"><!----><!----><div><h1 class="text-3xl text-center font-semibold mb-2">ADR-Quiz</h1> <!--[--><!--[!--><div class="flex flex-col gap-2"><div class="flex flex-col gap-2"><h2 class="text-base lg:text-lg font-semibold text-center">Welche Beschreibung passt zu dieser Gefahrentafel?</h2> <div class="flex flex-col text-center bg-orange-500 border-4 border-black text-black text-lg font-bold w-24 mx-auto rounded-md"><span class="border-b-2 border-black">83</span> <span class="border-t-2 border-black">2619</span></div></div><!----> <div class="flex flex-col gap-3"><!--[--><label class="flex items-center gap-2 px-1.5 py-3 cursor-pointer border-2 border-base-200 rounded-md"><input class="radio radio-primary" type="radio" value="ätzender oder schwach ätzender Stoff, entzündbar (Flammpunkt von 23 °C bis 61 °C)"> <div class="text-sm lg:text-base">ätzender oder schwach ätzender Stoff, entzündbar (Flammpunkt von 23 °C bis 61 °C)</div></label><label class="flex items-center gap-2 px-1.5 py-3 cursor-pointer border-2 border-base-200 rounded-md"><input class="radio radio-primary" type="radio" value="entzündbarer fester Stoff, giftig, der sich bei erhöhter Temperatur in geschmolzenem Zustand befindet"> <div class="text-sm lg:text-base">entzündbarer fester Stoff, giftig, der sich bei erhöhter Temperatur in geschmolzenem Zustand befindet</div></label><label class="flex items-center gap-2 px-1.5 py-3 cursor-pointer border-2 border-base-200 rounded-md"><input class="radio radio-primary" type="radio" value="ätzendes Gas"> <div class="text-sm lg:text-base">ätzendes Gas</div></label><!--]--></div></div><!--]--><!--]--> <div class="flex justify-center m-4"><!--[!--><!--[!--><button class="btn btn-primary btn-block btn-outline lg:w-1/2">Wählen</button><!--]--><!--]--></div> <!--[!--><!--]--></div><!----><!----></main></div> <div class="drawer-side"><label for="drawer" aria-label="close sidebar" class="drawer-overlay"></label> <ul class="menu p-4 w-80 min-h-full gap-2 bg-base-200"><li class="text-lg font-semibold"><a href="./"><!--[!--><!--]--><!----> HFLÜ-Quiz</a></li> <!--[--><li class="text-primary">Quiz</li> <!--[--><li><!--[!--><a class="bg-base-100" href="/training"><!--[!--><!--]--><!----> Training</a><!--]--></li><li><!--[!--><a class="bg-base-100" href="/endless"><!--[!--><!--]--><!----> Endlosquiz</a><!--]--></li><li><!--[!--><a class="bg-base-100" href="/quiz"><!--[!--><!--]--><!----> Quiz</a><!--]--></li><li><!--[--><a class="bg-base-100 active" href="/adrquiz"><!--[!--><!--]--><!----> ADR-Quiz</a><!--]--></li><li><!--[!--><a class="bg-base-100" href="/foamquiz"><!--[!--><!--]--><!----> Schaumquiz</a><!--]--></li><li><!--[!--><a class="bg-base-100" href="/problemquiz"><!--[!--><!--]--><!----> Problemquiz</a><!--]--></li><li><!--[!--><a class="bg-base-100" href="/pdfquiz"><!--[!--><!--]--><!----> PDF-Quiz</a><!--]--></li><!--]--><li class="text-primary">Informationen</li> <!--[--><li><!--[!--><a class="bg-base-100" href="/search"><!--[!--><!--]--><!----> Durchsuchen</a><!--]--></li><li><!--[!--><a class="bg-base-100" href="/quizstats"><!--[!--><!--]--><!----> Statistik</a><!--]--></li><li><!--[!--><a class="bg-base-100" href="/history"><!--[!--><!--]--><!----> Verlauf</a><!--]--></li><!--]--><!--]--></ul></div></div><!----><!--]--> <!--[!--><!--]--><!--]-->
+		<div style="display: contents"><!--[--><!--[--><!----><div class="drawer"><input id="drawer" type="checkbox" class="drawer-toggle"/> <div class="drawer-content flex flex-col"><nav class="navbar w-full bg-base-300"><div class="flex-none lg:hidden"><label for="drawer" aria-label="open sidebar" class="btn btn-square btn-ghost"><!--[!--><!--]--><!----></label></div> <div class="mr-2 flex-none"><a class="btn text-lg font-semibold btn-ghost" href="./"><!--[!--><!--]--><!----> HFLÜ-Quiz</a></div> <div class="hidden flex-1 lg:block"><ul class="menu menu-horizontal gap-2"><!--[--><li class="flex items-center"><!--[!--><a class="btn shadow-md btn-sm" href="./training"><!--[!--><!--]--><!----> Training</a><!--]--></li><li class="flex items-center"><!--[!--><a class="btn shadow-md btn-sm" href="./endless"><!--[!--><!--]--><!----> Endlosquiz</a><!--]--></li><li class="flex items-center"><!--[!--><a class="btn shadow-md btn-sm" href="./quiz"><!--[!--><!--]--><!----> Quiz</a><!--]--></li><li class="flex items-center"><!--[--><a class="btn btn-active shadow-md btn-sm" href="./adrquiz"><!--[!--><!--]--><!----> ADR-Quiz</a><!--]--></li><li class="flex items-center"><!--[!--><a class="btn shadow-md btn-sm" href="./pdfquiz"><!--[!--><!--]--><!----> PDF-Quiz</a><!--]--></li><!--]--></ul></div> <div class="inline-flex flex-1 items-center justify-end gap-3 lg:flex-none"><div><label class="btn swap btn-square shadow-md"><input type="checkbox"/> <!--[!--><!--]--><!----> <!--[!--><!--]--><!----></label> <input class="theme-controller" type="checkbox" checked value="" hidden=""/></div><!----> <a href="./bookmarks" class="btn indicator btn-square shadow-md"><!--[!--><!--]--><!----> <!--[!--><!--]--></a></div></nav> <main class="mx-auto mt-2 w-full p-1 lg:w-[80%]"><!----><div><h1 class="mb-2 text-center text-3xl font-semibold">ADR-Quiz</h1> <!--[!--><div class="flex flex-col gap-2"><div class="flex flex-col gap-2"><h2 class="text-center text-base font-semibold lg:text-lg">Welche Beschreibung passt zu dieser Gefahrentafel?</h2> <div class="mx-auto flex w-24 flex-col border-4 border-black bg-orange-500 text-center text-lg font-bold text-black"><span class="border-b-2 border-black">225</span> <span class="border-t-2 border-black">1003</span></div></div><!----> <div class="flex flex-col gap-3"><!--[--><label class="flex cursor-pointer items-center gap-2 rounded-md border-2 border-base-200 px-1.5 py-3"><input class="radio radio-primary" type="radio" value="brennbares Gas, das spontan zu heftiger Reaktion führen kann"/> <div class="text-sm lg:text-base">brennbares Gas, das spontan zu heftiger Reaktion führen kann</div></label><label class="flex cursor-pointer items-center gap-2 rounded-md border-2 border-base-200 px-1.5 py-3"><input class="radio radio-primary" type="radio" value="ätzender flüssiger Stoff, der mit Wasser reagiert und entzündbare Gase bildet"/> <div class="text-sm lg:text-base">ätzender flüssiger Stoff, der mit Wasser reagiert und entzündbare Gase bildet</div></label><label class="flex cursor-pointer items-center gap-2 rounded-md border-2 border-base-200 px-1.5 py-3"><input class="radio radio-primary" type="radio" value="tiefgekühltes brandförderndes Gas"/> <div class="text-sm lg:text-base">tiefgekühltes brandförderndes Gas</div></label><!--]--></div></div><!--]--> <div class="m-4 flex justify-center"><!--[!--><!--[!--><button class="btn btn-block btn-soft btn-primary lg:w-1/2">Wählen</button><!--]--><!--]--></div> <!--[!--><!--]--></div><!----><!----></main></div> <div class="drawer-side"><label for="drawer" aria-label="close sidebar" class="drawer-overlay"></label> <ul class="menu min-h-full w-80 gap-2 bg-base-200 p-4"><li class="text-lg font-semibold"><a href="./"><!--[!--><!--]--><!----> HFLÜ-Quiz</a></li> <!--[--><li class="text-primary">Quiz nach Fragenkatalog</li> <!--[--><li><!--[!--><a class="bg-base-100 shadow-md" href="./training"><!--[!--><!--]--><!----> Training</a><!--]--></li><li><!--[!--><a class="bg-base-100 shadow-md" href="./endless"><!--[!--><!--]--><!----> Endlosquiz</a><!--]--></li><li><!--[!--><a class="bg-base-100 shadow-md" href="./quiz"><!--[!--><!--]--><!----> Quiz</a><!--]--></li><li><!--[!--><a class="bg-base-100 shadow-md" href="./problemquiz"><!--[!--><!--]--><!----> Problemquiz</a><!--]--></li><li><!--[!--><a class="bg-base-100 shadow-md" href="./pdfquiz"><!--[!--><!--]--><!----> PDF-Quiz</a><!--]--></li><!--]--><li class="text-primary">Weitere</li> <!--[--><li><!--[--><a class="active bg-base-100 shadow-md" href="./adrquiz"><!--[!--><!--]--><!----> ADR-Quiz</a><!--]--></li><li><!--[!--><a class="bg-base-100 shadow-md" href="./foamquiz"><!--[!--><!--]--><!----> Schaumquiz</a><!--]--></li><!--]--><li class="text-primary">Informationen</li> <!--[--><li><!--[!--><a class="bg-base-100 shadow-md" href="./search"><!--[!--><!--]--><!----> Durchsuchen</a><!--]--></li><li><!--[!--><a class="bg-base-100 shadow-md" href="./quizstats"><!--[!--><!--]--><!----> Statistik</a><!--]--></li><li><!--[!--><a class="bg-base-100 shadow-md" href="./history"><!--[!--><!--]--><!----> Verlauf</a><!--]--></li><!--]--><!--]--></ul></div></div><!----><!--]--> <!--[!--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_13l70t5 = {
+					__sveltekit_2gnh2t = {
 						base: new URL(".", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("./_app/immutable/entry/start.Dl7IO_P3.js"),
-						import("./_app/immutable/entry/app.CaU7Drvf.js")
+						import("./_app/immutable/entry/start.CB2xNQiJ.js"),
+						import("./_app/immutable/entry/app.CW0PWOUw.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 3],
