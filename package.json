@@ -9,7 +9,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
 		"lint": "eslint . && prettier --check .",
-		"deploy": "vite build && npx gh-pages -d build -t true",
+		"deploy": "vite build && npx gh-pages -d build --dotfiles",
 		"format": "prettier --write .",
 		"parser": "peggy -o src/lib/adrparser.js --format es src/lib/parser/adrparser.peggy ",
 		"test:unit": "vitest",
