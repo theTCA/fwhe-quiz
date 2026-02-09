@@ -22,6 +22,7 @@
 	let quizName = $state('Fragebogen');
 	/** @type {'normal' | 'xl'}*/
 	let quizFontSize = $state('normal');
+	let quizHeader = $state(false);
 
 	function addRandomQuestions() {
 		let possibleQuestions = Array.from({ length: flattendQuestions.length }, (_, i) => i + 1);
@@ -87,11 +88,18 @@
 		if (questions.length === 0) return;
 		let bloburl = null;
 		if (solution) {
-			bloburl = new QuizBuilder(quizName, questions, { style: quizFontSize, showSolution: true })
+			bloburl = new QuizBuilder(quizName, questions, {
+				style: quizFontSize,
+				hasDetails: quizHeader,
+				showSolution: true
+			})
 				.get()
 				.output('bloburl');
 		} else {
-			bloburl = new QuizBuilder(quizName, questions, { style: quizFontSize })
+			bloburl = new QuizBuilder(quizName, questions, {
+				style: quizFontSize,
+				hasDetails: quizHeader
+			})
 				.get()
 				.output('bloburl');
 		}
@@ -141,6 +149,12 @@
 					placeholder="Fragebogen"
 					bind:value={quizName}
 				/>
+			</label>
+		</fieldset>
+		<fieldset class="fieldset">
+			<label class="flex w-full cursor-pointer items-center justify-start gap-3 input-ghost">
+				<input class="checkbox" type="checkbox" bind:checked={quizHeader} />
+				Fragebogenkopf
 			</label>
 		</fieldset>
 		<fieldset class="fieldset gap-2">
