@@ -7,7 +7,7 @@
 	import QuestionDisplay from '$lib/components/QuestionDisplay.svelte';
 	import { resolve } from '$app/paths';
 
-	let questions = getPossibleQuestions();
+	let questions = $state(getPossibleQuestions());
 	let currentIndex = $state(0);
 	let answer = $state('');
 	let answered = $state(false);
@@ -31,7 +31,7 @@
 	}
 
 	function nextQuestion() {
-		if (currentIndex + 1 > questions.length) currentIndex = 0;
+		if (currentIndex + 1 >= questions.length) currentIndex = 0;
 		else currentIndex++;
 		answer = '';
 		answered = false;
@@ -50,6 +50,11 @@
 	<h1 class="mb-2 text-center text-3xl font-semibold">Problemquiz</h1>
 	{#if questions.length > 0}
 		<div class="mb-2">
+			<div class="text-center text-sm font-light">
+				<span>{currentIndex + 1}</span>
+				/
+				<span>{questions.length}</span>
+			</div>
 			{#if !answered}
 				<Question question={questions[currentIndex]} bind:answer />
 			{:else}
