@@ -7,7 +7,7 @@
 	import QuestionHelp from '$lib/components/QuestionHelp.svelte';
 	import { flattendQuestions } from '$lib/data';
 	import { shuffle } from '$lib/helper';
-	import { endlessQuizQuestions, quizHistory } from '$lib/stores';
+	import { endlessQuizQuestions, quizHistory, endlessScore } from '$lib/stores';
 
 	if ($endlessQuizQuestions.length === 0) {
 		$endlessQuizQuestions = [...shuffle(flattendQuestions)];
@@ -15,7 +15,6 @@
 	let question = $state($endlessQuizQuestions[0]);
 	let answer = $state('');
 	let answered = $state(false);
-	let streak = $state(0);
 
 	function nextQuestion() {
 		answered = false;
@@ -41,9 +40,9 @@
 		}
 		let correctChoice = question.choices.find((/** @type {{ answer: boolean; }} */ c) => c.answer);
 		if (correctChoice && correctChoice.text === answer) {
-			streak += 1;
+			$endlessScore += 1;
 		} else {
-			streak = 0;
+			$endlessScore = 0;
 		}
 		answered = true;
 		$endlessQuizQuestions = [...$endlessQuizQuestions.slice(1)];
@@ -59,12 +58,20 @@
 		<h1 class="mb-2 flex-1 text-center text-3xl font-semibold">Endlosquiz</h1>
 		<BookmarkButton class="absolute right-2 lg:right-0" {question} />
 	</div>
-	<div class="mb-2">
-		{#if answered}
+	<div class="flex flex-row gap-2 mb-2">
+		<div class="w-full">
+			{#if answered}
 			<QuestionDisplay {question} {answer} showCatalog />
-		{:else}
+			{:else}
 			<Question {question} bind:answer />
-		{/if}
+			{/if}
+		</div>
+		<div class="bg-base-300 rounded-box flex flex-col justify-center p-2">
+			<span class="countdown font-mono text-4xl">
+				<span style={`--value:${$endlessScore};`} aria-live="polite">{$endlessScore}</span>
+			</span>
+			in Folge
+		</div>
 	</div>
 	<div class="mb-4 grid grid-cols-2 gap-2">
 		<a class="btn" href={resolve('/')}> Zurück </a>
@@ -77,14 +84,6 @@
 		{/if}
 	</div>
 	{#if answered}
-		<div class="grid grid-cols-2">
-			<div class="mb-4 text-center text-sm">
-				in Folge richtig:
-				<span class="font-semibold">
-					{streak}
-				</span>
-			</div>
-		</div>
 		<QuestionHelp {question} />
 	{/if}
 </div>

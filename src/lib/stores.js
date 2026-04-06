@@ -144,6 +144,12 @@ trainedBookmarks.subscribe((val) =>
 );
 
 /**
+ * @type {import('svelte/store').Writable<number>}
+ */
+export const endlessScore = writable(getLocalStorage('endlessScore', 0));
+endlessScore.subscribe((val) => putLocalStorage('endlessScore', val));
+
+/**
  * @type {import('svelte/store').Writable<string>}
  */
 export const theme = writable(getLocalStorage('theme', ''));
