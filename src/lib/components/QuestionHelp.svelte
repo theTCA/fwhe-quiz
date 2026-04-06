@@ -19,7 +19,7 @@
 	}
 </script>
 
-{#if questionHelp}
+{#if questionHelp && questionHelp.length > 0}
 	<div class="divider font-semibold"> Hilfestellungen </div>
 	<div class="flex flex-col gap-2">
 		{#each questionHelp as help, idx (idx)}
