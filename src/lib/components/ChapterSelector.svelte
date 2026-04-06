@@ -4,14 +4,14 @@
 	let { chapter, select, reset } = $props();
 </script>
 
-<div class="flex flex-row items-center gap-2 rounded-md bg-base-200 p-2">
+<div class="flex flex-row items-center gap-2 rounded-md bg-base-200 p-2 w-full shadow-md">
 	<div class="flex-none">
 		{#if chapter.questions.length === chapter.length}
 			<div class="p-2 text-success">
 				<Icon class="size-6" icon="mdi:check" />
 			</div>
 		{:else}
-			<button class="btn btn-square btn-soft btn-primary" onclick={() => select(chapter.name)}>
+			<button class="btn btn-square btn-soft btn-primary shadow-md" onclick={() => select(chapter.name)}>
 				<Icon icon="carbon:play-filled-alt" />
 			</button>
 		{/if}
@@ -37,7 +37,7 @@
 		{/if}
 	</div>
 	<div class="flex-none">
-		<button class="btn btn-square btn-soft" onclick={() => reset(chapter.name)}>
+		<button class="btn btn-square btn-soft shadow-md" onclick={() => reset(chapter.name)}>
 			<Icon icon="material-symbols:refresh" />
 		</button>
 	</div>
