@@ -66,8 +66,8 @@
 			<Question {question} bind:answer />
 			{/if}
 		</div>
-		<div class="bg-base-300 rounded-box flex flex-col justify-center p-2">
-			<span class="countdown font-mono text-4xl">
+		<div class="bg-base-300 rounded-box flex flex-col justify-center p-2 text-xs lg:text-base">
+			<span class="countdown font-mono text-3xl lg:text-5xl">
 				<span style={`--value:${$endlessScore};`} aria-live="polite">{$endlessScore}</span>
 			</span>
 			in Folge
