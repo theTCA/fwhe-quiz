@@ -18,9 +18,9 @@
 		},
 		{
 			"id": 3,
-			"name": "Brennen 1",
-			"file": "Brennen1.png",
-			"description": ""
+			"name": "GHS02 Achtung",
+			"file": "ghs02_achtung.png",
+			"description": "https://symbib-light.bgrci.de/"
 		},
 		{
 			"id": 4,
