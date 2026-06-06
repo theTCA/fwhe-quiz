@@ -1,5 +1,6 @@
 <script>
 	import { PUBLIC_APP_NAME } from '$env/static/public';
+	import { resolve } from '$app/paths';
 	import { shuffle } from '$lib/helper';
 	import { catalogues } from '$lib/data.json';
 	import { flattendQuestions } from '$lib/data';
@@ -220,8 +221,8 @@
 		{#if ended}
 			<QuizResult questions={[...$quizQuestions]} />
 			<div class="mb-4 grid w-full grid-cols-2 gap-2">
-				<button class="btn btn-outline btn-error" type="button" onclick={toMenu}>Zurück</button>
-				<button class="btn btn-primary" type="button" onclick={start}>Erneut</button>
+				<a class="btn btn-outline btn-error" type="button" href={resolve('/')}>Zurück</a>
+				<button class="btn btn-primary" type="button" onclick={toMenu}>Erneut</button>
 			</div>
 		{/if}
 	{/if}
